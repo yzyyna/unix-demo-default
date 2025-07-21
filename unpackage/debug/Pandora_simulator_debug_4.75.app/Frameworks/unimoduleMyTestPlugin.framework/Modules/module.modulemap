@@ -1,0 +1,11 @@
+framework module unimoduleMyTestPlugin {
+  umbrella header "unimoduleMyTestPlugin.h"
+  export *
+
+  module * { export * }
+}
+
+module unimoduleMyTestPlugin.Swift {
+  header "unimoduleMyTestPlugin-Swift.h"
+  requires objc
+}

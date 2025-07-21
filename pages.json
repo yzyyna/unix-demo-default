@@ -5,6 +5,18 @@
 			"style": {
 				"navigationBarTitleText": "uni-app x"
 			}
+		},
+		{
+			"path": "pages/index/page2",
+			"style": {
+				"navigationBarTitleText": "Page2"
+			}
+		},
+		{
+			"path": "pages/index/page3native",
+			"style": {
+				"navigationBarTitleText": "Page3 native"
+			}
 		}
 	],
 	"globalStyle": {

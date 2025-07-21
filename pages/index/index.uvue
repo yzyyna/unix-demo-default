@@ -4,6 +4,8 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<view @click="onClick('/pages/index/page2')">click to page2</view>
+		<view @click="onClick('/pages/index/page3native')">click to page3</view>
 	</view>
 </template>
 
@@ -15,10 +17,16 @@
 			}
 		},
 		onLoad() {
-
+		},
+		onReady() {
+			console.log(getApp(), getCurrentPages())
 		},
 		methods: {
-
+			onClick(path:string) {
+				uni.navigateTo({
+					url: path
+				})
+			}
 		}
 	}
 </script>
@@ -33,6 +41,10 @@
 	.title {
 		font-size: 18px;
 		color: #8f8f94;
-    text-align: center;
+		text-align: center;
+	}
+
+	.text-area {
+		color: #333
 	}
 </style>

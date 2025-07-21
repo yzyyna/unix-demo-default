@@ -1,0 +1,26 @@
+<template>
+	<view>
+		Page2
+		<test-com></test-com>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		onReady() {
+			console.log(getApp(), getCurrentPages())
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

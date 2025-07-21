@@ -1,0 +1,33 @@
+<template>
+	<view class="container">
+		111
+	</view>
+</template>
+
+<script setup>
+	// #ifdef APP
+	import { myApi, myApiSync, MyApiOptions } from "@/uni_modules/my-test-plugin";
+
+
+
+	const testMyApi = () => {
+		// 调用异步方法示例
+		let options = {
+			paramA: false,
+			complete: (res : any) => {
+				console.log(res)
+			}
+		} as MyApiOptions;
+		myApi(options);
+	}
+
+	const testMyApiSync = () => {
+		// 调用同步方法示例
+		console.log(myApiSync(true))
+	}
+	onReady(() => {
+		testMyApi()
+		testMyApiSync()
+	})
+	// #endif
+</script>

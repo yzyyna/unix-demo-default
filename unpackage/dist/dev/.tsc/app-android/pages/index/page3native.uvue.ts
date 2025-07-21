@@ -1,0 +1,50 @@
+
+import ModbusTCPClient from '@/uni_modules/my-test-plugin';
+
+const __sfc__ = defineComponent({
+  data() {
+    return {
+      client: null,
+      data: ''
+    };
+  },
+  onLoad() {
+    this.client = new ModbusTCPClient('192.168.1.100', 502); // 替换为实际控制器 IP 和端口
+  },
+  methods: {
+    connect() {
+      this.client.connect();
+    },
+    readData() {
+      this.client.readHoldingRegisters(40001, 1, (result, error) => {
+        if (result) {
+          this.data = `读取结果: ${result.join(', ')}`;
+        } else {
+          this.data = `读取失败: ${error}`;
+        }
+      });
+    },
+    writeData() {
+      this.client.writeRegister(40001, 123, (success, error) => {
+        if (success) {
+          this.data = '写入成功';
+        } else {
+          this.data = `写入失败: ${error}`;
+        }
+      });
+    }
+  }
+});
+
+export default __sfc__
+function GenPagesIndexPage3nativeRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return _cE("view", null, [
+    _cE("button", _uM({ onClick: _ctx.connect }), "连接控制器", 8 /* PROPS */, ["onClick"]),
+    _cE("button", _uM({ onClick: _ctx.readData }), "读取寄存器", 8 /* PROPS */, ["onClick"]),
+    _cE("button", _uM({ onClick: _ctx.writeData }), "写入寄存器", 8 /* PROPS */, ["onClick"]),
+    _cE("text", null, _tD(_ctx.data), 1 /* TEXT */)
+  ])
+}
+const GenPagesIndexPage3nativeStyles = []

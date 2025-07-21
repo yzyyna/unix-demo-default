@@ -1,0 +1,72 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-ios12-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name unimoduleMyTestPlugin
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import DCloudUTSFoundation
+import DCloudUniappRuntime
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import unimoduleMyTestPlugin
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesMyTestPluginMyApiOptions) @objcMembers public class MyApiOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var paramA: Swift.Bool
+  @objc public var success: ((_ res: unimoduleMyTestPlugin.MyApiResult) -> Swift.Void)?
+  public var fail: ((_ res: any unimoduleMyTestPlugin.MyApiFail) -> Swift.Void)?
+  @objc public var complete: ((_ res: Any) -> Swift.Void)?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesMyTestPluginMyApiResult) @objcMembers public class MyApiResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var fieldA: Foundation.NSNumber!
+  @objc public var fieldB: Swift.Bool
+  @objc public var fieldC: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias MyApiErrorCode = Foundation.NSNumber
+public protocol MyApiFail : DCloudUTSFoundation.IUniError {
+  var errCode: unimoduleMyTestPlugin.MyApiErrorCode { get set }
+}
+public typealias MyApi = (_ options: unimoduleMyTestPlugin.MyApiOptions) -> Swift.Void
+public typealias MyApiSync = (_ paramA: Swift.Bool) -> unimoduleMyTestPlugin.MyApiResult
+public var UniErrorSubject: Swift.String
+public var MyAPIErrors: [unimoduleMyTestPlugin.MyApiErrorCode : Swift.String]
+@objc(UTSSDKModulesMyTestPluginMyApiFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesMyTestPluginMyApiFailImpl) public class MyApiFailImpl : DCloudUTSFoundation.UniError, unimoduleMyTestPlugin.MyApiFail {
+  @objc public init(_ errCode: unimoduleMyTestPlugin.MyApiErrorCode)
+  @objc deinit
+}
+public var myApi: (_ options: unimoduleMyTestPlugin.MyApiOptions) -> Swift.Void
+public var myApiSync: (_ paramA: Swift.Bool) -> unimoduleMyTestPlugin.MyApiResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesMyTestPluginMyApiOptionsJSONObject) @objcMembers public class MyApiOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var paramA: Swift.Bool
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func myApiByJs(_ options: unimoduleMyTestPlugin.MyApiOptionsJSONObject)
+public func myApiSyncByJs(_ paramA: Swift.Bool) -> unimoduleMyTestPlugin.MyApiResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesMyTestPluginIndexSwift) @objcMembers public class UTSSDKModulesMyTestPluginIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_myApiByJs(_ options: unimoduleMyTestPlugin.MyApiOptionsJSONObject)
+  @objc public static func s_myApiSyncByJs(_ paramA: Swift.Bool) -> unimoduleMyTestPlugin.MyApiResult
+  @objc override dynamic public init()
+  @objc deinit
+}

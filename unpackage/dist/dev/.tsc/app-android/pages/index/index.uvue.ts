@@ -1,0 +1,42 @@
+
+	const __sfc__ = defineComponent({
+		data() {
+			return {
+				title: 'Hello'
+			}
+		},
+		onLoad() {
+		},
+		onReady() {
+			console.log(getApp(), getCurrentPages(), " at pages/index/index.uvue:22")
+		},
+		methods: {
+			onClick(path:string) {
+				uni.navigateTo({
+					url: path
+				})
+			}
+		}
+	})
+
+export default __sfc__
+function GenPagesIndexIndexRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return _cE("view", null, [
+    _cE("image", _uM({
+      class: "logo",
+      src: "/static/logo.png"
+    })),
+    _cE("view", _uM({ class: "text-area" }), [
+      _cE("text", _uM({ class: "title" }), _tD(_ctx.title), 1 /* TEXT */)
+    ]),
+    _cE("view", _uM({
+      onClick: () => {_ctx.onClick('/pages/index/page2')}
+    }), "click to page2", 8 /* PROPS */, ["onClick"]),
+    _cE("view", _uM({
+      onClick: () => {_ctx.onClick('/pages/index/page3native')}
+    }), "click to page3", 8 /* PROPS */, ["onClick"])
+  ])
+}
+const GenPagesIndexIndexStyles = [_uM([["logo", _pS(_uM([["height", 100], ["width", 100], ["marginTop", 100], ["marginRight", "auto"], ["marginBottom", 25], ["marginLeft", "auto"]]))], ["title", _pS(_uM([["fontSize", 18], ["color", "#8f8f94"], ["textAlign", "center"]]))], ["text-area", _pS(_uM([["color", "#333333"]]))]])]

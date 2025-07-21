@@ -1,0 +1,47 @@
+<template>
+  <view>
+    <button @click="connect">连接控制器</button>
+    <button @click="readData">读取寄存器</button>
+    <button @click="writeData">写入寄存器</button>
+    <text>{{ data }}</text>
+  </view>
+</template>
+
+<script lang="ts">
+import ModbusTCPClient from '@/uni_modules/my-test-plugin';
+
+export default {
+  data() {
+    return {
+      client: null,
+      data: ''
+    };
+  },
+  onLoad() {
+    this.client = new ModbusTCPClient('192.168.1.100', 502); // 替换为实际控制器 IP 和端口
+  },
+  methods: {
+    connect() {
+      this.client.connect();
+    },
+    readData() {
+      this.client.readHoldingRegisters(40001, 1, (result, error) => {
+        if (result) {
+          this.data = `读取结果: ${result.join(', ')}`;
+        } else {
+          this.data = `读取失败: ${error}`;
+        }
+      });
+    },
+    writeData() {
+      this.client.writeRegister(40001, 123, (success, error) => {
+        if (success) {
+          this.data = '写入成功';
+        } else {
+          this.data = `写入失败: ${error}`;
+        }
+      });
+    }
+  }
+};
+</script>
