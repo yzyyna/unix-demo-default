@@ -1,85 +1,37 @@
-// import { UTSModule } from 'uts';
-import { NWConnection, NWEndpoint, NWConnectionState, DispatchQueue } from "Network";
+import { GetMemoryInfo, OnMemoryInfoChange, OffMemoryInfoChange } from '../interface.uts'
 
-// @UTSModule
-export class ModbusTCPClient {
-    private connection: NWConnection;
-    private isConnected: boolean = false;
 
-    constructor(private host: string, private port: number) {
-        const endpoint = NWEndpoint.Host(this.host);
-        const portEndpoint = NWEndpoint.Port(this.port);
-        this.connection = NWConnection(endpoint, port: portEndpoint, using: .tcp);
-        
-        this.connection.stateUpdateHandler = (newState: NWConnectionState) => {
-            if (newState == 'ready') {
-                this.isConnected = true;
-                __f__('log','at uni_modules/my-test-plugin/utssdk/app-ios/index.uts:17',"Connected to Modbus TCP server");
-            } else if (newState == 'failed') {
-                this.isConnected = false;
-                __f__('log','at uni_modules/my-test-plugin/utssdk/app-ios/index.uts:20',"Connection failed");
-            }
-        };
-    }
+/**
+ * 获取内存信息
+ */
+export const getMemoryInfo : GetMemoryInfo = function () : Array<number> {
+  // 将原生 swift 语言的 Int 数组转换成 uts 语言中的 number数组
+  let numberArray = MemoryInfoNative.getMemInfoSwift().map((value : Int, index : number) : number => {
+    // 将 Int 数据类型转换成 number
+    return Number.from(value);
+  })
+  return numberArray;
+}
 
-    connect() {
-        this.connection.start(DispatchQueue.global());
-    }
 
-    readHoldingRegisters(address: number, count: number, callback: (data: number[] | null, error: string | null) => void) {
-        if (!this.isConnected) {
-            callback(null, "Not connected");
-            return;
-        }
-        const transactionId = Math.floor(Math.random() * 65535);
-        const request = [
-            (transactionId >> 8) & 0xFF, transactionId & 0xFF,
-            0, 0, // Protocol ID
-            0, 6, // Length
-            1, // Unit ID
-            3, // Function Code
-            (address >> 8) & 0xFF, address & 0xFF,
-            (count >> 8) & 0xFF, count & 0xFF
-        ];
-        this.connection.send(request, completion: .contentProcessed((error) => {
-            if (error) callback(null, error.localizedDescription);
-            else this.connection.receive(1, maximumLength: 65536, completion: (data: Uint8Array, _, _, receiveError) => {
-                if (receiveError) callback(null, receiveError.localizedDescription);
-                else if (data && data.length > 9 && data[7] == 3) {
-                    const byteCount = data[8];
-                    const values: number[] = [];
-                    for (let i = 0; i < byteCount / 2; i++) {
-                        values.push((data[9 + i * 2] << 8) | data[9 + i * 2 + 1]);
-                    }
-                    callback(values, null);
-                } else callback(null, "Invalid response");
-            });
-        }));
-    }
+/**
+ * 开始监听内存信息变化
+ */
+export const onMemoryInfoChange : OnMemoryInfoChange = function (callback : (res : Array<number>) => void) {
+  MemoryInfoNative.onMemoryInfoChangeSwift((res : Array<Int>) => {
+    // 将原生 swift 语言的 Int 数组转换成 uts 语言中的 number数组
+    let numberArray = res.map((value : Int, index : number) : number => {
+      // 将 Int 数据类型转换成 number
+      return Number.from(value);
+    })
+    callback(numberArray)
+  })
+}
 
-    writeRegister(address: number, value: number, callback: (success: boolean, error: string | null) => void) {
-        if (!this.isConnected) {
-            callback(false, "Not connected");
-            return;
-        }
-        const transactionId = Math.floor(Math.random() * 65535);
-        const request = [
-            (transactionId >> 8) & 0xFF, transactionId & 0xFF,
-            0, 0, // Protocol ID
-            0, 6, // Length
-            1, // Unit ID
-            6, // Function Code
-            (address >> 8) & 0xFF, address & 0xFF,
-            (value >> 8) & 0xFF, value & 0xFF
-        ];
-        this.connection.send(request, completion: .contentProcessed((error) => {
-            if (error) callback(false, error.localizedDescription);
-            else this.connection.receive(1, maximumLength: 12, completion: (data: Uint8Array, _, _, receiveError) => {
-                if (receiveError) callback(false, receiveError.localizedDescription);
-                else if (data && data.length == 12 && data[7] == 6) {
-                    callback(true, null);
-                } else callback(false, "Invalid response");
-            });
-        }));
-    }
+
+/**
+ * 停止监听内存信息变化
+ */
+export const offMemoryInfoChange : OffMemoryInfoChange = function () {
+  MemoryInfoNative.offMemoryInfoChangeSwift()
 }

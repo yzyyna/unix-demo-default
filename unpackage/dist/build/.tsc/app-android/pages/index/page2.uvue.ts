@@ -1,0 +1,29 @@
+
+	const __sfc__ = defineComponent({
+		data() {
+			return {
+
+			}
+		},
+		onReady() {
+			console.log(getApp(), getCurrentPages())
+		},
+		methods: {
+
+		}
+	})
+
+export default __sfc__
+function GenPagesIndexPage2Render(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+const _component_test_com = resolveEasyComponent("test-com",_easycom_test_com)
+
+  return _cE("view", null, [
+    " Page2 ",
+    _cV(_component_test_com)
+  ])
+}
+const GenPagesIndexPage2Styles = []
+
+import _easycom_test_com from '@/components/test-com/test-com.uvue'

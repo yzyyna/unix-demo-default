@@ -1,138 +1,81 @@
+// 引用 uts 基础库
 import DCloudUTSFoundation
-import DCloudUniappRuntime
-import Network
-@objc(UTSSDKModulesMyTestPluginModbusTCPClient)
-@objcMembers
-public class ModbusTCPClient : NSObject, IUTSSourceMap {
-    private var host: String
-    private var port: NSNumber
-    public func __$getOriginalPosition() -> UTSSourceMapPosition? {
-        return UTSSourceMapPosition("ModbusTCPClient", "uni_modules/my-test-plugin/utssdk/app-ios/index.uts", 4, 14)
+// 引用原生系统库
+import Foundation
+
+/// 原生 Swift 语言实现封装类
+public class MemoryInfoNative {
+    // 记录上一次的任务id
+    static private var lastTaskId = -1
+
+    /**
+     * 获取内测信息
+     */
+    static func getMemInfoSwift() -> [Int] {
+        let freeMem = MemoryInfoNative.getFreeMemory()
+        let totalMem = MemoryInfoNative.getTotalMemory()
+        // console.log(freeMem, totalMem)
+        return [freeMem, totalMem]
     }
-    private var connection: NWConnection
-    private var isConnected: Bool = false
-    public init(_ host: String, _ port: NSNumber){
-        self.host = host
-        self.port = port
-        var endpoint = NWEndpoint.Host(self.host)
-        var portEndpoint = NWEndpoint.Port(self.port)
-        self.connection = NWConnection(endpoint, port, portEndpoint, using, tcp)
-        self.connection.stateUpdateHandler = {
-        (_ newState: NWConnectionState) -> Void in
-        if (newState == "ready") {
-            self.isConnected = true
-            console.log("Connected to Modbus TCP server", " at uni_modules/my-test-plugin/utssdk/app-ios/index.uts:17")
-        } else if (newState == "failed") {
-            self.isConnected = false
-            console.log("Connection failed", " at uni_modules/my-test-plugin/utssdk/app-ios/index.uts:20")
+
+    /**
+     * 开始监听内存信息变化
+     */
+    static func onMemoryInfoChangeSwift(_ callback: @escaping (_ res: [Int]) -> Void) {
+        if lastTaskId != -1 {
+            // 避免重复开启
+            clearInterval(NSNumber.from(lastTaskId))
         }
+
+        lastTaskId = setInterval(
+            {
+                let freeMem = MemoryInfoNative.getFreeMemory()
+                let totalMem = MemoryInfoNative.getTotalMemory()
+                // console.log(freeMem, totalMem)
+                callback([freeMem, totalMem])
+            }, 2000
+        ).toInt()
+    }
+
+    /**
+     * 停止监听内存信息变化
+     */
+    static func offMemoryInfoChangeSwift() {
+        if lastTaskId != -1 {
+            clearInterval(NSNumber.from(lastTaskId))
+            lastTaskId = -1
         }
     }
-    public func connect() {
-        self.connection.start(DispatchQueue.global())
+
+    /**
+     * 获取总内存大小（以MB为单位）
+     * Returns: 设备总内存
+     */
+    static private func getTotalMemory() -> Int {
+        return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
     }
-    public func readHoldingRegisters(_ address: NSNumber, _ count: NSNumber, _ callback:@escaping (_ data: [NSNumber]?, _ error: String?) -> Void) {
-        if (!self.isConnected) {
-            callback(nil, "Not connected")
-            return
-        }
-        var transactionId = Math.floor(Math.random() * 65535)
-        var request = [
-            (transactionId >> 8) & 0xFF,
-            transactionId & 0xFF,
-            0,
-            0,
-            0,
-            6,
-            1,
-            3,
-            (address >> 8) & 0xFF,
-            address & 0xFF,
-            (count >> 8) & 0xFF,
-            count & 0xFF
-        ]
-        self.connection.send(request, completion, contentProcessed({
-        (error) -> Void in
-        if (error) {
-            callback(nil, error.localizedDescription)
-        } else {
-            self.connection.receive(1, maximumLength, 65536, completion, {
-            (data: Uint8Array, _, _, receiveError) -> Void in
-            if (receiveError) {
-                callback(nil, receiveError.localizedDescription)
-            } else if (data && data.length > 9 && data[7] == 3) {
-                var byteCount = data[8]
-                var values: [NSNumber] = []
-                do {
-                    var i: NSNumber = 0
-                    while(i < byteCount / 2){
-                        values.push((data[9 + i * 2] << 8) | data[9 + i * 2 + 1])
-                        i++
-                    }
-                }
-                callback(values, nil)
-            } else {
-                callback(nil, "Invalid response")
+
+    /**
+     * 获取可用内存大小（以MB为单位）
+     * Returns: 设备可用内存
+     */
+    static private func getFreeMemory() -> Int {
+        var vmStats = vm_statistics_data_t()
+        var infoCount = mach_msg_type_number_t(
+            MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
+        let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
+            $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
+                host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
             }
-            })
         }
-        }))
-    }
-    public func writeRegister(_ address: NSNumber, _ value: NSNumber, _ callback:@escaping (_ success: Bool, _ error: String?) -> Void) {
-        if (!self.isConnected) {
-            callback(false, "Not connected")
-            return
+
+        if kernReturn != KERN_SUCCESS {
+            return 0
         }
-        var transactionId = Math.floor(Math.random() * 65535)
-        var request = [
-            (transactionId >> 8) & 0xFF,
-            transactionId & 0xFF,
-            0,
-            0,
-            0,
-            6,
-            1,
-            6,
-            (address >> 8) & 0xFF,
-            address & 0xFF,
-            (value >> 8) & 0xFF,
-            value & 0xFF
-        ]
-        self.connection.send(request, completion, contentProcessed({
-        (error) -> Void in
-        if (error) {
-            callback(false, error.localizedDescription)
-        } else {
-            self.connection.receive(1, maximumLength, 12, completion, {
-            (data: Uint8Array, _, _, receiveError) -> Void in
-            if (receiveError) {
-                callback(false, receiveError.localizedDescription)
-            } else if (data && data.length == 12 && data[7] == 6) {
-                callback(true, nil)
-            } else {
-                callback(false, "Invalid response")
-            }
-            })
-        }
-        }))
+
+        let vmPageSize = vm_page_size
+        let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
+        return freeMemorySize / 1024 / 1024
     }
-}
-@objc(UTSSDKModulesMyTestPluginModbusTCPClientByJs)
-@objcMembers
-public class ModbusTCPClientByJs : ModbusTCPClient {
-    public func connectByJs() {
-        return self.connect()
-    }
-    public func readHoldingRegistersByJs(_ address: NSNumber, _ count: NSNumber, _ callback: UTSCallback) {
-        return self.readHoldingRegisters(address, count, {
-        (data: [NSNumber]?, error: String?) -> Void in
-        callback(data, error)
-        })
-    }
-    public func writeRegisterByJs(_ address: NSNumber, _ value: NSNumber, _ callback: UTSCallback) {
-        return self.writeRegister(address, value, {
-        (success: Bool, error: String?) -> Void in
-        callback(success, error)
-        })
-    }
+
 }

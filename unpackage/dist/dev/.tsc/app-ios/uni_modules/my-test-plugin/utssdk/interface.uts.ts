@@ -4,43 +4,37 @@
  */
 
 /**
- * myApi 异步函数的参数，在type里定义函数需要的参数以及api成功、失败的相关回调函数。
+ * 内存信息返回结果
  */
-export type MyApiOptions = {
-  paramA : boolean
-  success ?: (res : MyApiResult) => void
-  fail ?: (res : MyApiFail) => void
-  complete ?: (res : any) => void
+export type MemoryInfoResult = {
+  freeMem: number,
+  totalMem: number
 }
 
 /**
- * 函数返回结果
- * 可以是void, 基本数据类型，自定义type, 或者其他类型。
- * [可选实现]
+ * 内存信息变化回调函数
  */
-export type MyApiResult = {
-  fieldA : number,
-  fieldB : boolean,
-  fieldC : string
-}
+export type MemoryInfoCallback = (res: MemoryInfoResult) => void
 
 /**
  * 错误码
- * 根据uni错误码规范要求，建议错误码以90开头，以下是错误码示例：
- * - 9010001 错误信息1
- * - 9010002 错误信息2
+ * 根据uni错误码规范要求，建议错误码以90开头
  */
-export type MyApiErrorCode = 9010001 | 9010002;
+export type MemoryInfoErrorCode = 9010001 | 9010002;
+
 /**
- * myApi 的错误回调参数
+ * 内存信息错误回调参数
  */
-export interface MyApiFail extends IUniError {
-  errCode : MyApiErrorCode
+export interface MemoryInfoFail extends IUniError {
+  errCode: MemoryInfoErrorCode
 };
 
-/* 异步函数定义 */
-export type MyApi = (options : MyApiOptions) => void
+/* 同步获取内存信息 */
+export type getMemInfo = () => MemoryInfoResult
 
-/* 同步函数定义 */
-export type MyApiSync = (paramA : boolean) => MyApiResult
+/* 异步监听内存信息变化 */
+export type onMemoryInfoChange = (callback: MemoryInfoCallback) => void
+
+/* 停止监听内存信息变化 */
+export type offMemoryInfoChange = () => void
 

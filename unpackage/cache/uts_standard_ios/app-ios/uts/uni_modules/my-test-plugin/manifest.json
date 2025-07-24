@@ -5,10 +5,10 @@
   },
   "files": {
     "utssdk/app-ios/index.uts": {
-      "md5": "903e9a1ae0fadaf90783348289861a42"
+      "md5": "dced9ca246e0fb3f8f7f8ee30bc5a786"
     },
     "utssdk/interface.uts": {
-      "md5": "a4e13adad01fdcc74a48292969956e5d"
+      "md5": "0627d3f17672df9f5e04b4c7e936b46b"
     },
     "utssdk/unierror.uts": {
       "md5": "2e94771aa7d3802e8966524c6a142eb2"
@@ -18,6 +18,9 @@
     },
     "utssdk/app-ios/config.json": {
       "md5": "b346537f0a5ae3f8a9f59189d07f8ff0"
+    },
+    "utssdk/app-ios/index.swift": {
+      "md5": "5aa9766ab2c8637d37125934782b7eb0"
     }
   }
 }

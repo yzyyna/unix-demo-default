@@ -1,0 +1,192 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "unimoduleMyTestPlugin",
+    "printedName": "unimoduleMyTestPlugin",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "DCloudUTSFoundation",
+        "printedName": "DCloudUTSFoundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleMyTestPlugin",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleMyTestPlugin",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MemoryInfoNative",
+        "printedName": "MemoryInfoNative",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getMemInfoSwift",
+            "printedName": "getMemInfoSwift()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21unimoduleMyTestPlugin16MemoryInfoNativeC06getMemF5SwiftSaySiGyFZ",
+            "mangledName": "$s21unimoduleMyTestPlugin16MemoryInfoNativeC06getMemF5SwiftSaySiGyFZ",
+            "moduleName": "unimoduleMyTestPlugin",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onMemoryInfoChangeSwift",
+            "printedName": "onMemoryInfoChangeSwift(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Swift.Int]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.Int]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21unimoduleMyTestPlugin16MemoryInfoNativeC02oneF11ChangeSwiftyyySaySiGcFZ",
+            "mangledName": "$s21unimoduleMyTestPlugin16MemoryInfoNativeC02oneF11ChangeSwiftyyySaySiGcFZ",
+            "moduleName": "unimoduleMyTestPlugin",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "offMemoryInfoChangeSwift",
+            "printedName": "offMemoryInfoChangeSwift()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:21unimoduleMyTestPlugin16MemoryInfoNativeC03offeF11ChangeSwiftyyFZ",
+            "mangledName": "$s21unimoduleMyTestPlugin16MemoryInfoNativeC03offeF11ChangeSwiftyyFZ",
+            "moduleName": "unimoduleMyTestPlugin",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MemoryInfoNative",
+                "printedName": "unimoduleMyTestPlugin.MemoryInfoNative",
+                "usr": "s:21unimoduleMyTestPlugin16MemoryInfoNativeC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:21unimoduleMyTestPlugin16MemoryInfoNativeCACycfc",
+            "mangledName": "$s21unimoduleMyTestPlugin16MemoryInfoNativeCACycfc",
+            "moduleName": "unimoduleMyTestPlugin",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:21unimoduleMyTestPlugin16MemoryInfoNativeC",
+        "mangledName": "$s21unimoduleMyTestPlugin16MemoryInfoNativeC",
+        "moduleName": "unimoduleMyTestPlugin",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/my-test-plugin\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "IntegerLiteral",
+      "offset": 236,
+      "length": 2,
+      "value": "-1"
+    }
+  ]
+}
