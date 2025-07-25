@@ -1,0 +1,8 @@
+import { connect } from '../interface.uts'
+
+
+
+export const connect = function (ip : string, port : number) {
+	console.log("%c ✨ connectToModbusServer ✨ ", "color:#0ff;", ip, port);
+	FPSSModbusTcpNative.connectToModbusServer(ip, port)
+}

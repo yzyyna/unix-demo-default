@@ -1,0 +1,26 @@
+{
+  "version": "1",
+  "env": {
+    "compilerVersion": "4.75"
+  },
+  "files": {
+    "utssdk/app-ios/index.uts": {
+      "md5": "844acb972d22cc44a4e5e6b36ea57996"
+    },
+    "utssdk/interface.uts": {
+      "md5": "2c846690b4dff26bafb1da4233c5a965"
+    },
+    "utssdk/unierror.uts": {
+      "md5": "96c1bcfa94529b3cafbd16b4730334a0"
+    },
+    "package.json": {
+      "md5": "121b8f2804775b9f59ddcfbf0aeaf404"
+    },
+    "utssdk/app-ios/FPSSModbusTcpNative.swift": {
+      "md5": "93af76af8cedd05300919a04cc6c86ad"
+    },
+    "utssdk/app-ios/config.json": {
+      "md5": "22e597b95366f33dacc5887bff2d351b"
+    }
+  }
+}

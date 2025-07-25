@@ -1,0 +1,10 @@
+// 声明 uts 插件的 API 类型  
+
+
+/**
+ * 声明连接Modbus服务器API类型
+ * connect
+ */
+export type connect = (ip : string, port : number) => void
+
+

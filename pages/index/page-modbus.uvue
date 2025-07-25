@@ -1,0 +1,14 @@
+<template>
+	<view class="container">
+		        <button @tap="connectClient">连接Modbus服务器</button>
+
+	</view>
+</template>
+
+<script setup>
+	import {connect} from '@/uni_modules/fpss-modbus-tcp'
+const connectClient = () => {
+	console.log('dddd');
+	connect('192.168.110.88',500)
+}
+</script>

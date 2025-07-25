@@ -6,6 +6,7 @@
 		</view>
 		<view @click="onClick('/pages/index/page2')">click to page2</view>
 		<view @click="onClick('/pages/index/page3native')">click to page3</view>
+		<view @click="onClick('/pages/index/page-modbus')">click to page-modbus</view>
 	</view>
 </template>
 
@@ -19,7 +20,7 @@
 		onLoad() {
 		},
 		onReady() {
-			console.log(getApp(), getCurrentPages())
+			// console.log(getApp(), getCurrentPages())
 		},
 		methods: {
 			onClick(path:string) {

@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni_modules/webworker-batteryStatus/utssdk/app-ios/index.uts"],"sourcesContent":["export function getBatteryLevelSwift() : Float {\n  return NativeCode.getBatteryLevelSwift()\n}"],"names":[],"mappings":";;AAAM,YAAU,0BAAyB,MAAK;IAC5C,OAAO,WAAW,oBAAoB;AACxC;0CAFyC;;;;;;uDAAA"}

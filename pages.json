@@ -1,29 +1,36 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app x"
-			}
-		},
-		{
-			"path": "pages/index/page2",
-			"style": {
-				"navigationBarTitleText": "Page2"
-			}
-		},
-		{
-			"path": "pages/index/page3native",
-			"style": {
-				"navigationBarTitleText": "Page3 native"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app x",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"uniIdRouter": {}
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "uni-app x"
+      }
+    },
+    {
+      "path": "pages/index/page2",
+      "style": {
+        "navigationBarTitleText": "Page2"
+      }
+    },
+    {
+      "path": "pages/index/page3native",
+      "style": {
+        "navigationBarTitleText": "Page3 native"
+      }
+    },
+    {
+      "path": "pages/index/page-modbus",
+      "style": {
+        "navigationBarTitleText": "Modbus服务器"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app x",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "uniIdRouter": {}
 }

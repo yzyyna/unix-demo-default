@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni_modules/fpss-modbus-tcp/utssdk/interface.uts"],"sourcesContent":["// 声明 uts 插件的 API 类型  \n\n\n/**\n * 声明连接Modbus服务器API类型\n * connect\n */\nexport type connect = (ip : string, port : number) => void\n\n\n"],"names":[],"mappings":";;iBAOY,aAAW,IAAK,MAAM,IAAE,MAAO,QAAM,KAAK,IAAI"}

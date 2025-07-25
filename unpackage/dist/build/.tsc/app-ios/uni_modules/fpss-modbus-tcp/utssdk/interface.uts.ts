@@ -1,0 +1,28 @@
+// 声明 uts 插件的 API 类型  
+
+
+/**
+ * 声明连接Modbus服务器API类型
+ * connect
+ */
+export type connect = (ip : string, port : number) => void
+/**
+ * 声明获取内存信息API类型
+ * GetMemoryInfo
+ */
+export type GetMemoryInfo = () => Array<number>
+
+
+/**
+ * 声明开始监听内存信息变化API类型
+ * OnMemoryInfoChange
+ */
+export type OnMemoryInfoChange = (callback: (res: Array<number>) => void) => void
+
+
+/**
+ * 声明停止监听内存信息变化API类型
+ * OffMemoryInfoChange
+ */
+export type OffMemoryInfoChange = () => void
+

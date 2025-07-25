@@ -1,0 +1,10 @@
+import { connect } from '../interface.uts'
+
+
+
+export const connect : connect = function (ip : string, port : number) {
+	__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:6',"%c ✨ coerver??? ✨ ", "color:#0ff;", ip, port);
+	FPSSModbusTcpNative.connectToModbusServer(ip, port, (Bool, Error) => {
+		__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:8',Bool, Error);
+	})
+}
