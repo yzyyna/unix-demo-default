@@ -2,28 +2,29 @@ import { connectType, connectType2 } from '../interface.uts'
 
 
 
-	// FPSSModbusTcpNative.connectToModbusServer(host = '192.168.130.30', port = 502,
-	// FPSSModbusTcpNative.connectToModbusServer(host = '192.168.150.224', port = 502,
+// FPSSModbusTcpNative.connectToModbusServer(host = '192.168.130.30', port = 502,
+// FPSSModbusTcpNative.connectToModbusServer(host = '192.168.150.224', port = 502,
 export const connect : connectType = function () {
 	FPSSModbusTcpNative.connectToModbusServer(host = '192.168.150.224', port = 502,
 		completion = (Bool : Boolean, Error : any) => {
 			console.log(Bool ? '链接成功' : '连接失败');
 			if (Bool) {
 				console.log('开始读取');
-				FPSSModbusTcpNative.readHoldingRegisters(startAddress = 0, count = 0, completion = (UInt16 : any, Error : any) => {
+				FPSSModbusTcpNative.readHoldingRegisters(startAddress = 0, count = 5, completion = (UInt16 : any, Error : any) => {
 					console.log('读取结束');
-					console.log(UInt16, Error);
+					console.log(UInt16, JSON.stringify(Error));
 					// 断开连接
 					disConnect()
 				})
-			}else{
+			} else {
 				console.log(Error);
 			}
 		})
 }
+// 直接导出disConnect函数，移除中间变量disConnect0
 export const disConnect : connectType = function () {
-	console.log('断开连接');
-	FPSSModbusTcpNative.disconnectModbusServer()
+    console.log('断开连接');
+    FPSSModbusTcpNative.disconnectModbusServer()
 }
 export const myApi : connectType = function () {
 	console.log("%c ✨ myApi??? ✨ ", "color:#0ff;");

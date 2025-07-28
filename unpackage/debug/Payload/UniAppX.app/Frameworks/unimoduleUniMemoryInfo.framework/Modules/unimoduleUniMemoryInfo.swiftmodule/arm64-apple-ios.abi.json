@@ -1,0 +1,986 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "unimoduleUniMemoryInfo",
+    "printedName": "unimoduleUniMemoryInfo",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "DCloudUTSFoundation",
+        "printedName": "DCloudUTSFoundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MemoryInfoNative",
+        "printedName": "MemoryInfoNative",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getMemInfoSwift",
+            "printedName": "getMemInfoSwift()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC06getMemD5SwiftSaySiGyFZ",
+            "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeC06getMemD5SwiftSaySiGyFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onMemoryInfoChangeSwift",
+            "printedName": "onMemoryInfoChangeSwift(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Swift.Int]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.Int]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC02oncD11ChangeSwiftyyySaySiGcFZ",
+            "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeC02oncD11ChangeSwiftyyySaySiGcFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "offMemoryInfoChangeSwift",
+            "printedName": "offMemoryInfoChangeSwift()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC03offcD11ChangeSwiftyyFZ",
+            "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeC03offcD11ChangeSwiftyyFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getTotalMemory",
+            "printedName": "getTotalMemory()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC08getTotalC0SiyFZ",
+            "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeC08getTotalC0SiyFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getFreeMemory",
+            "printedName": "getFreeMemory()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC07getFreeC0SiyFZ",
+            "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeC07getFreeC0SiyFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MemoryInfoNative",
+                "printedName": "unimoduleUniMemoryInfo.MemoryInfoNative",
+                "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22unimoduleUniMemoryInfo0cD6NativeCACycfc",
+            "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeCACycfc",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:22unimoduleUniMemoryInfo0cD6NativeC",
+        "mangledName": "$s22unimoduleUniMemoryInfo0cD6NativeC",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "DCloudUTSFoundation",
+        "printedName": "DCloudUTSFoundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniMemoryInfo"
+      },
+      {
+        "kind": "Import",
+        "name": "DCloudUniappRuntime",
+        "printedName": "DCloudUniappRuntime",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniMemoryInfo"
+      },
+      {
+        "kind": "Var",
+        "name": "getMemoryInfo",
+        "printedName": "getMemoryInfo",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> [Foundation.NSNumber]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvp",
+        "mangledName": "$s22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvp",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> [Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.NSNumber]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvg",
+            "mangledName": "$s22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvg",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> [Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.NSNumber]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvs",
+            "mangledName": "$s22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvs",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvM",
+            "mangledName": "$s22unimoduleUniMemoryInfo03getcD0SaySo8NSNumberCGycvM",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "onMemoryInfoChange",
+        "printedName": "onMemoryInfoChange",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "(@escaping ([Foundation.NSNumber]) -> ()) -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Foundation.NSNumber]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Foundation.NSNumber]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvp",
+        "mangledName": "$s22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvp",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(@escaping ([Foundation.NSNumber]) -> ()) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Foundation.NSNumber]) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Foundation.NSNumber]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSNumber",
+                            "printedName": "Foundation.NSNumber",
+                            "usr": "c:objc(cs)NSNumber"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvg",
+            "mangledName": "$s22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvg",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(@escaping ([Foundation.NSNumber]) -> ()) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Foundation.NSNumber]) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Foundation.NSNumber]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSNumber",
+                            "printedName": "Foundation.NSNumber",
+                            "usr": "c:objc(cs)NSNumber"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvs",
+            "mangledName": "$s22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvs",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvM",
+            "mangledName": "$s22unimoduleUniMemoryInfo02oncD6ChangeyyySaySo8NSNumberCGccvM",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "offMemoryInfoChange",
+        "printedName": "offMemoryInfoChange",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22unimoduleUniMemoryInfo03offcD6Changeyycvp",
+        "mangledName": "$s22unimoduleUniMemoryInfo03offcD6Changeyycvp",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo03offcD6Changeyycvg",
+            "mangledName": "$s22unimoduleUniMemoryInfo03offcD6Changeyycvg",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo03offcD6Changeyycvs",
+            "mangledName": "$s22unimoduleUniMemoryInfo03offcD6Changeyycvs",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleUniMemoryInfo03offcD6ChangeyycvM",
+            "mangledName": "$s22unimoduleUniMemoryInfo03offcD6ChangeyycvM",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "getMemoryInfoByJs",
+        "printedName": "getMemoryInfoByJs()",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Array",
+            "printedName": "[Foundation.NSNumber]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              }
+            ],
+            "usr": "s:Sa"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:22unimoduleUniMemoryInfo03getcD4ByJsSaySo8NSNumberCGyF",
+        "mangledName": "$s22unimoduleUniMemoryInfo03getcD4ByJsSaySo8NSNumberCGyF",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "onMemoryInfoChangeByJs",
+        "printedName": "onMemoryInfoChangeByJs(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "UTSCallback",
+            "printedName": "DCloudUTSFoundation.UTSCallback",
+            "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:22unimoduleUniMemoryInfo02oncD10ChangeByJsyy19DCloudUTSFoundation11UTSCallbackCF",
+        "mangledName": "$s22unimoduleUniMemoryInfo02oncD10ChangeByJsyy19DCloudUTSFoundation11UTSCallbackCF",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "offMemoryInfoChangeByJs",
+        "printedName": "offMemoryInfoChangeByJs()",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:22unimoduleUniMemoryInfo03offcD10ChangeByJsyyF",
+        "mangledName": "$s22unimoduleUniMemoryInfo03offcD10ChangeByJsyyF",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UTSSDKModulesUniMemoryInfoIndexSwift",
+        "printedName": "UTSSDKModulesUniMemoryInfoIndexSwift",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "s_getMemoryInfoByJs",
+            "printedName": "s_getMemoryInfoByJs()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Foundation.NSNumber]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniMemoryInfo@objc(cs)UTSSDKModulesUniMemoryInfoIndexSwift(cm)s_getMemoryInfoByJs",
+            "mangledName": "$s22unimoduleUniMemoryInfo013UTSSDKModulesbcD10IndexSwiftC05s_getcD4ByJsSaySo8NSNumberCGyFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "s_onMemoryInfoChangeByJs",
+            "printedName": "s_onMemoryInfoChangeByJs(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UTSCallback",
+                "printedName": "DCloudUTSFoundation.UTSCallback",
+                "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniMemoryInfo@objc(cs)UTSSDKModulesUniMemoryInfoIndexSwift(cm)s_onMemoryInfoChangeByJs:",
+            "mangledName": "$s22unimoduleUniMemoryInfo013UTSSDKModulesbcD10IndexSwiftC04s_oncD10ChangeByJsyy19DCloudUTSFoundation11UTSCallbackCFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "s_offMemoryInfoChangeByJs",
+            "printedName": "s_offMemoryInfoChangeByJs()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniMemoryInfo@objc(cs)UTSSDKModulesUniMemoryInfoIndexSwift(cm)s_offMemoryInfoChangeByJs",
+            "mangledName": "$s22unimoduleUniMemoryInfo013UTSSDKModulesbcD10IndexSwiftC05s_offcD10ChangeByJsyyFZ",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UTSSDKModulesUniMemoryInfoIndexSwift",
+                "printedName": "unimoduleUniMemoryInfo.UTSSDKModulesUniMemoryInfoIndexSwift",
+                "usr": "c:@M@unimoduleUniMemoryInfo@objc(cs)UTSSDKModulesUniMemoryInfoIndexSwift"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniMemoryInfo@objc(cs)UTSSDKModulesUniMemoryInfoIndexSwift(im)init",
+            "mangledName": "$s22unimoduleUniMemoryInfo013UTSSDKModulesbcD10IndexSwiftCACycfc",
+            "moduleName": "unimoduleUniMemoryInfo",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleUniMemoryInfo@objc(cs)UTSSDKModulesUniMemoryInfoIndexSwift",
+        "mangledName": "$s22unimoduleUniMemoryInfo013UTSSDKModulesbcD10IndexSwiftC",
+        "moduleName": "unimoduleUniMemoryInfo",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesUniMemoryInfoIndexSwift",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-MemoryInfo\/utssdk\/app-ios\/src\/MemoryInfoNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 246,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-MemoryInfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 343,
+      "length": 21,
+      "value": "\"get mmmmmmmmmm.....\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-MemoryInfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 366,
+      "length": 59,
+      "value": "\" at uni_modules\/uni-MemoryInfo\/utssdk\/app-ios\/index.uts:8\""
+    }
+  ]
+}

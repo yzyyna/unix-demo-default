@@ -1,0 +1,75 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios9 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name unimoduleUniGetbatteryinfo
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import DCloudUTSFoundation
+import DCloudUniappRuntime
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import unimoduleUniGetbatteryinfo
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess) @objcMembers public class GetBatteryInfoSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var errMsg: Swift.String!
+  @objc public var level: Foundation.NSNumber!
+  @objc public var isCharging: Swift.Bool
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions) @objcMembers public class GetBatteryInfoOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var success: ((_ res: unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> Swift.Void)?
+  @objc public var fail: ((_ res: DCloudUTSFoundation.UniError) -> Swift.Void)?
+  @objc public var complete: ((_ res: Any) -> Swift.Void)?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult) @objcMembers public class GetBatteryInfoResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var level: Foundation.NSNumber!
+  @objc public var isCharging: Swift.Bool
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetBatteryInfo = (_ options: unimoduleUniGetbatteryinfo.GetBatteryInfoOptions) -> Swift.Void
+public typealias GetBatteryInfoSync = () -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult
+public var getBatteryInfo: (_ options: unimoduleUniGetbatteryinfo.GetBatteryInfoOptions) -> Swift.Void
+public var getBatteryInfoSync: () -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject) @objcMembers public class GetBatteryInfoOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func getBatteryInfoByJs(_ options: unimoduleUniGetbatteryinfo.GetBatteryInfoOptionsJSONObject)
+public func getBatteryInfoSyncByJs() -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniGetbatteryinfoIndexSwift) @objcMembers public class UTSSDKModulesUniGetbatteryinfoIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getBatteryInfoByJs(_ options: unimoduleUniGetbatteryinfo.GetBatteryInfoOptionsJSONObject)
+  @objc public static func s_getBatteryInfoSyncByJs() -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult
+  @objc override dynamic public init()
+  @objc deinit
+}

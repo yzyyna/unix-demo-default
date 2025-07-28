@@ -1,0 +1,11 @@
+framework module unimoduleUniMemoryInfo {
+  umbrella header "unimoduleUniMemoryInfo.h"
+  export *
+
+  module * { export * }
+}
+
+module unimoduleUniMemoryInfo.Swift {
+  header "unimoduleUniMemoryInfo-Swift.h"
+  requires objc
+}

@@ -1,0 +1,11 @@
+framework module unimoduleFpssModbusTcp {
+  umbrella header "unimoduleFpssModbusTcp.h"
+  export *
+
+  module * { export * }
+}
+
+module unimoduleFpssModbusTcp.Swift {
+  header "unimoduleFpssModbusTcp-Swift.h"
+  requires objc
+}

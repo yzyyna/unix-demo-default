@@ -1,0 +1,3196 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "unimoduleUniGetbatteryinfo",
+    "printedName": "unimoduleUniGetbatteryinfo",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "DCloudUTSFoundation",
+        "printedName": "DCloudUTSFoundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniGetbatteryinfo"
+      },
+      {
+        "kind": "Import",
+        "name": "DCloudUniappRuntime",
+        "printedName": "DCloudUniappRuntime",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniGetbatteryinfo"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "unimoduleUniGetbatteryinfo"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "GetBatteryInfoSuccess",
+        "printedName": "GetBatteryInfoSuccess",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "__$getOriginalPosition",
+            "printedName": "__$getOriginalPosition()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DCloudUTSFoundation.UTSSourceMapPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTSSourceMapPosition",
+                    "printedName": "DCloudUTSFoundation.UTSSourceMapPosition",
+                    "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSSourceMapPosition"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)__$getOriginalPosition",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC22__$getOriginalPosition19DCloudUTSFoundation012UTSSourceMapJ0CSgyF",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "errMsg",
+            "printedName": "errMsg",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(py)errMsg",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC6errMsgSSSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)errMsg",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC6errMsgSSSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)setErrMsg:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC6errMsgSSSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC6errMsgSSSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC6errMsgSSSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "level",
+            "printedName": "level",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(py)level",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC5levelSo8NSNumberCSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)level",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC5levelSo8NSNumberCSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)setLevel:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC5levelSo8NSNumberCSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC5levelSo8NSNumberCSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC5levelSo8NSNumberCSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isCharging",
+            "printedName": "isCharging",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(py)isCharging",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC10isChargingSbvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)isCharging",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC10isChargingSbvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)setIsCharging:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC10isChargingSbvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC10isChargingSbvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC10isChargingSbvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyypSgSScip",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyypSgSScip",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)objectForKeyedSubscript:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyypSgSScig",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)setObject:forKeyedSubscript:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyypSgSScis",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyypSgSSciM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyypSgSSciM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoSuccess",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)init",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCACycfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoSuccess",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UTSJSONObject",
+                "printedName": "DCloudUTSFoundation.UTSJSONObject",
+                "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSJSONObject"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess(im)init:",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessCyAC19DCloudUTSFoundation13UTSJSONObjectCcfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoSuccessC",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "UTSObject",
+            "printedName": "UTSObject",
+            "usr": "s:19DCloudUTSFoundation9UTSObjectP",
+            "mangledName": "$s19DCloudUTSFoundation9UTSObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "IUTSSourceMap",
+            "printedName": "IUTSSourceMap",
+            "usr": "s:19DCloudUTSFoundation13IUTSSourceMapP",
+            "mangledName": "$s19DCloudUTSFoundation13IUTSSourceMapP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "IUTSObject",
+            "printedName": "IUTSObject",
+            "usr": "s:19DCloudUTSFoundation10IUTSObjectP",
+            "mangledName": "$s19DCloudUTSFoundation10IUTSObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DCUTSSequence",
+            "printedName": "DCUTSSequence",
+            "usr": "s:19DCloudUTSFoundation13DCUTSSequenceP",
+            "mangledName": "$s19DCloudUTSFoundation13DCUTSSequenceP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCUniIterator",
+                    "printedName": "DCloudUTSFoundation.DCUniIterator",
+                    "usr": "s:19DCloudUTSFoundation13DCUniIteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "GetBatteryInfoOptions",
+        "printedName": "GetBatteryInfoOptions",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "__$getOriginalPosition",
+            "printedName": "__$getOriginalPosition()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DCloudUTSFoundation.UTSSourceMapPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTSSourceMapPosition",
+                    "printedName": "DCloudUTSFoundation.UTSSourceMapPosition",
+                    "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSSourceMapPosition"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)__$getOriginalPosition",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC22__$getOriginalPosition19DCloudUTSFoundation012UTSSourceMapJ0CSgyF",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "success",
+            "printedName": "success",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GetBatteryInfoSuccess",
+                        "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess",
+                        "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(py)success",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC7successyAA0deF7SuccessCcSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GetBatteryInfoSuccess",
+                            "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess",
+                            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)success",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC7successyAA0deF7SuccessCcSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GetBatteryInfoSuccess",
+                            "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoSuccess",
+                            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoSuccess"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)setSuccess:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC7successyAA0deF7SuccessCcSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC7successyAA0deF7SuccessCcSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC7successyAA0deF7SuccessCcSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fail",
+            "printedName": "fail",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((DCloudUTSFoundation.UniError) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(DCloudUTSFoundation.UniError) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UniError",
+                        "printedName": "DCloudUTSFoundation.UniError",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UniError"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(py)fail",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC4faily19DCloudUTSFoundation0B5ErrorCcSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((DCloudUTSFoundation.UniError) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(DCloudUTSFoundation.UniError) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UniError",
+                            "printedName": "DCloudUTSFoundation.UniError",
+                            "usr": "c:@M@DCloudUTSFoundation@objc(cs)UniError"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)fail",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC4faily19DCloudUTSFoundation0B5ErrorCcSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((DCloudUTSFoundation.UniError) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(DCloudUTSFoundation.UniError) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UniError",
+                            "printedName": "DCloudUTSFoundation.UniError",
+                            "usr": "c:@M@DCloudUTSFoundation@objc(cs)UniError"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)setFail:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC4faily19DCloudUTSFoundation0B5ErrorCcSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC4faily19DCloudUTSFoundation0B5ErrorCcSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC4faily19DCloudUTSFoundation0B5ErrorCcSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "complete",
+            "printedName": "complete",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Any) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Any) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(py)complete",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC8completeyypcSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Any) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Any) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)complete",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC8completeyypcSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Any) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Any) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)setComplete:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC8completeyypcSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC8completeyypcSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC8completeyypcSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyypSgSScip",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyypSgSScip",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)objectForKeyedSubscript:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyypSgSScig",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)setObject:forKeyedSubscript:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyypSgSScis",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyypSgSSciM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyypSgSSciM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoOptions",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptions",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)init",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCACycfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoOptions",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptions",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UTSJSONObject",
+                "printedName": "DCloudUTSFoundation.UTSJSONObject",
+                "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSJSONObject"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions(im)init:",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsCyAC19DCloudUTSFoundation13UTSJSONObjectCcfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo21GetBatteryInfoOptionsC",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "UTSObject",
+            "printedName": "UTSObject",
+            "usr": "s:19DCloudUTSFoundation9UTSObjectP",
+            "mangledName": "$s19DCloudUTSFoundation9UTSObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "IUTSSourceMap",
+            "printedName": "IUTSSourceMap",
+            "usr": "s:19DCloudUTSFoundation13IUTSSourceMapP",
+            "mangledName": "$s19DCloudUTSFoundation13IUTSSourceMapP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "IUTSObject",
+            "printedName": "IUTSObject",
+            "usr": "s:19DCloudUTSFoundation10IUTSObjectP",
+            "mangledName": "$s19DCloudUTSFoundation10IUTSObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DCUTSSequence",
+            "printedName": "DCUTSSequence",
+            "usr": "s:19DCloudUTSFoundation13DCUTSSequenceP",
+            "mangledName": "$s19DCloudUTSFoundation13DCUTSSequenceP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCUniIterator",
+                    "printedName": "DCloudUTSFoundation.DCUniIterator",
+                    "usr": "s:19DCloudUTSFoundation13DCUniIteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "GetBatteryInfoResult",
+        "printedName": "GetBatteryInfoResult",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "__$getOriginalPosition",
+            "printedName": "__$getOriginalPosition()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DCloudUTSFoundation.UTSSourceMapPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTSSourceMapPosition",
+                    "printedName": "DCloudUTSFoundation.UTSSourceMapPosition",
+                    "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSSourceMapPosition"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)__$getOriginalPosition",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC22__$getOriginalPosition19DCloudUTSFoundation012UTSSourceMapJ0CSgyF",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "level",
+            "printedName": "level",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(py)level",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC5levelSo8NSNumberCSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)level",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC5levelSo8NSNumberCSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)setLevel:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC5levelSo8NSNumberCSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC5levelSo8NSNumberCSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC5levelSo8NSNumberCSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isCharging",
+            "printedName": "isCharging",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(py)isCharging",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC10isChargingSbvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)isCharging",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC10isChargingSbvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)setIsCharging:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC10isChargingSbvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC10isChargingSbvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC10isChargingSbvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyypSgSScip",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyypSgSScip",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)objectForKeyedSubscript:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyypSgSScig",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)setObject:forKeyedSubscript:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyypSgSScis",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyypSgSSciM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyypSgSSciM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoResult",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)init",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCACycfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "overriding": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoResult",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UTSJSONObject",
+                "printedName": "DCloudUTSFoundation.UTSJSONObject",
+                "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSJSONObject"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult(im)init:",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultCyAC19DCloudUTSFoundation13UTSJSONObjectCcfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo20GetBatteryInfoResultC",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "UTSObject",
+            "printedName": "UTSObject",
+            "usr": "s:19DCloudUTSFoundation9UTSObjectP",
+            "mangledName": "$s19DCloudUTSFoundation9UTSObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "IUTSSourceMap",
+            "printedName": "IUTSSourceMap",
+            "usr": "s:19DCloudUTSFoundation13IUTSSourceMapP",
+            "mangledName": "$s19DCloudUTSFoundation13IUTSSourceMapP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "IUTSObject",
+            "printedName": "IUTSObject",
+            "usr": "s:19DCloudUTSFoundation10IUTSObjectP",
+            "mangledName": "$s19DCloudUTSFoundation10IUTSObjectP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DCUTSSequence",
+            "printedName": "DCUTSSequence",
+            "usr": "s:19DCloudUTSFoundation13DCUTSSequenceP",
+            "mangledName": "$s19DCloudUTSFoundation13DCUTSSequenceP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DCUniIterator",
+                    "printedName": "DCloudUTSFoundation.DCUniIterator",
+                    "usr": "s:19DCloudUTSFoundation13DCUniIteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "getBatteryInfo",
+        "printedName": "getBatteryInfo",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "(unimoduleUniGetbatteryinfo.GetBatteryInfoOptions) -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoOptions",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptions",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvp",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvp",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(unimoduleUniGetbatteryinfo.GetBatteryInfoOptions) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GetBatteryInfoOptions",
+                    "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptions",
+                    "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvg",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvg",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(unimoduleUniGetbatteryinfo.GetBatteryInfoOptions) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GetBatteryInfoOptions",
+                    "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptions",
+                    "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptions"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvs",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvs",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvM",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo14getBatteryInfoyyAA03GeteF7OptionsCcvM",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "getBatteryInfoSync",
+        "printedName": "getBatteryInfoSync",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoResult",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvp",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvp",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GetBatteryInfoResult",
+                    "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                    "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvg",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvg",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GetBatteryInfoResult",
+                    "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                    "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvs",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvs",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvM",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo18getBatteryInfoSyncAA03GeteF6ResultCycvM",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "GetBatteryInfoOptionsJSONObject",
+        "printedName": "GetBatteryInfoOptionsJSONObject",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "success",
+            "printedName": "success",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DCloudUTSFoundation.UTSCallback?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTSCallback",
+                    "printedName": "DCloudUTSFoundation.UTSCallback",
+                    "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(py)success",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC7success19DCloudUTSFoundation11UTSCallbackCSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DCloudUTSFoundation.UTSCallback?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UTSCallback",
+                        "printedName": "DCloudUTSFoundation.UTSCallback",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)success",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC7success19DCloudUTSFoundation11UTSCallbackCSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DCloudUTSFoundation.UTSCallback?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UTSCallback",
+                        "printedName": "DCloudUTSFoundation.UTSCallback",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)setSuccess:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC7success19DCloudUTSFoundation11UTSCallbackCSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC7success19DCloudUTSFoundation11UTSCallbackCSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC7success19DCloudUTSFoundation11UTSCallbackCSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fail",
+            "printedName": "fail",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DCloudUTSFoundation.UTSCallback?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTSCallback",
+                    "printedName": "DCloudUTSFoundation.UTSCallback",
+                    "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(py)fail",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC4fail19DCloudUTSFoundation11UTSCallbackCSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DCloudUTSFoundation.UTSCallback?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UTSCallback",
+                        "printedName": "DCloudUTSFoundation.UTSCallback",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)fail",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC4fail19DCloudUTSFoundation11UTSCallbackCSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DCloudUTSFoundation.UTSCallback?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UTSCallback",
+                        "printedName": "DCloudUTSFoundation.UTSCallback",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)setFail:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC4fail19DCloudUTSFoundation11UTSCallbackCSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC4fail19DCloudUTSFoundation11UTSCallbackCSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC4fail19DCloudUTSFoundation11UTSCallbackCSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "complete",
+            "printedName": "complete",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DCloudUTSFoundation.UTSCallback?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTSCallback",
+                    "printedName": "DCloudUTSFoundation.UTSCallback",
+                    "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(py)complete",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC8complete19DCloudUTSFoundation11UTSCallbackCSgvp",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DCloudUTSFoundation.UTSCallback?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UTSCallback",
+                        "printedName": "DCloudUTSFoundation.UTSCallback",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)complete",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC8complete19DCloudUTSFoundation11UTSCallbackCSgvg",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DCloudUTSFoundation.UTSCallback?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UTSCallback",
+                        "printedName": "DCloudUTSFoundation.UTSCallback",
+                        "usr": "c:@M@DCloudUTSFoundation@objc(cs)UTSCallback"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)setComplete:",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC8complete19DCloudUTSFoundation11UTSCallbackCSgvs",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC8complete19DCloudUTSFoundation11UTSCallbackCSgvM",
+                "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC8complete19DCloudUTSFoundation11UTSCallbackCSgvM",
+                "moduleName": "unimoduleUniGetbatteryinfo",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoOptionsJSONObject",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptionsJSONObject",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject(im)init",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectCACycfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo31GetBatteryInfoOptionsJSONObjectC",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "getBatteryInfoByJs",
+        "printedName": "getBatteryInfoByJs(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "GetBatteryInfoOptionsJSONObject",
+            "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptionsJSONObject",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:26unimoduleUniGetbatteryinfo18getBatteryInfoByJsyyAA03GeteF17OptionsJSONObjectCF",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo18getBatteryInfoByJsyyAA03GeteF17OptionsJSONObjectCF",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "getBatteryInfoSyncByJs",
+        "printedName": "getBatteryInfoSyncByJs()",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "GetBatteryInfoResult",
+            "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:26unimoduleUniGetbatteryinfo22getBatteryInfoSyncByJsAA03GeteF6ResultCyF",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo22getBatteryInfoSyncByJsAA03GeteF6ResultCyF",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UTSSDKModulesUniGetbatteryinfoIndexSwift",
+        "printedName": "UTSSDKModulesUniGetbatteryinfoIndexSwift",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "s_getBatteryInfoByJs",
+            "printedName": "s_getBatteryInfoByJs(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoOptionsJSONObject",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoOptionsJSONObject",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoOptionsJSONObject"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoIndexSwift(cm)s_getBatteryInfoByJs:",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo013UTSSDKModulesbC10IndexSwiftC20s_getBatteryInfoByJsyyAA03GethI17OptionsJSONObjectCFZ",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "s_getBatteryInfoSyncByJs",
+            "printedName": "s_getBatteryInfoSyncByJs()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GetBatteryInfoResult",
+                "printedName": "unimoduleUniGetbatteryinfo.GetBatteryInfoResult",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoGetBatteryInfoResult"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoIndexSwift(cm)s_getBatteryInfoSyncByJs",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo013UTSSDKModulesbC10IndexSwiftC24s_getBatteryInfoSyncByJsAA03GethI6ResultCyFZ",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UTSSDKModulesUniGetbatteryinfoIndexSwift",
+                "printedName": "unimoduleUniGetbatteryinfo.UTSSDKModulesUniGetbatteryinfoIndexSwift",
+                "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoIndexSwift"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoIndexSwift(im)init",
+            "mangledName": "$s26unimoduleUniGetbatteryinfo013UTSSDKModulesbC10IndexSwiftCACycfc",
+            "moduleName": "unimoduleUniGetbatteryinfo",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleUniGetbatteryinfo@objc(cs)UTSSDKModulesUniGetbatteryinfoIndexSwift",
+        "mangledName": "$s26unimoduleUniGetbatteryinfo013UTSSDKModulesbC10IndexSwiftC",
+        "moduleName": "unimoduleUniGetbatteryinfo",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesUniGetbatteryinfoIndexSwift",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "BooleanLiteral",
+      "offset": 507,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3124,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4038,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 4095,
+      "length": 8,
+      "value": "\"errMsg\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 4105,
+      "length": 19,
+      "value": "\"getBatteryInfo:ok\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 4130,
+      "length": 7,
+      "value": "\"level\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4180,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 4190,
+      "length": 12,
+      "value": "\"isCharging\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4449,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 4505,
+      "length": 7,
+      "value": "\"level\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4555,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/uni-getbatteryinfo\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 4565,
+      "length": 12,
+      "value": "\"isCharging\""
+    }
+  ]
+}

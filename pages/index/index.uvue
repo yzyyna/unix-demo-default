@@ -23,7 +23,7 @@
 			// console.log(getApp(), getCurrentPages())
 		},
 		methods: {
-			onClick(path:string) {
+			onClick(path) {
 				uni.navigateTo({
 					url: path
 				})

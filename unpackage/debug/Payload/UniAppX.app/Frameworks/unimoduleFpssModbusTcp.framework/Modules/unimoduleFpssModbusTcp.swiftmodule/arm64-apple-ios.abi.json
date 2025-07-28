@@ -1,0 +1,1865 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "unimoduleFpssModbusTcp",
+    "printedName": "unimoduleFpssModbusTcp",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "DCloudUTSFoundation",
+        "printedName": "DCloudUTSFoundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "unimoduleFpssModbusTcp"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FPSSModbusTcpNative",
+        "printedName": "FPSSModbusTcpNative",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "myApiNa",
+            "printedName": "myApiNa()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeC7myApiNayyFZ",
+            "mangledName": "$s22unimoduleFpssModbusTcp010FPSSModbusD6NativeC7myApiNayyFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "connectToModbusServer",
+            "printedName": "connectToModbusServer(host:port:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.Bool, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeC09connectToC6Server4host4port10completionySS_s6UInt16VySb_s5Error_pSgtctFZ",
+            "mangledName": "$s22unimoduleFpssModbusTcp010FPSSModbusD6NativeC09connectToC6Server4host4port10completionySS_s6UInt16VySb_s5Error_pSgtctFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "readHoldingRegisters",
+            "printedName": "readHoldingRegisters(startAddress:count:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt16",
+                "printedName": "Swift.UInt16",
+                "usr": "s:s6UInt16V"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Swift.UInt16]?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "([Swift.UInt16]?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[Swift.UInt16]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Swift.UInt16]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UInt16",
+                                "printedName": "Swift.UInt16",
+                                "usr": "s:s6UInt16V"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeC20readHoldingRegisters12startAddress5count10completionys6UInt16V_AIySayAIGSg_s5Error_pSgtctFZ",
+            "mangledName": "$s22unimoduleFpssModbusTcp010FPSSModbusD6NativeC20readHoldingRegisters12startAddress5count10completionys6UInt16V_AIySayAIGSg_s5Error_pSgtctFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "disconnectModbusServer",
+            "printedName": "disconnectModbusServer()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeC010disconnectC6ServeryyFZ",
+            "mangledName": "$s22unimoduleFpssModbusTcp010FPSSModbusD6NativeC010disconnectC6ServeryyFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FPSSModbusTcpNative",
+                "printedName": "unimoduleFpssModbusTcp.FPSSModbusTcpNative",
+                "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeCACycfc",
+            "mangledName": "$s22unimoduleFpssModbusTcp010FPSSModbusD6NativeCACycfc",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:22unimoduleFpssModbusTcp010FPSSModbusD6NativeC",
+        "mangledName": "$s22unimoduleFpssModbusTcp010FPSSModbusD6NativeC",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "DCloudUTSFoundation",
+        "printedName": "DCloudUTSFoundation",
+        "declKind": "Import",
+        "moduleName": "unimoduleFpssModbusTcp"
+      },
+      {
+        "kind": "Import",
+        "name": "DCloudUniappRuntime",
+        "printedName": "DCloudUniappRuntime",
+        "declKind": "Import",
+        "moduleName": "unimoduleFpssModbusTcp"
+      },
+      {
+        "kind": "Var",
+        "name": "connect",
+        "printedName": "connect",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22unimoduleFpssModbusTcp7connectyycvp",
+        "mangledName": "$s22unimoduleFpssModbusTcp7connectyycvp",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp7connectyycvg",
+            "mangledName": "$s22unimoduleFpssModbusTcp7connectyycvg",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp7connectyycvs",
+            "mangledName": "$s22unimoduleFpssModbusTcp7connectyycvs",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp7connectyycvM",
+            "mangledName": "$s22unimoduleFpssModbusTcp7connectyycvM",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "disConnect",
+        "printedName": "disConnect",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22unimoduleFpssModbusTcp10disConnectyycvp",
+        "mangledName": "$s22unimoduleFpssModbusTcp10disConnectyycvp",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp10disConnectyycvg",
+            "mangledName": "$s22unimoduleFpssModbusTcp10disConnectyycvg",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp10disConnectyycvs",
+            "mangledName": "$s22unimoduleFpssModbusTcp10disConnectyycvs",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp10disConnectyycvM",
+            "mangledName": "$s22unimoduleFpssModbusTcp10disConnectyycvM",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "myApi",
+        "printedName": "myApi",
+        "children": [
+          {
+            "kind": "TypeFunc",
+            "name": "Function",
+            "printedName": "() -> ()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ]
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22unimoduleFpssModbusTcp5myApiyycvp",
+        "mangledName": "$s22unimoduleFpssModbusTcp5myApiyycvp",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp5myApiyycvg",
+            "mangledName": "$s22unimoduleFpssModbusTcp5myApiyycvg",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "get"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Set",
+            "printedName": "Set()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp5myApiyycvs",
+            "mangledName": "$s22unimoduleFpssModbusTcp5myApiyycvs",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "set"
+          },
+          {
+            "kind": "Accessor",
+            "name": "Modify",
+            "printedName": "Modify()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22unimoduleFpssModbusTcp5myApiyycvM",
+            "mangledName": "$s22unimoduleFpssModbusTcp5myApiyycvM",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "implicit": true,
+            "accessorKind": "_modify"
+          }
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "connectByJs",
+        "printedName": "connectByJs()",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:22unimoduleFpssModbusTcp11connectByJsyyF",
+        "mangledName": "$s22unimoduleFpssModbusTcp11connectByJsyyF",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "disConnectByJs",
+        "printedName": "disConnectByJs()",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:22unimoduleFpssModbusTcp14disConnectByJsyyF",
+        "mangledName": "$s22unimoduleFpssModbusTcp14disConnectByJsyyF",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "myApiByJs",
+        "printedName": "myApiByJs()",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Void",
+            "printedName": "()"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:22unimoduleFpssModbusTcp9myApiByJsyyF",
+        "mangledName": "$s22unimoduleFpssModbusTcp9myApiByJsyyF",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UTSSDKModulesFpssModbusTcpIndexSwift",
+        "printedName": "UTSSDKModulesFpssModbusTcpIndexSwift",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "s_connectByJs",
+            "printedName": "s_connectByJs()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleFpssModbusTcp@objc(cs)UTSSDKModulesFpssModbusTcpIndexSwift(cm)s_connectByJs",
+            "mangledName": "$s22unimoduleFpssModbusTcp013UTSSDKModulesbcD10IndexSwiftC13s_connectByJsyyFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "s_disConnectByJs",
+            "printedName": "s_disConnectByJs()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleFpssModbusTcp@objc(cs)UTSSDKModulesFpssModbusTcpIndexSwift(cm)s_disConnectByJs",
+            "mangledName": "$s22unimoduleFpssModbusTcp013UTSSDKModulesbcD10IndexSwiftC16s_disConnectByJsyyFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "s_myApiByJs",
+            "printedName": "s_myApiByJs()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@unimoduleFpssModbusTcp@objc(cs)UTSSDKModulesFpssModbusTcpIndexSwift(cm)s_myApiByJs",
+            "mangledName": "$s22unimoduleFpssModbusTcp013UTSSDKModulesbcD10IndexSwiftC11s_myApiByJsyyFZ",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UTSSDKModulesFpssModbusTcpIndexSwift",
+                "printedName": "unimoduleFpssModbusTcp.UTSSDKModulesFpssModbusTcpIndexSwift",
+                "usr": "c:@M@unimoduleFpssModbusTcp@objc(cs)UTSSDKModulesFpssModbusTcpIndexSwift"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@unimoduleFpssModbusTcp@objc(cs)UTSSDKModulesFpssModbusTcpIndexSwift(im)init",
+            "mangledName": "$s22unimoduleFpssModbusTcp013UTSSDKModulesbcD10IndexSwiftCACycfc",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@unimoduleFpssModbusTcp@objc(cs)UTSSDKModulesFpssModbusTcpIndexSwift",
+        "mangledName": "$s22unimoduleFpssModbusTcp013UTSSDKModulesbcD10IndexSwiftC",
+        "moduleName": "unimoduleFpssModbusTcp",
+        "isOpen": true,
+        "objc_name": "UTSSDKModulesFpssModbusTcpIndexSwift",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Data",
+        "printedName": "Data",
+        "children": [
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(safe:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.UInt8?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:10Foundation4DataV22unimoduleFpssModbusTcpE4safes5UInt8VSgSi_tcip",
+            "mangledName": "$s10Foundation4DataV22unimoduleFpssModbusTcpE4safes5UInt8VSgSi_tcip",
+            "moduleName": "unimoduleFpssModbusTcp",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.UInt8?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Foundation4DataV22unimoduleFpssModbusTcpE4safes5UInt8VSgSi_tcig",
+                "mangledName": "$s10Foundation4DataV22unimoduleFpssModbusTcpE4safes5UInt8VSgSi_tcig",
+                "moduleName": "unimoduleFpssModbusTcp",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10Foundation4DataV",
+        "mangledName": "$s10Foundation4DataV",
+        "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Frozen",
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RandomAccessCollection",
+            "printedName": "RandomAccessCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sk",
+            "mangledName": "$sSk"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MutableCollection",
+            "printedName": "MutableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SM",
+            "mangledName": "$sSM"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MutableDataProtocol",
+            "printedName": "MutableDataProtocol",
+            "usr": "s:10Foundation19MutableDataProtocolP",
+            "mangledName": "$s10Foundation19MutableDataProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ContiguousBytes",
+            "printedName": "ContiguousBytes",
+            "usr": "s:10Foundation15ContiguousBytesP",
+            "mangledName": "$s10Foundation15ContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Foundation.Data.Iterator",
+                    "usr": "s:10Foundation4DataV8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DataProtocol",
+            "printedName": "DataProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Regions",
+                "printedName": "Regions",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CollectionOfOne",
+                    "printedName": "Swift.CollectionOfOne<Foundation.Data>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:s15CollectionOfOneV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation12DataProtocolP",
+            "mangledName": "$s10Foundation12DataProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Foundation.Data.Iterator",
+                    "usr": "s:10Foundation4DataV8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSData",
+                    "printedName": "Foundation.NSData",
+                    "usr": "c:objc(cs)NSData"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSData",
+                    "printedName": "Foundation.NSData",
+                    "usr": "c:objc(cs)NSData"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Transferable",
+            "printedName": "Transferable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Representation",
+                "printedName": "Representation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some CoreTransferable.TransferRepresentation",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TransferRepresentation",
+                        "printedName": "CoreTransferable.TransferRepresentation",
+                        "usr": "s:16CoreTransferable22TransferRepresentationP"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "usr": "s:16CoreTransferable0B0P",
+            "mangledName": "$s16CoreTransferable0B0P"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "StringLiteral",
+      "offset": 458,
+      "length": 21,
+      "value": "\"com.fpss.modbus.tcp\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "BooleanLiteral",
+      "offset": 518,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 563,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 635,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10346,
+      "length": 1,
+      "value": "9"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10469,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10537,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10543,
+      "length": 4,
+      "value": "0x03"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10655,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10685,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10690,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10815,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10831,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10864,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10872,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10914,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11474,
+      "length": 1,
+      "value": "9"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11536,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11570,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11623,
+      "length": 4,
+      "value": "0x03"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11690,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11696,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11725,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11729,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11807,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11812,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11887,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11904,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11938,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11946,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11988,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/FPSSModbusTcpNative.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12165,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 194,
+      "length": 16,
+      "value": "\"192.168.130.30\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "IntegerLiteral",
+      "offset": 218,
+      "length": 3,
+      "value": "502"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 299,
+      "length": 14,
+      "value": "\"链接成功\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 316,
+      "length": 14,
+      "value": "\"连接失败\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 332,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:10\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 423,
+      "length": 14,
+      "value": "\"开始读取\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 439,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:12\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "IntegerLiteral",
+      "offset": 561,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "IntegerLiteral",
+      "offset": 571,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 652,
+      "length": 14,
+      "value": "\"读取结束\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 668,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:14\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 765,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:15\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 887,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:20\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 1022,
+      "length": 14,
+      "value": "\"断开连接\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 1038,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:26\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 1208,
+      "length": 22,
+      "value": "\"%c ✨ myApi??? ✨ \""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 1232,
+      "length": 13,
+      "value": "\"color:#0ff;\""
+    },
+    {
+      "filePath": "\/var\/folders\/7k\/9lnnkpkx55zfr6yj6ygz92k40000gn\/T\/ios_build_device\/template\/xcode_uts_template_x\/uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/src\/index.swift",
+      "kind": "StringLiteral",
+      "offset": 1247,
+      "length": 61,
+      "value": "\" at uni_modules\/fpss-modbus-tcp\/utssdk\/app-ios\/index.uts:30\""
+    }
+  ]
+}

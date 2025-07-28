@@ -1,0 +1,11 @@
+framework module unimoduleUniGetbatteryinfo {
+  umbrella header "unimoduleUniGetbatteryinfo.h"
+  export *
+
+  module * { export * }
+}
+
+module unimoduleUniGetbatteryinfo.Swift {
+  header "unimoduleUniGetbatteryinfo-Swift.h"
+  requires objc
+}

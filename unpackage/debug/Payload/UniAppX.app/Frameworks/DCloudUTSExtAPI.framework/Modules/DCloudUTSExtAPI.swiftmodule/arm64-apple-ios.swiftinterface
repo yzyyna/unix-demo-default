@@ -1,0 +1,1840 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name DCloudUTSExtAPI
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import CommonCrypto
+@_exported import DCloudUTSExtAPI
+import DCloudUTSFoundation
+import DCloudUniappRuntime
+import Dispatch
+import Foundation
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniActionSheetPopover) @objcMembers public class Popover : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var top: Foundation.NSNumber!
+  @objc public var left: Foundation.NSNumber!
+  @objc public var width: Foundation.NSNumber!
+  @objc public var height: Foundation.NSNumber!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowActionSheetErrorCode = Foundation.NSNumber
+public protocol ShowActionSheetSuccess {
+  var errMsg: Swift.String { get set }
+  var tapIndex: Foundation.NSNumber { get set }
+}
+public typealias ShowActionSheetSuccessCallback = (_ result: any DCloudUTSExtAPI.ShowActionSheetSuccess) -> Swift.Void
+public protocol ShowActionSheetFail : DCloudUTSFoundation.IUniError {
+  var errCode: DCloudUTSExtAPI.ShowActionSheetErrorCode { get set }
+}
+public typealias ShowActionSheetFailCallback = (_ result: any DCloudUTSExtAPI.ShowActionSheetFail) -> Swift.Void
+public typealias ShowActionSheetComplete = Any
+public typealias ShowActionSheetCompleteCallback = (_ result: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniActionSheetShowActionSheetOptions) @objcMembers public class ShowActionSheetOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var title: Swift.String?
+  @objc public var alertText: Swift.String?
+  @objc public var itemList: [Swift.String]!
+  @objc public var itemColor: Swift.String?
+  @objc public var popover: DCloudUTSExtAPI.Popover?
+  @objc public var titleColor: Swift.String?
+  @objc public var cancelText: Swift.String?
+  @objc public var cancelColor: Swift.String?
+  @objc public var backgroundColor: Swift.String?
+  public var success: DCloudUTSExtAPI.ShowActionSheetSuccessCallback?
+  public var fail: DCloudUTSExtAPI.ShowActionSheetFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.ShowActionSheetCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowActionSheet = (_ options: DCloudUTSExtAPI.ShowActionSheetOptions) -> Swift.Void
+@objc(UTSSDKModulesDCloudUniActionSheetShowActionSheetSuccessImpl) @objcMembers public class ShowActionSheetSuccessImpl : ObjectiveC.NSObject, DCloudUTSExtAPI.ShowActionSheetSuccess {
+  @objc public var tapIndex: Foundation.NSNumber
+  @objc public var errMsg: Swift.String
+  @objc public init(_ tapIndex: Foundation.NSNumber, _ errMsg: Swift.String = "showActionSheet:ok")
+  @objc deinit
+}
+@objc(UTSSDKModulesDCloudUniActionSheetShowActionSheetFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniActionSheetShowActionSheetFailImpl) public class ShowActionSheetFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.ShowActionSheetFail {
+  @objc override public var errCode: DCloudUTSExtAPI.ShowActionSheetErrorCode {
+    @objc get
+    @objc set(value)
+  }
+  @objc public init(_ errMsg: Swift.String = "showActionSheet:fail cancel", _ errCode: DCloudUTSExtAPI.ShowActionSheetErrorCode = 4)
+  @objc deinit
+}
+public var showActionSheet: (_ options: DCloudUTSExtAPI.ShowActionSheetOptions) -> Swift.Void
+public var hideActionSheet: () -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniActionSheetShowActionSheetOptionsJSONObject) @objcMembers public class ShowActionSheetOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var title: Swift.String?
+  @objc public var alertText: Swift.String?
+  @objc public var itemList: [Swift.String]!
+  @objc public var itemColor: Swift.String?
+  @objc public var popover: DCloudUTSExtAPI.Popover?
+  @objc public var titleColor: Swift.String?
+  @objc public var cancelText: Swift.String?
+  @objc public var cancelColor: Swift.String?
+  @objc public var backgroundColor: Swift.String?
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func showActionSheetByJs(_ options: DCloudUTSExtAPI.ShowActionSheetOptionsJSONObject)
+public func hideActionSheetByJs()
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniActionSheetIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniActionSheetIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_showActionSheetByJs(_ options: DCloudUTSExtAPI.ShowActionSheetOptionsJSONObject)
+  @objc public static func s_hideActionSheetByJs()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeOsThemeChangeResult) @objcMembers public class OsThemeChangeResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var osTheme: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeAppThemeChangeResult) @objcMembers public class AppThemeChangeResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var appTheme: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias OnOsThemeChangeCallback = (_ res: DCloudUTSExtAPI.OsThemeChangeResult) -> Swift.Void
+public typealias OnOsThemeChange = (_ callback: @escaping DCloudUTSExtAPI.OnOsThemeChangeCallback) -> Foundation.NSNumber
+public typealias OffOsThemeChange = (_ id: Foundation.NSNumber) -> Swift.Void
+public typealias OnHostThemeChange = (_ callback: @escaping DCloudUTSExtAPI.OnHostThemeChangeCallback) -> Foundation.NSNumber
+public typealias OffHostThemeChange = (_ id: Foundation.NSNumber) -> Swift.Void
+public typealias SetAppTheme = (_ options: DCloudUTSExtAPI.SetAppThemeOptions) -> Swift.Void
+public typealias OnAppThemeChangeCallback = (_ res: DCloudUTSExtAPI.AppThemeChangeResult) -> Swift.Void
+public typealias OnAppThemeChange = (_ callback: @escaping DCloudUTSExtAPI.OnAppThemeChangeCallback) -> Foundation.NSNumber
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeSetAppThemeSuccessResult) @objcMembers public class SetAppThemeSuccessResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var theme: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias SetAppThemeSuccessCallback = (_ result: DCloudUTSExtAPI.SetAppThemeSuccessResult) -> Swift.Void
+public typealias SetAppThemeFailCallback = (_ result: any DCloudUTSExtAPI.IAppThemeFail) -> Swift.Void
+public typealias SetAppThemeCompleteCallback = (_ result: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeSetAppThemeOptions) @objcMembers public class SetAppThemeOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var theme: Swift.String!
+  @objc public var success: DCloudUTSExtAPI.SetAppThemeSuccessCallback?
+  public var fail: DCloudUTSExtAPI.SetAppThemeFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.SetAppThemeCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias AppThemeErrorCode = Foundation.NSNumber
+public typealias AppThemeFail = DCloudUTSExtAPI.IAppThemeFail
+public protocol IAppThemeFail : DCloudUTSFoundation.IUniError {
+  var errCode: DCloudUTSExtAPI.AppThemeErrorCode { get set }
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeOnHostThemeChangeCallbackResult) @objcMembers public class OnHostThemeChangeCallbackResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var hostTheme: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias OnHostThemeChangeCallback = (_ result: DCloudUTSExtAPI.OnHostThemeChangeCallbackResult) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeOnThemeChangeCallbackResult) @objcMembers public class OnThemeChangeCallbackResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var theme: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public var AppThemeUniErrorSubject: Swift.String
+public var AppThemeUniErrors: [DCloudUTSExtAPI.AppThemeErrorCode : Swift.String]
+@objc(UTSSDKModulesDCloudUniThemeAppThemeFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniThemeAppThemeFailImpl) public class AppThemeFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.IAppThemeFail {
+  @objc override public var errCode: DCloudUTSExtAPI.AppThemeErrorCode {
+    @objc get
+    @objc set(value)
+  }
+  @objc public init(_ errCode: DCloudUTSExtAPI.AppThemeErrorCode)
+  @objc deinit
+}
+public var onOsThemeChange: (_ callback: @escaping DCloudUTSExtAPI.OnOsThemeChangeCallback) -> Foundation.NSNumber
+public var offOsThemeChange: (_ id: Foundation.NSNumber) -> Swift.Void
+public var setAppTheme: (_ options: DCloudUTSExtAPI.SetAppThemeOptions) -> Swift.Void
+public var onAppThemeChange: (_ callback: @escaping DCloudUTSExtAPI.OnAppThemeChangeCallback) -> Foundation.NSNumber
+public var offAppThemeChange: (_ id: Foundation.NSNumber) -> Swift.Void
+public var onHostThemeChange: (_ callback: @escaping DCloudUTSExtAPI.OnHostThemeChangeCallback) -> Foundation.NSNumber
+public var offHostThemeChange: (_ id: Foundation.NSNumber) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeSetAppThemeOptionsJSONObject) @objcMembers public class SetAppThemeOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var theme: Swift.String!
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func onOsThemeChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+public func offOsThemeChangeByJs(_ id: Foundation.NSNumber)
+public func setAppThemeByJs(_ options: DCloudUTSExtAPI.SetAppThemeOptionsJSONObject)
+public func onAppThemeChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+public func offAppThemeChangeByJs(_ id: Foundation.NSNumber)
+public func onHostThemeChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+public func offHostThemeChangeByJs(_ id: Foundation.NSNumber)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniThemeIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniThemeIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_onOsThemeChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+  @objc public static func s_offOsThemeChangeByJs(_ id: Foundation.NSNumber)
+  @objc public static func s_setAppThemeByJs(_ options: DCloudUTSExtAPI.SetAppThemeOptionsJSONObject)
+  @objc public static func s_onAppThemeChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+  @objc public static func s_offAppThemeChangeByJs(_ id: Foundation.NSNumber)
+  @objc public static func s_onHostThemeChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+  @objc public static func s_offHostThemeChangeByJs(_ id: Foundation.NSNumber)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias GetSystemInfo = (_ options: DCloudUTSExtAPI.GetSystemInfoOptions) -> Swift.Void
+public typealias GetSystemInfoSync = () -> DCloudUTSExtAPI.GetSystemInfoResult
+public typealias GetWindowInfo = () -> DCloudUTSExtAPI.GetWindowInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoSafeArea) @objcMembers public class SafeArea : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var left: Foundation.NSNumber!
+  @objc public var right: Foundation.NSNumber!
+  @objc public var top: Foundation.NSNumber!
+  @objc public var bottom: Foundation.NSNumber!
+  @objc public var width: Foundation.NSNumber!
+  @objc public var height: Foundation.NSNumber!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoSafeAreaInsets) @objcMembers public class SafeAreaInsets : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var left: Foundation.NSNumber!
+  @objc public var right: Foundation.NSNumber!
+  @objc public var top: Foundation.NSNumber!
+  @objc public var bottom: Foundation.NSNumber!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoCutoutRect) @objcMembers public class CutoutRect : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var left: Foundation.NSNumber!
+  @objc public var right: Foundation.NSNumber!
+  @objc public var top: Foundation.NSNumber!
+  @objc public var bottom: Foundation.NSNumber!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoGetSystemInfoResult) @objcMembers public class GetSystemInfoResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var SDKVersion: Swift.String!
+  @objc public var appId: Swift.String!
+  @objc public var appLanguage: Swift.String!
+  @objc public var appName: Swift.String!
+  @objc public var appVersion: Swift.String!
+  @objc public var appVersionCode: Swift.String!
+  @objc public var appWgtVersion: Swift.String?
+  @objc public var brand: Swift.String!
+  @objc public var browserName: Swift.String!
+  @objc public var browserVersion: Swift.String!
+  @objc public var deviceId: Swift.String!
+  @objc public var deviceBrand: Swift.String!
+  @objc public var deviceModel: Swift.String!
+  @objc public var deviceType: Swift.String!
+  @objc public var devicePixelRatio: Foundation.NSNumber!
+  @objc public var deviceOrientation: Swift.String!
+  @objc public var language: Swift.String!
+  @objc public var model: Swift.String?
+  @objc public var osName: Swift.String!
+  @objc public var osVersion: Swift.String!
+  @objc public var osLanguage: Swift.String!
+  @objc public var osTheme: Swift.String?
+  @objc public var pixelRatio: Foundation.NSNumber!
+  @objc public var platform: Swift.String!
+  @objc public var screenWidth: Foundation.NSNumber!
+  @objc public var screenHeight: Foundation.NSNumber!
+  @objc public var statusBarHeight: Foundation.NSNumber!
+  @objc public var system: Swift.String!
+  @objc public var safeArea: DCloudUTSExtAPI.SafeArea!
+  @objc public var safeAreaInsets: DCloudUTSExtAPI.SafeAreaInsets!
+  @objc public var ua: Swift.String!
+  @objc public var uniCompileVersion: Swift.String!
+  @objc public var uniCompilerVersion: Swift.String!
+  @objc public var uniPlatform: Swift.String!
+  @objc public var uniRuntimeVersion: Swift.String!
+  @objc public var uniCompileVersionCode: Foundation.NSNumber!
+  @objc public var uniCompilerVersionCode: Foundation.NSNumber!
+  @objc public var uniRuntimeVersionCode: Foundation.NSNumber!
+  @objc public var version: Swift.String!
+  @objc public var romName: Swift.String!
+  @objc public var romVersion: Swift.String!
+  @objc public var windowWidth: Foundation.NSNumber!
+  @objc public var windowHeight: Foundation.NSNumber!
+  @objc public var windowTop: Foundation.NSNumber!
+  @objc public var windowBottom: Foundation.NSNumber!
+  @objc public var osAndroidAPILevel: Foundation.NSNumber?
+  @objc public var osHarmonySDKAPIVersion: Foundation.NSNumber?
+  @objc public var osHarmonyDisplayVersion: Swift.String?
+  @objc public var appTheme: Swift.String?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetSystemInfoSuccessCallback = (_ result: DCloudUTSExtAPI.GetSystemInfoResult) -> Swift.Void
+public typealias GetSystemInfoFail = DCloudUTSFoundation.UniError
+public typealias GetSystemInfoFailCallback = (_ result: DCloudUTSExtAPI.GetSystemInfoFail) -> Swift.Void
+public typealias GetSystemInfoComplete = Any
+public typealias GetSystemInfoCompleteCallback = (_ result: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoGetSystemInfoOptions) @objcMembers public class GetSystemInfoOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var success: DCloudUTSExtAPI.GetSystemInfoSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.GetSystemInfoFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.GetSystemInfoCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoGetWindowInfoResult) @objcMembers public class GetWindowInfoResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var pixelRatio: Foundation.NSNumber!
+  @objc public var screenWidth: Foundation.NSNumber!
+  @objc public var screenHeight: Foundation.NSNumber!
+  @objc public var windowWidth: Foundation.NSNumber!
+  @objc public var windowHeight: Foundation.NSNumber!
+  @objc public var statusBarHeight: Foundation.NSNumber!
+  @objc public var windowTop: Foundation.NSNumber!
+  @objc public var windowBottom: Foundation.NSNumber!
+  @objc public var safeArea: DCloudUTSExtAPI.SafeArea!
+  @objc public var safeAreaInsets: DCloudUTSExtAPI.SafeAreaInsets!
+  @objc public var screenTop: Foundation.NSNumber!
+  @objc public var cutoutArea: Swift.Array<DCloudUTSExtAPI.CutoutRect>?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public var getSystemInfo: (_ options: DCloudUTSExtAPI.GetSystemInfoOptions) -> Swift.Void
+public var getSystemInfoSync: () -> DCloudUTSExtAPI.GetSystemInfoResult
+public var systemInfoConvertVersionCode: (_ version: Swift.String) -> Foundation.NSNumber
+public func getWindowInfoResult() -> DCloudUTSExtAPI.GetWindowInfoResult
+public var getWindowInfo: () -> DCloudUTSExtAPI.GetWindowInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoGetSystemInfoOptionsJSONObject) @objcMembers public class GetSystemInfoOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func getSystemInfoByJs(_ options: DCloudUTSExtAPI.GetSystemInfoOptionsJSONObject)
+public func getSystemInfoSyncByJs() -> DCloudUTSExtAPI.GetSystemInfoResult
+public func getWindowInfoByJs() -> DCloudUTSExtAPI.GetWindowInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemInfoIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniGetSystemInfoIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getSystemInfoByJs(_ options: DCloudUTSExtAPI.GetSystemInfoOptionsJSONObject)
+  @objc public static func s_getSystemInfoSyncByJs() -> DCloudUTSExtAPI.GetSystemInfoResult
+  @objc public static func s_getWindowInfoByJs() -> DCloudUTSExtAPI.GetWindowInfoResult
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias OpenDialogPageSuccess = DCloudUTSFoundation.AsyncApiSuccessResult
+public typealias OpenDialogPageSuccessCallback = (any DCloudUTSFoundation.AsyncApiSuccessResult) -> Swift.Void
+public protocol OpenDialogPageFail : DCloudUTSFoundation.IUniError {
+}
+public typealias OpenDialogPageFailCallback = (any DCloudUTSExtAPI.OpenDialogPageFail) -> Swift.Void
+public typealias OpenDialogPageComplete = DCloudUTSFoundation.AsyncApiResult
+public typealias OpenDialogPageCompleteCallback = (any DCloudUTSFoundation.AsyncApiResult) -> Swift.Void
+public typealias CloseDialogPageSuccess = DCloudUTSFoundation.AsyncApiSuccessResult
+public typealias CloseDialogPageSuccessCallback = (any DCloudUTSFoundation.AsyncApiSuccessResult) -> Swift.Void
+public protocol CloseDialogPageFail : DCloudUTSFoundation.IUniError {
+}
+public typealias CloseDialogPageFailCallback = (any DCloudUTSExtAPI.CloseDialogPageFail) -> Swift.Void
+public typealias CloseDialogPageComplete = DCloudUTSFoundation.AsyncApiResult
+public typealias CloseDialogPageCompleteCallback = (any DCloudUTSFoundation.AsyncApiResult) -> Swift.Void
+@_hasMissingDesignatedInitializers public class OpenDialogPageSuccessImpl : DCloudUTSExtAPI.OpenDialogPageSuccess {
+  public var errMsg: Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EventChannel {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class OpenDialogPageFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.OpenDialogPageFail {
+  @objc deinit
+}
+open class OpenDialogPageOptions {
+  public init()
+  public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public var url: Swift.String
+  public var animationType: Swift.String?
+  public var animationDuration: Foundation.NSNumber?
+  public var disableEscBack: Foundation.NSNumber?
+  public var triggerParentHide: Foundation.NSNumber?
+  public var parentPage: Any?
+  public var success: DCloudUTSExtAPI.OpenDialogPageSuccessCallback?
+  public var fail: DCloudUTSExtAPI.OpenDialogPageFailCallback?
+  public var complete: DCloudUTSExtAPI.OpenDialogPageCompleteCallback?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CloseDialogPageSuccessImpl : DCloudUTSExtAPI.CloseDialogPageSuccess {
+  public var errMsg: Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CloseDialogPageFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.CloseDialogPageFail {
+  @objc deinit
+}
+open class CloseDialogPageOptions {
+  public init()
+  public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public var dialogPage: (any DCloudUniappRuntime.UniDialogPage)?
+  public var animationType: Swift.String?
+  public var animationDuration: Foundation.NSNumber?
+  public var success: DCloudUTSExtAPI.CloseDialogPageSuccessCallback?
+  public var fail: DCloudUTSExtAPI.CloseDialogPageFailCallback?
+  public var complete: DCloudUTSExtAPI.CloseDialogPageCompleteCallback?
+  @objc deinit
+}
+public func openDialogPage(_ option: DCloudUTSExtAPI.OpenDialogPageOptions) -> (any DCloudUniappRuntime.UniDialogPage)?
+public func closeDialogPage(_ option: DCloudUTSExtAPI.CloseDialogPageOptions)
+public var __$$on: (_ eventName: Swift.String, _ callback: @escaping (_ arg: Any?...) -> Swift.Void) -> Foundation.NSNumber
+public func __$$off(_ eventName: Swift.String, _ callbackId: Foundation.NSNumber? = nil)
+public var __$$once: (_ eventName: Swift.String, _ callback: @escaping (_ arg: Any?...) -> Swift.Void) -> Foundation.NSNumber
+public var __$$emit: (_ eventName: Swift.String, _ spreadArg: Any?...) -> Swift.Void
+public typealias Base64ToArrayBuffer = (_ base64: Swift.String) -> DCloudUTSFoundation.ArrayBuffer
+public var base64ToArrayBuffer: (_ base64: Swift.String) -> DCloudUTSFoundation.ArrayBuffer
+public func base64ToArrayBufferByJs(_ base64: Swift.String) -> DCloudUTSFoundation.ArrayBuffer
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniBase64ToArrayBufferIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniBase64ToArrayBufferIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_base64ToArrayBufferByJs(_ base64: Swift.String) -> DCloudUTSFoundation.ArrayBuffer
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias ArrayBufferToBase64 = (_ arrayBuffer: DCloudUTSFoundation.ArrayBuffer) -> Swift.String
+public var arrayBufferToBase64: (_ arrayBuffer: DCloudUTSFoundation.ArrayBuffer) -> Swift.String
+public func arrayBufferToBase64ByJs(_ arrayBuffer: DCloudUTSFoundation.ArrayBuffer) -> Swift.String
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniArrayBufferToBase64IndexSwift) @objcMembers public class UTSSDKModulesDCloudUniArrayBufferToBase64IndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_arrayBufferToBase64ByJs(_ arrayBuffer: DCloudUTSFoundation.ArrayBuffer) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias OnAppCrashCallback = () -> Swift.Void
+public typealias OnAppCrash = (_ callback: @escaping DCloudUTSExtAPI.OnAppCrashCallback) -> Swift.Void
+public typealias OffAppCrash = () -> Swift.Void
+public typealias GetAppCrashInfoIOS = () -> Swift.Array<Swift.Dictionary<Swift.String, Any>>
+public typealias DeleteAppCrashInfo = (_ id: Swift.String?) -> Swift.Void
+public typealias CreatAppCrash = () -> Swift.Void
+public var __onAppCrash: (_ callback: @escaping DCloudUTSExtAPI.OnAppCrashCallback) -> Swift.Void
+public var __offAppCrash: () -> Swift.Void
+public var __getAppCrashInfo: () -> Swift.Array<Swift.Dictionary<Swift.String, Any>>
+public var __deleteAppCrashInfo: (_ id: Swift.String?) -> Swift.Void
+public var __createAppCrash: () -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniCrashCrashManagerHookProxy) @objcMembers public class CrashManagerHookProxy : ObjectiveC.NSObject, DCloudUniappRuntime.UTSiOSHookProxy {
+  @objc public func applicationDidFinishLaunchingWithOptions(_ application: UIKit.UIApplication?, _ launchOptions: Swift.Dictionary<UIKit.UIApplication.LaunchOptionsKey, Any>? = nil) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniCrashCrashManager) @objcMembers public class CrashManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func __onAppCrashByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+public func __offAppCrashByJs()
+public func __getAppCrashInfoByJs() -> Swift.Array<Swift.Dictionary<Swift.String, Any>>
+public func __deleteAppCrashInfoByJs(_ id: Swift.String?)
+public func __createAppCrashByJs()
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniCrashCrashManagerHookProxyByJs) @objcMembers public class CrashManagerHookProxyByJs : DCloudUTSExtAPI.CrashManagerHookProxy {
+  @objc public func applicationDidFinishLaunchingWithOptionsByJs(_ application: UIKit.UIApplication?, _ launchOptions: Swift.Dictionary<UIKit.UIApplication.LaunchOptionsKey, Any>? = nil) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniCrashIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniCrashIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s___onAppCrashByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+  @objc public static func s___offAppCrashByJs()
+  @objc public static func s___getAppCrashInfoByJs() -> Swift.Array<Swift.Dictionary<Swift.String, Any>>
+  @objc public static func s___deleteAppCrashInfoByJs(_ id: Swift.String?)
+  @objc public static func s___createAppCrashByJs()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct UniAppCrashInfo {
+}
+@_hasMissingDesignatedInitializers public class UniCrashManager {
+  public static var uploadUrl: Swift.String
+  public static var onCrash: (() -> Swift.Void)?
+  public static var offAppCrash: Swift.Bool
+  public static var isUniStatistics: Swift.Bool
+  public class func initCrash()
+  public class func getCrashReports() -> [DCloudUTSExtAPI.UniAppCrashInfo]?
+  @discardableResult
+  public class func deleteCrashReport(reportID: Swift.String) -> Swift.Bool
+  public class func createAppCrash()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageSetStorageSuccess) @objcMembers public class SetStorageSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias SetStorageSuccessCallback = (_ res: DCloudUTSExtAPI.SetStorageSuccess) -> Swift.Void
+public typealias SetStorageFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias SetStorageCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageSetStorageOptions) @objcMembers public class SetStorageOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var key: Swift.String!
+  @objc public var data: Any!
+  @objc public var success: DCloudUTSExtAPI.SetStorageSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.SetStorageFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.SetStorageCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias SetStorage = (_ options: DCloudUTSExtAPI.SetStorageOptions) -> Swift.Void
+public typealias SetStorageSync = (_ key: Swift.String, _ data: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageGetStorageSuccess) @objcMembers public class GetStorageSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var data: Any?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetStorageSuccessCallback = (_ res: DCloudUTSExtAPI.GetStorageSuccess) -> Swift.Void
+public typealias GetStorageFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias GetStorageCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageGetStorageOptions) @objcMembers public class GetStorageOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var key: Swift.String!
+  @objc public var success: DCloudUTSExtAPI.GetStorageSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.GetStorageFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.GetStorageCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetStorage = (_ options: DCloudUTSExtAPI.GetStorageOptions) -> Swift.Void
+public typealias GetStorageSync = (_ key: Swift.String) -> Any?
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageGetStorageInfoSuccess) @objcMembers public class GetStorageInfoSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var keys: Swift.Array<Swift.String>!
+  @objc public var currentSize: Foundation.NSNumber!
+  @objc public var limitSize: Foundation.NSNumber!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetStorageInfoSuccessCallback = (_ res: DCloudUTSExtAPI.GetStorageInfoSuccess) -> Swift.Void
+public typealias GetStorageInfoFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias GetStorageInfoCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageGetStorageInfoOptions) @objcMembers public class GetStorageInfoOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var success: DCloudUTSExtAPI.GetStorageInfoSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.GetStorageInfoFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.GetStorageInfoCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetStorageInfo = (_ options: DCloudUTSExtAPI.GetStorageInfoOptions) -> Swift.Void
+public typealias GetStorageInfoSync = () -> DCloudUTSExtAPI.GetStorageInfoSuccess
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageRemoveStorageSuccess) @objcMembers public class RemoveStorageSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias RemoveStorageSuccessCallback = (_ res: DCloudUTSExtAPI.RemoveStorageSuccess) -> Swift.Void
+public typealias RemoveStorageFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias RemoveStorageCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageRemoveStorageOptions) @objcMembers public class RemoveStorageOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var key: Swift.String!
+  @objc public var success: DCloudUTSExtAPI.RemoveStorageSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.RemoveStorageFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.RemoveStorageCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias RemoveStorage = (_ options: DCloudUTSExtAPI.RemoveStorageOptions) -> Swift.Void
+public typealias RemoveStorageSync = (_ key: Swift.String) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageClearStorageSuccess) @objcMembers public class ClearStorageSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ClearStorageSuccessCallback = (_ res: DCloudUTSExtAPI.ClearStorageSuccess) -> Swift.Void
+public typealias ClearStorageFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias ClearStorageCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageClearStorageOptions) @objcMembers public class ClearStorageOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var success: DCloudUTSExtAPI.ClearStorageSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.ClearStorageFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.ClearStorageCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ClearStorage = (_ option: DCloudUTSExtAPI.ClearStorageOptions?) -> Swift.Void
+public typealias ClearStorageSync = () -> Swift.Void
+public var STORAGE_DATA_TYPE: Swift.String
+public func filterNativeType(_ src: Swift.String) -> Swift.String
+public func parseValue(_ value: Any) -> Any?
+public func praseGetStorage(_ type: Swift.String, _ value: Swift.String) -> Any?
+public func uni_setStorageSync(_ key: Swift.String, _ data: Any, _ saveItemHandler: @escaping (_ key: Swift.String, _ data: Swift.String) -> Swift.Void, _ removeItemHandler: @escaping (_ key: Swift.String) -> Swift.Void)
+public func uni_setStorageAsync(_ options: DCloudUTSExtAPI.SetStorageOptions, _ saveItemAsyncHandler: @escaping (_ key: Swift.String, _ data: Swift.String) -> Swift.Void, _ removeItemAsyncHandler: @escaping (_ key: Swift.String) -> Swift.Void)
+public func uni_getStorageSync(_ key: Swift.String, _ getItemHandler: @escaping ((_ key: Swift.String) -> Swift.String?)) -> Any?
+public func uni_getStorageAsync(_ options: DCloudUTSExtAPI.GetStorageOptions, _ getItemAsyncHandler: @escaping ((_ key: Swift.String) -> Swift.String?), _ includesKey: @escaping (_ key: Swift.String) -> Swift.Bool)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageStorageTool) @objcMembers public class StorageTool : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public var setStorage: (_ options: DCloudUTSExtAPI.SetStorageOptions) -> Swift.Void
+public var setStorageSync: (_ key: Swift.String, _ data: Any) -> Swift.Void
+public func getItemAsync(_ itemKey: Swift.String) -> Swift.String?
+public func includeKey(_ key: Swift.String) -> Swift.Bool
+public var getStorage: (_ options: DCloudUTSExtAPI.GetStorageOptions) -> Swift.Void
+public var getStorageSync: DCloudUTSExtAPI.GetStorageSync
+public var getStorageInfo: (_ options: DCloudUTSExtAPI.GetStorageInfoOptions) -> Swift.Void
+public var getStorageInfoSync: () -> DCloudUTSExtAPI.GetStorageInfoSuccess
+public var removeStorage: (_ options: DCloudUTSExtAPI.RemoveStorageOptions) -> Swift.Void
+public var removeStorageSync: (_ key: Swift.String) -> Swift.Void
+public var clearStorage: (_ option: DCloudUTSExtAPI.ClearStorageOptions?) -> Swift.Void
+public var clearStorageSync: () -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageSetStorageOptionsJSONObject) @objcMembers public class SetStorageOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var key: Swift.String!
+  @objc public var data: Any!
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageGetStorageOptionsJSONObject) @objcMembers public class GetStorageOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var key: Swift.String!
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageGetStorageInfoOptionsJSONObject) @objcMembers public class GetStorageInfoOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageRemoveStorageOptionsJSONObject) @objcMembers public class RemoveStorageOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var key: Swift.String!
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageClearStorageOptionsJSONObject) @objcMembers public class ClearStorageOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func setStorageByJs(_ options: DCloudUTSExtAPI.SetStorageOptionsJSONObject)
+public func setStorageSyncByJs(_ key: Swift.String, _ data: Any)
+public func getStorageByJs(_ options: DCloudUTSExtAPI.GetStorageOptionsJSONObject)
+public func getStorageSyncByJs(_ key: Swift.String) -> Any?
+public func getStorageInfoByJs(_ options: DCloudUTSExtAPI.GetStorageInfoOptionsJSONObject)
+public func getStorageInfoSyncByJs() -> DCloudUTSExtAPI.GetStorageInfoSuccess
+public func removeStorageByJs(_ options: DCloudUTSExtAPI.RemoveStorageOptionsJSONObject)
+public func removeStorageSyncByJs(_ key: Swift.String)
+public func clearStorageByJs(_ option: DCloudUTSExtAPI.ClearStorageOptionsJSONObject?)
+public func clearStorageSyncByJs()
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniStorageIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniStorageIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_setStorageByJs(_ options: DCloudUTSExtAPI.SetStorageOptionsJSONObject)
+  @objc public static func s_setStorageSyncByJs(_ key: Swift.String, _ data: Any)
+  @objc public static func s_getStorageByJs(_ options: DCloudUTSExtAPI.GetStorageOptionsJSONObject)
+  @objc public static func s_getStorageSyncByJs(_ key: Swift.String) -> Any?
+  @objc public static func s_getStorageInfoByJs(_ options: DCloudUTSExtAPI.GetStorageInfoOptionsJSONObject)
+  @objc public static func s_getStorageInfoSyncByJs() -> DCloudUTSExtAPI.GetStorageInfoSuccess
+  @objc public static func s_removeStorageByJs(_ options: DCloudUTSExtAPI.RemoveStorageOptionsJSONObject)
+  @objc public static func s_removeStorageSyncByJs(_ key: Swift.String)
+  @objc public static func s_clearStorageByJs(_ option: DCloudUTSExtAPI.ClearStorageOptionsJSONObject?)
+  @objc public static func s_clearStorageSyncByJs()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniExitExitSuccess) @objcMembers public class ExitSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var errMsg: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ExitErrorCode = Foundation.NSNumber
+public protocol IExitError : DCloudUTSFoundation.IUniError {
+  var errCode: DCloudUTSExtAPI.ExitErrorCode { get set }
+}
+public typealias ExitFail = DCloudUTSExtAPI.IExitError
+public typealias ExitSuccessCallback = (_ res: DCloudUTSExtAPI.ExitSuccess) -> Swift.Void
+public typealias ExitFailCallback = (_ res: any DCloudUTSExtAPI.IExitError) -> Swift.Void
+public typealias ExitCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniExitExitOptions) @objcMembers public class ExitOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var success: DCloudUTSExtAPI.ExitSuccessCallback?
+  public var fail: DCloudUTSExtAPI.ExitFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.ExitCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias Exit = (_ options: DCloudUTSExtAPI.ExitOptions?) -> Swift.Void
+public var ExitUniErrorSubject: Swift.String
+public var ExitUniErrors: [Foundation.NSNumber : Swift.String]
+@objc(UTSSDKModulesDCloudUniExitExitFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniExitExitFailImpl) public class ExitFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.IExitError {
+  @objc public init(_ errCode: DCloudUTSExtAPI.ExitErrorCode)
+  @objc deinit
+}
+public var exit: (_ options: DCloudUTSExtAPI.ExitOptions?) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniExitExitOptionsJSONObject) @objcMembers public class ExitOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func exitByJs(_ options: DCloudUTSExtAPI.ExitOptionsJSONObject?)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniExitIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniExitIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_exitByJs(_ options: DCloudUTSExtAPI.ExitOptionsJSONObject?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias GetAppAuthorizeSetting = () -> DCloudUTSExtAPI.GetAppAuthorizeSettingResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppAuthorizeSettingGetAppAuthorizeSettingResult) @objcMembers public class GetAppAuthorizeSettingResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var albumAuthorized: Swift.String!
+  @objc public var bluetoothAuthorized: Swift.String!
+  @objc public var cameraAuthorized: Swift.String!
+  @objc public var locationAuthorized: Swift.String!
+  @objc public var locationAccuracy: Swift.String?
+  @objc public var locationReducedAccuracy: Swift.Bool
+  @objc public var microphoneAuthorized: Swift.String!
+  @objc public var notificationAuthorized: Swift.String!
+  @objc public var notificationAlertAuthorized: Swift.String?
+  @objc public var notificationBadgeAuthorized: Swift.String?
+  @objc public var notificationSoundAuthorized: Swift.String?
+  @objc public var phoneCalendarAuthorized: Swift.String?
+  @objc public var readPhoneCalendarAuthorized: Swift.String?
+  @objc public var writePhoneCalendarAuthorized: Swift.String?
+  @objc public var pasteboardAuthorized: Swift.String?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public var getAppAuthorizeSetting: () -> DCloudUTSExtAPI.GetAppAuthorizeSettingResult
+public func getAppAuthorizeSettingByJs() -> DCloudUTSExtAPI.GetAppAuthorizeSettingResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppAuthorizeSettingIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniGetAppAuthorizeSettingIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getAppAuthorizeSettingByJs() -> DCloudUTSExtAPI.GetAppAuthorizeSettingResult
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppBaseInfoAppBaseInfoDeviceUtil) @objcMembers public class AppBaseInfoDeviceUtil : ObjectiveC.NSObject {
+  @objc public static func getAppID() -> Swift.String
+  @objc public static func getAppName() -> Swift.String
+  @objc public static func getHostName() -> Swift.String
+  @objc public static func getHostTheme() -> Swift.String
+  @objc public static func getHostLanguage() -> Swift.String
+  @objc public static func getHostVersion() -> Swift.String
+  @objc public static func getHostPackageName() -> Swift.String
+  @objc public static func getAppVersion() -> Swift.String
+  @objc public static func getAppVersionCode() -> Swift.String
+  @objc public static func getAppWgtVersion() -> Swift.String
+  @objc public static func getOsLanguage() -> Swift.String
+  @objc public static func getOsLanguageNormal() -> Swift.String
+  @objc public static func getAppInnerVersion() -> Swift.String
+  @objc public static func getBundleId() -> Swift.String
+  @objc public static func getSignature() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppBaseInfoGetAppBaseInfoOptions) @objcMembers public class GetAppBaseInfoOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var filter: Swift.Array<Swift.String>!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppBaseInfoGetAppBaseInfoResult) @objcMembers public class GetAppBaseInfoResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var appId: Swift.String?
+  @objc public var appName: Swift.String?
+  @objc public var appVersion: Swift.String?
+  @objc public var appVersionCode: Swift.String?
+  @objc public var appLanguage: Swift.String?
+  @objc public var language: Swift.String?
+  @objc public var version: Swift.String?
+  @objc public var appWgtVersion: Swift.String?
+  @objc public var hostLanguage: Swift.String?
+  @objc public var hostVersion: Swift.String?
+  @objc public var hostName: Swift.String?
+  @objc public var hostPackageName: Swift.String?
+  @objc public var hostSDKVersion: Swift.String?
+  @objc public var hostTheme: Swift.String?
+  @objc public var isUniAppX: Swift.Bool
+  @objc public var uniCompileVersion: Swift.String?
+  @objc public var uniCompilerVersion: Swift.String?
+  @objc public var uniPlatform: Swift.String?
+  @objc public var uniRuntimeVersion: Swift.String?
+  @objc public var uniCompileVersionCode: Foundation.NSNumber?
+  @objc public var uniCompilerVersionCode: Foundation.NSNumber?
+  @objc public var uniRuntimeVersionCode: Foundation.NSNumber?
+  @objc public var packageName: Swift.String?
+  @objc public var bundleName: Swift.String?
+  @objc public var bundleId: Swift.String?
+  @objc public var signature: Swift.String?
+  @objc public var appTheme: Swift.String?
+  @objc public var channel: Swift.String?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetAppBaseInfo = (_ options: DCloudUTSExtAPI.GetAppBaseInfoOptions?) -> DCloudUTSExtAPI.GetAppBaseInfoResult
+public var getAppBaseInfo: (_ config: DCloudUTSExtAPI.GetAppBaseInfoOptions?) -> DCloudUTSExtAPI.GetAppBaseInfoResult
+public func getBaseInfo(_ filterArray: Swift.Array<Swift.String>) -> DCloudUTSExtAPI.GetAppBaseInfoResult
+public var AppBaseInfoConvertVersionCode: (_ version: Swift.String) -> Foundation.NSNumber
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppBaseInfoGetAppBaseInfoOptionsJSONObject) @objcMembers public class GetAppBaseInfoOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var filter: Swift.Array<Swift.String>!
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func getAppBaseInfoByJs(_ options: DCloudUTSExtAPI.GetAppBaseInfoOptionsJSONObject?) -> DCloudUTSExtAPI.GetAppBaseInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetAppBaseInfoIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniGetAppBaseInfoIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getAppBaseInfoByJs(_ options: DCloudUTSExtAPI.GetAppBaseInfoOptionsJSONObject?) -> DCloudUTSExtAPI.GetAppBaseInfoResult
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetDeviceInfoDeviceUtil) @objcMembers public class DeviceUtil : ObjectiveC.NSObject {
+  @objc public static func isPad() -> Swift.Bool
+  @objc public static func getOSVersion() -> Swift.String
+  @objc public static func getLan() -> Swift.String
+  @objc public static func getOrientation() -> Swift.String
+  @objc public static func hasRootPrivilege() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetDeviceInfoGetDeviceInfoOptions) @objcMembers public class GetDeviceInfoOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var filter: Swift.Array<Swift.String>!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetDeviceInfoGetDeviceInfoResult) @objcMembers public class GetDeviceInfoResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var brand: Swift.String?
+  @objc public var deviceBrand: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var model: Swift.String?
+  @objc public var deviceModel: Swift.String?
+  @objc public var deviceType: Swift.String?
+  @objc public var deviceOrientation: Swift.String?
+  @objc public var devicePixelRatio: Foundation.NSNumber?
+  @objc public var system: Swift.String?
+  @objc public var platform: Swift.String?
+  @objc public var isRoot: Swift.Bool
+  @objc public var isSimulator: Swift.Bool
+  @objc public var isUSBDebugging: Swift.Bool
+  @objc public var osName: Swift.String?
+  @objc public var osVersion: Swift.String?
+  @objc public var osLanguage: Swift.String?
+  @objc public var osTheme: Swift.String?
+  @objc public var osAndroidAPILevel: Foundation.NSNumber?
+  @objc public var osHarmonySDKAPIVersion: Foundation.NSNumber?
+  @objc public var osHarmonyDisplayVersion: Swift.String?
+  @objc public var romName: Swift.String?
+  @objc public var romVersion: Swift.String?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetDeviceInfo = (_ options: DCloudUTSExtAPI.GetDeviceInfoOptions?) -> DCloudUTSExtAPI.GetDeviceInfoResult
+public func isSimulator() -> Swift.Bool
+public var getDeviceInfo: (_ config: DCloudUTSExtAPI.GetDeviceInfoOptions?) -> DCloudUTSExtAPI.GetDeviceInfoResult
+public func getBaseInfo(_ filterArray: Swift.Array<Swift.String>) -> DCloudUTSExtAPI.GetDeviceInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetDeviceInfoGetDeviceInfoOptionsJSONObject) @objcMembers public class GetDeviceInfoOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var filter: Swift.Array<Swift.String>!
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func isSimulatorByJs() -> Swift.Bool
+public func getDeviceInfoByJs(_ options: DCloudUTSExtAPI.GetDeviceInfoOptionsJSONObject?) -> DCloudUTSExtAPI.GetDeviceInfoResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetDeviceInfoIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniGetDeviceInfoIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_isSimulatorByJs() -> Swift.Bool
+  @objc public static func s_getDeviceInfoByJs(_ options: DCloudUTSExtAPI.GetDeviceInfoOptionsJSONObject?) -> DCloudUTSExtAPI.GetDeviceInfoResult
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DCUniGetElementById {
+  public static func getElementById(_ id: Swift.String) -> (any DCloudUniappRuntime.UniElement)?
+  @objc deinit
+}
+public typealias GetElementById = (_ id: Swift.String) -> (any DCloudUniappRuntime.UniElement)?
+public var getElementById: (_ id: Swift.String) -> (any DCloudUniappRuntime.UniElement)?
+public func getElementByIdByJs(_ id: Swift.String) -> (any DCloudUniappRuntime.UniElement)?
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetElementByIdIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniGetElementByIdIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getElementByIdByJs(_ id: Swift.String) -> (any DCloudUniappRuntime.UniElement)?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemSettingGetSystemSettingResult) @objcMembers public class GetSystemSettingResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var bluetoothEnabled: Swift.Bool
+  @objc public var bluetoothError: Swift.String?
+  @objc public var locationEnabled: Swift.Bool
+  @objc public var wifiEnabled: Swift.Bool
+  @objc public var wifiError: Swift.String?
+  @objc public var deviceOrientation: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetSystemSetting = () -> DCloudUTSExtAPI.GetSystemSettingResult
+public var getSystemSetting: () -> DCloudUTSExtAPI.GetSystemSettingResult
+public func getSystemSettingByJs() -> DCloudUTSExtAPI.GetSystemSettingResult
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniGetSystemSettingIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniGetSystemSettingIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getSystemSettingByJs() -> DCloudUTSExtAPI.GetSystemSettingResult
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalUniShowModalResult) @objcMembers public class UniShowModalResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var content: Swift.String?
+  @objc public var cancel: Swift.Bool
+  @objc public var confirm: Swift.Bool
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias UniShowModalErrorCode = Foundation.NSNumber
+public protocol UniShowModalFail : DCloudUTSFoundation.IUniError {
+  var errCode: DCloudUTSExtAPI.UniShowModalErrorCode { get set }
+}
+@objc(UTSSDKModulesDCloudUniModalUniShowModalFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniModalUniShowModalFailImpl) public class UniShowModalFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.UniShowModalFail {
+  @objc override public var errCode: DCloudUTSExtAPI.UniShowModalErrorCode {
+    @objc get
+    @objc set(value)
+  }
+  @objc public init(_ errMsg: Swift.String = "showModal:fail cancel", _ errCode: DCloudUTSExtAPI.UniShowModalErrorCode = 4)
+  @objc deinit
+}
+public typealias UniShowModalFailCallback = (_ result: any DCloudUTSExtAPI.UniShowModalFail) -> Swift.Void
+public typealias UniShowModalSuccessCallback = (_ result: DCloudUTSExtAPI.UniShowModalResult) -> Swift.Void
+public typealias UniShowModalCompleteCallback = (_ result: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalShowModalOptions) @objcMembers public class ShowModalOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var title: Swift.String?
+  @objc public var content: Swift.String?
+  @objc public var showCancel: Swift.Bool
+  @objc public var cancelText: Swift.String?
+  @objc public var cancelColor: Swift.String?
+  @objc public var confirmText: Swift.String?
+  @objc public var confirmColor: Swift.String?
+  @objc public var editable: Swift.Bool
+  @objc public var placeholderText: Swift.String?
+  @objc public var success: DCloudUTSExtAPI.UniShowModalSuccessCallback?
+  public var fail: DCloudUTSExtAPI.UniShowModalFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.UniShowModalCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowModal = (_ options: DCloudUTSExtAPI.ShowModalOptions) -> (any DCloudUniappRuntime.UniPage)?
+public typealias ModalPage = DCloudUniappRuntime.UniPage
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalUniHideModalResult) @objcMembers public class UniHideModalResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias UniHideModalErrorCode = Foundation.NSNumber
+public protocol UniHideModalFail : DCloudUTSFoundation.IUniError {
+  var errCode: DCloudUTSExtAPI.UniHideModalErrorCode { get set }
+}
+@objc(UTSSDKModulesDCloudUniModalUniHideModalFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniModalUniHideModalFailImpl) public class UniHideModalFailImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.UniHideModalFail {
+  @objc override public var errCode: DCloudUTSExtAPI.UniHideModalErrorCode {
+    @objc get
+    @objc set(value)
+  }
+  @objc public init(_ errMsg: Swift.String = "hideModal:fail cancel", _ errCode: DCloudUTSExtAPI.UniHideModalErrorCode = 4)
+  @objc deinit
+}
+public typealias UniHideModalFailCallback = (_ result: any DCloudUTSExtAPI.UniHideModalFail) -> Swift.Void
+public typealias UniHideModalSuccessCallback = (_ result: DCloudUTSExtAPI.UniHideModalResult) -> Swift.Void
+public typealias UniHideModalCompleteCallback = (_ result: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalHideModalOptions) @objcMembers public class HideModalOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var modalPage: (any DCloudUniappRuntime.UniPage)?
+  @objc public var success: DCloudUTSExtAPI.UniHideModalSuccessCallback?
+  public var fail: DCloudUTSExtAPI.UniHideModalFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.UniHideModalCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias HideModal = (_ options: DCloudUTSExtAPI.HideModalOptions?) -> Swift.Void
+public var showModal: (_ options: DCloudUTSExtAPI.ShowModalOptions) -> (any DCloudUniappRuntime.UniPage)?
+public var hideModal: (_ options: DCloudUTSExtAPI.HideModalOptions?) -> Swift.Void
+public func isSystemModalDialogPage(_ page: any DCloudUniappRuntime.UniPage) -> Swift.Bool
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalShowModalOptionsJSONObject) @objcMembers public class ShowModalOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var title: Swift.String?
+  @objc public var content: Swift.String?
+  @objc public var showCancel: Swift.Bool
+  @objc public var cancelText: Swift.String?
+  @objc public var cancelColor: Swift.String?
+  @objc public var confirmText: Swift.String?
+  @objc public var confirmColor: Swift.String?
+  @objc public var editable: Swift.Bool
+  @objc public var placeholderText: Swift.String?
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalHideModalOptionsJSONObject) @objcMembers public class HideModalOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var modalPage: (any DCloudUniappRuntime.UniPage)?
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func showModalByJs(_ options: DCloudUTSExtAPI.ShowModalOptionsJSONObject) -> (any DCloudUniappRuntime.UniPage)?
+public func hideModalByJs(_ options: DCloudUTSExtAPI.HideModalOptionsJSONObject?)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniModalIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniModalIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_showModalByJs(_ options: DCloudUTSExtAPI.ShowModalOptionsJSONObject) -> (any DCloudUniappRuntime.UniPage)?
+  @objc public static func s_hideModalByJs(_ options: DCloudUTSExtAPI.HideModalOptionsJSONObject?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias OpenAppAuthorizeSetting = (_ options: DCloudUTSExtAPI.OpenAppAuthorizeSettingOptions) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniOpenAppAuthorizeSettingOpenAppAuthorizeSettingSuccess) @objcMembers public class OpenAppAuthorizeSettingSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var errMsg: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias OpenAppAuthorizeSettingSuccessCallback = (_ result: DCloudUTSExtAPI.OpenAppAuthorizeSettingSuccess) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniOpenAppAuthorizeSettingOpenAppAuthorizeSettingFail) @objcMembers public class OpenAppAuthorizeSettingFail : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var errMsg: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias OpenAppAuthorizeSettingFailCallback = (_ result: DCloudUTSExtAPI.OpenAppAuthorizeSettingFail) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniOpenAppAuthorizeSettingOpenAppAuthorizeSettingComplete) @objcMembers public class OpenAppAuthorizeSettingComplete : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var errMsg: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias OpenAppAuthorizeSettingCompleteCallback = (_ result: DCloudUTSExtAPI.OpenAppAuthorizeSettingComplete) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniOpenAppAuthorizeSettingOpenAppAuthorizeSettingOptions) @objcMembers public class OpenAppAuthorizeSettingOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var success: DCloudUTSExtAPI.OpenAppAuthorizeSettingSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.OpenAppAuthorizeSettingFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.OpenAppAuthorizeSettingCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public var openAppAuthorizeSetting: (_ settingOptions: DCloudUTSExtAPI.OpenAppAuthorizeSettingOptions) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniOpenAppAuthorizeSettingOpenAppAuthorizeSettingOptionsJSONObject) @objcMembers public class OpenAppAuthorizeSettingOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func openAppAuthorizeSettingByJs(_ options: DCloudUTSExtAPI.OpenAppAuthorizeSettingOptionsJSONObject)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniOpenAppAuthorizeSettingIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniOpenAppAuthorizeSettingIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_openAppAuthorizeSettingByJs(_ options: DCloudUTSExtAPI.OpenAppAuthorizeSettingOptionsJSONObject)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias OnPrivacyAuthorizationChange = (_ callback: @escaping DCloudUTSExtAPI.OnPrivacyAuthorizationChangeCallback) -> Foundation.NSNumber
+public typealias OffPrivacyAuthorizationChange = (_ id: Foundation.NSNumber) -> Swift.Void
+public typealias OnPrivacyAuthorizationChangeCallback = (_ res: DCloudUTSExtAPI.PrivacyChangeResult) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPrivacyPrivacyChangeResult) @objcMembers public class PrivacyChangeResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var needAuthorization: Swift.Bool
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetPrivacySetting = (_ options: DCloudUTSExtAPI.GetPrivacySettingOptions) -> Swift.Void
+public typealias GetPrivacySettingSuccessCallback = (_ result: DCloudUTSExtAPI.GetPrivacySettingSuccessResult) -> Swift.Void
+public typealias GetPrivacySettingFailCallback = (_ result: Any) -> Swift.Void
+public typealias GetPrivacySettingCompleteCallback = (_ result: Any) -> Swift.Void
+public typealias ResetPrivacyAuthorization = () -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPrivacyGetPrivacySettingSuccessResult) @objcMembers public class GetPrivacySettingSuccessResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var needAuthorization: Swift.Bool
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPrivacyGetPrivacySettingOptions) @objcMembers public class GetPrivacySettingOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var success: DCloudUTSExtAPI.GetPrivacySettingSuccessCallback?
+  @objc public var fail: DCloudUTSExtAPI.GetPrivacySettingFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.GetPrivacySettingCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public var getPrivacySetting: (_ options: DCloudUTSExtAPI.GetPrivacySettingOptions) -> Swift.Void
+public var resetPrivacyAuthorization: () -> Swift.Void
+public var onPrivacyAuthorizationChange: (_ callback: @escaping DCloudUTSExtAPI.OnPrivacyAuthorizationChangeCallback) -> Foundation.NSNumber
+public var offPrivacyAuthorizationChange: (_ id: Foundation.NSNumber) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPrivacyGetPrivacySettingOptionsJSONObject) @objcMembers public class GetPrivacySettingOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func getPrivacySettingByJs(_ options: DCloudUTSExtAPI.GetPrivacySettingOptionsJSONObject)
+public func resetPrivacyAuthorizationByJs()
+public func onPrivacyAuthorizationChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+public func offPrivacyAuthorizationChangeByJs(_ id: Foundation.NSNumber)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPrivacyIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniPrivacyIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_getPrivacySettingByJs(_ options: DCloudUTSExtAPI.GetPrivacySettingOptionsJSONObject)
+  @objc public static func s_resetPrivacyAuthorizationByJs()
+  @objc public static func s_onPrivacyAuthorizationChangeByJs(_ callback: DCloudUTSFoundation.UTSCallback) -> Foundation.NSNumber
+  @objc public static func s_offPrivacyAuthorizationChangeByJs(_ id: Foundation.NSNumber)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias PromptErrorCode = Foundation.NSNumber
+public protocol IPromptError : DCloudUTSFoundation.IUniError {
+  var errCode: DCloudUTSExtAPI.PromptErrorCode { get set }
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptShowToastSuccess) @objcMembers public class ShowToastSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowToastFail = DCloudUTSExtAPI.IPromptError
+public typealias ShowToastSuccessCallback = (_ res: DCloudUTSExtAPI.ShowToastSuccess) -> Swift.Void
+public typealias ShowToastFailCallback = (_ res: any DCloudUTSExtAPI.IPromptError) -> Swift.Void
+public typealias ShowToastCompleteCallback = (_ res: Any) -> Swift.Void
+public typealias Icon = Swift.String
+public typealias ShowToastPosition = Swift.String
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptShowToastOptions) @objcMembers public class ShowToastOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var title: Swift.String!
+  @objc public var icon: DCloudUTSExtAPI.Icon?
+  @objc public var image: Swift.String?
+  @objc public var mask: Swift.Bool
+  @objc public var duration: Foundation.NSNumber?
+  @objc public var position: DCloudUTSExtAPI.ShowToastPosition?
+  @objc public var success: DCloudUTSExtAPI.ShowToastSuccessCallback?
+  public var fail: DCloudUTSExtAPI.ShowToastFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.ShowToastCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowToast = (_ options: DCloudUTSExtAPI.ShowToastOptions) -> Swift.Void
+public typealias HideToast = () -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptShowLoadingSuccess) @objcMembers public class ShowLoadingSuccess : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowLoadingFail = DCloudUTSExtAPI.IPromptError
+public typealias ShowLoadingSuccessCallback = (_ res: DCloudUTSExtAPI.ShowLoadingSuccess) -> Swift.Void
+public typealias ShowLoadingFailCallback = (_ res: any DCloudUTSExtAPI.IPromptError) -> Swift.Void
+public typealias ShowLoadingCompleteCallback = (_ res: Any) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptShowLoadingOptions) @objcMembers public class ShowLoadingOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var title: Swift.String!
+  @objc public var mask: Swift.Bool
+  @objc public var success: DCloudUTSExtAPI.ShowLoadingSuccessCallback?
+  public var fail: DCloudUTSExtAPI.ShowLoadingFailCallback?
+  @objc public var complete: DCloudUTSExtAPI.ShowLoadingCompleteCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias ShowLoading = (_ options: DCloudUTSExtAPI.ShowLoadingOptions) -> Swift.Void
+public typealias HideLoading = () -> Swift.Void
+@objc(UTSSDKModulesDCloudUniPromptPromptErrorImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniPromptPromptErrorImpl) public class PromptErrorImpl : DCloudUTSFoundation.UniError, DCloudUTSExtAPI.IPromptError {
+  @objc public init(_ errCode: DCloudUTSExtAPI.PromptErrorCode, _ errMsg: Swift.String)
+  @objc deinit
+}
+public func toShowToast(_ options: DCloudUTSExtAPI.ShowToastOptions)
+public func toHideToast()
+public func toShowLoading(_ options: DCloudUTSExtAPI.ShowLoadingOptions)
+public func toHideLoading()
+public var showToast: (_ options: DCloudUTSExtAPI.ShowToastOptions) -> Swift.Void
+public var hideToast: () -> Swift.Void
+public var showLoading: (_ options: DCloudUTSExtAPI.ShowLoadingOptions) -> Swift.Void
+public var hideLoading: () -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptShowToastOptionsJSONObject) @objcMembers public class ShowToastOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var title: Swift.String!
+  @objc public var icon: DCloudUTSExtAPI.Icon?
+  @objc public var image: Swift.String?
+  @objc public var mask: Swift.Bool
+  @objc public var duration: Foundation.NSNumber?
+  @objc public var position: DCloudUTSExtAPI.ShowToastPosition?
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptShowLoadingOptionsJSONObject) @objcMembers public class ShowLoadingOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var title: Swift.String!
+  @objc public var mask: Swift.Bool
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func showToastByJs(_ options: DCloudUTSExtAPI.ShowToastOptionsJSONObject)
+public func hideToastByJs()
+public func showLoadingByJs(_ options: DCloudUTSExtAPI.ShowLoadingOptionsJSONObject)
+public func hideLoadingByJs()
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniPromptIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniPromptIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_showToastByJs(_ options: DCloudUTSExtAPI.ShowToastOptionsJSONObject)
+  @objc public static func s_hideToastByJs()
+  @objc public static func s_showLoadingByJs(_ options: DCloudUTSExtAPI.ShowLoadingOptionsJSONObject)
+  @objc public static func s_hideLoadingByJs()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public let ActionSheetNotificationNameViewWillRotate: Swift.String
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class DCActionSheetController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public init(noticeTitle: Swift.String, supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask? = nil)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func loadView()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency public func addAction(_ action: DCloudUTSExtAPI.DCAlertAction)
+  @_Concurrency.MainActor @preconcurrency public func addAction(_ title: Swift.String, _ style: DCloudUTSExtAPI.DCAlertActionStyle, _ handler: @escaping (_ action: DCloudUTSExtAPI.DCAlertAction) -> Swift.Void) -> DCloudUTSExtAPI.DCAlertAction
+  @_Concurrency.MainActor @preconcurrency public func show()
+}
+extension DCloudUTSExtAPI.DCActionSheetController : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
+}
+extension Foundation.NSString {
+  public func dc_boundingSize(_ font: UIKit.UIFont?, _ lineHeight: CoreFoundation.CGFloat, _ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+}
+public typealias DCAlertView = DCloudUTSExtAPI.DCAlertViewController
+extension DCloudUTSExtAPI.DCAlertViewController {
+  @_Concurrency.MainActor @preconcurrency public func show()
+  @_Concurrency.MainActor @preconcurrency public func dismiss()
+  @_Concurrency.MainActor @preconcurrency public static func alertView(_ title: Swift.String, _ doneItem: DCloudUTSExtAPI.DCRIButtonItem, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle = .alert, _ placeholder: Swift.String = "") -> DCloudUTSExtAPI.DCAlertView
+  @_Concurrency.MainActor @preconcurrency public static func alertView(_ title: Swift.String?, _ cancelItem: DCloudUTSExtAPI.DCRIButtonItem, _ doneItem: DCloudUTSExtAPI.DCRIButtonItem, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle = .alert, _ placeholder: Swift.String = "") -> DCloudUTSExtAPI.DCAlertView
+  @_Concurrency.MainActor @preconcurrency public static func alertView(_ title: Swift.String?, _ subTitle: Swift.String?, _ doneItem: DCloudUTSExtAPI.DCRIButtonItem, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle = .alert, _ placeholder: Swift.String = "") -> DCloudUTSExtAPI.DCAlertView
+  @_Concurrency.MainActor @preconcurrency public static func alertView(_ title: Swift.String?, _ subTitle: Swift.String?, _ cancelItem: DCloudUTSExtAPI.DCRIButtonItem, _ doneItem: DCloudUTSExtAPI.DCRIButtonItem, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle = .alert, _ placeholder: Swift.String = "") -> DCloudUTSExtAPI.DCAlertView
+  @_Concurrency.MainActor @preconcurrency public static func alertView(_ title: Swift.String?, _ subTitle: Swift.String?, _ cancelItem: DCloudUTSExtAPI.DCRIButtonItem, _ cancelActionStyle: DCloudUTSExtAPI.DCAlertActionStyle, _ doneItem: DCloudUTSExtAPI.DCRIButtonItem, _ doneActionStyle: DCloudUTSExtAPI.DCAlertActionStyle, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle, _ placeholder: Swift.String = "") -> DCloudUTSExtAPI.DCAlertView
+}
+public enum DCAlertViewControllerStyle : Swift.Int {
+  case alert
+  case textViewAlert
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol DCAlertViewControllerDismissDelegate : UIKit.UITextViewDelegate {
+  func canDismissWithAction(_ action: DCloudUTSExtAPI.DCAlertAction?, _ param: Any?) -> Swift.Bool
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class DCAlertViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public var canOpenDarkMode: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var contentViewVisible: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var mesageTitle: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var message: Swift.String? {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var textViewText: Swift.String? {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var textView: UIKit.UITextView? {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency weak public var dismissDelegate: (any DCloudUTSExtAPI.DCAlertViewControllerDismissDelegate)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor @preconcurrency public var preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle
+  @_Concurrency.MainActor @preconcurrency public var tapGesture: UIKit.UITapGestureRecognizer?
+  @_Concurrency.MainActor @preconcurrency public var contentView: (any UIKit.UIView & DCloudUTSExtAPI.DCAlertControllerContentViewProtocol)?
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency public init(_ title: Swift.String?, _ message: Swift.String?, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle, _ placeholder: Swift.String?)
+  @_Concurrency.MainActor @preconcurrency public init(_ customView: any UIKit.UIView & DCloudUTSExtAPI.DCAlertControllerContentViewProtocol, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func loadView()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public func alertControllerWithTitle(_ title: Swift.String?, _ message: Swift.String?, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle, _ placeholder: Swift.String?) -> DCloudUTSExtAPI.DCAlertViewController
+  @_Concurrency.MainActor @preconcurrency public func alertControllerWithCustomView(_ view: any UIKit.UIView & DCloudUTSExtAPI.DCAlertControllerContentViewProtocol, _ preferredStyle: DCloudUTSExtAPI.DCAlertViewControllerStyle) -> DCloudUTSExtAPI.DCAlertViewController
+  @_Concurrency.MainActor @preconcurrency public func addActionWithTitle(_ title: Foundation.NSString, _ style: DCloudUTSExtAPI.DCAlertActionStyle, _ handler: @escaping (_ action: DCloudUTSExtAPI.DCAlertAction) -> Swift.Void) -> DCloudUTSExtAPI.DCAlertAction
+  @_Concurrency.MainActor @preconcurrency public func addImage(_ image: UIKit.UIImage, _ position: DCloudUTSExtAPI.DCAlertImagePosition)
+  @_Concurrency.MainActor @preconcurrency public func addCustomView(_ customView: UIKit.UIView)
+  @_Concurrency.MainActor @preconcurrency public func addAction(_ action: DCloudUTSExtAPI.DCAlertAction)
+  @_Concurrency.MainActor @preconcurrency public func addTapGesture()
+  @_Concurrency.MainActor @preconcurrency public func onTapAction(_ action: DCloudUTSExtAPI.DCAlertAction)
+  @_Concurrency.MainActor @preconcurrency public func resetDoneBtnTitleColor(_ color: UIKit.UIColor)
+}
+extension DCloudUTSExtAPI.DCAlertViewController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+}
+public enum DCAlertActionStyle : Swift.Int {
+  case defaultStyle
+  case cancelStyle
+  case destructiveStyle
+  case preferredStyle
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum DCAlertImagePosition : Swift.Int {
+  case null
+  case topCenter
+  case leftTopCenter
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class DCAlertAction : ObjectiveC.NSObject {
+  public var title: Swift.String?
+  public var titleColor: UIKit.UIColor? {
+    get
+    set
+  }
+  public var style: DCloudUTSExtAPI.DCAlertActionStyle
+  weak public var button: UIKit.UIButton?
+  public var handler: (_ action: DCloudUTSExtAPI.DCAlertAction) -> Swift.Void
+  public var enabled: Swift.Bool {
+    get
+    set
+  }
+  public init(title: Swift.String, style: DCloudUTSExtAPI.DCAlertActionStyle, handler: @escaping (_ action: DCloudUTSExtAPI.DCAlertAction) -> Swift.Void)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class DCAlertActionButton : UIKit.UIButton {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol DCAlertControllerContentViewProtocol : ObjectiveC.NSObject {
+  var titleLabel: UIKit.UILabel { get set }
+  var messageLabel: UIKit.UITextView { get set }
+  var title: Swift.String? { get set }
+  var message: Swift.String? { get set }
+  var image: UIKit.UIImage? { get set }
+  var customView: UIKit.UIView? { get set }
+  var imagePositon: DCloudUTSExtAPI.DCAlertImagePosition? { get set }
+  var buttons: [DCloudUTSExtAPI.DCAlertActionButton] { get }
+  var actionClickedHandler: ((_ action: DCloudUTSExtAPI.DCAlertAction) -> Swift.Void)? { get set }
+  func addAction(_ action: DCloudUTSExtAPI.DCAlertAction)
+  func setHairLineColor(_ hairLineColor: UIKit.UIColor?)
+}
+@objc @_inheritsConvenienceInitializers public class DCRIButtonItem : ObjectiveC.NSObject {
+  public static func item() -> DCloudUTSExtAPI.DCRIButtonItem
+  public static func itemWithLabel(_ inLabel: Swift.String) -> DCloudUTSExtAPI.DCRIButtonItem
+  public static func itemWithLabel(_ inLabel: Swift.String, _ labelColor: UIKit.UIColor? = nil, inAction action: @escaping (() -> Swift.Void)) -> DCloudUTSExtAPI.DCRIButtonItem
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIResponder {
+  @_Concurrency.MainActor @preconcurrency public func mc_loading(text: Swift.String = "正在加载中", duration: CoreFoundation.CGFloat = 0, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+  @_Concurrency.MainActor @preconcurrency public func mc_loading(imageNames: [UIKit.UIImage?], animationSpeed: CoreFoundation.CGFloat = 0.1, duration: CoreFoundation.CGFloat = 0, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  public static func mc_loading(text: Swift.String = "正在加载中", duration: CoreFoundation.CGFloat = 0, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+  public static func mc_loading(imageNames: [UIKit.UIImage?], animationSpeed: CoreFoundation.CGFloat = 0.1, duration: CoreFoundation.CGFloat = 0, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension Foundation.NSString {
+  public func dc_getBoundingSize(_ font: UIKit.UIFont?, _ lineHeight: CoreFoundation.CGFloat, _ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+}
+extension UIKit.UIResponder {
+  @_Concurrency.MainActor @preconcurrency public func mc_remove(callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  public static func mc_remove(callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  public enum MCToastType {
+    case success
+    case failure
+    case warning
+    public static func == (a: DCloudUTSExtAPI.MCToast.MCToastType, b: DCloudUTSExtAPI.MCToast.MCToastType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension UIKit.UIResponder {
+  @_Concurrency.MainActor @preconcurrency public func mc_success(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+  @_Concurrency.MainActor @preconcurrency public func mc_failure(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+  @_Concurrency.MainActor @preconcurrency public func mc_warning(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  public static func mc_success(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+  public static func mc_failure(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+  public static func mc_warning(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  @discardableResult
+  public static func showStatus(_ type: DCloudUTSExtAPI.MCToast.MCToastType?, text: Swift.String, iconImage: UIKit.UIImage?, duration: CoreFoundation.CGFloat, respond: DCloudUTSExtAPI.MCToast.MCToastRespond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil) -> (imageView: UIKit.UIImageView, label: UIKit.UILabel)
+}
+extension UIKit.UIResponder {
+  @_Concurrency.MainActor @preconcurrency public func mc_statusBar(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, font: UIKit.UIFont = MCToastConfig.shared.text.font, backgroundColor: UIKit.UIColor? = nil, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  public static func mc_statusBar(_ text: Swift.String, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, font: UIKit.UIFont = MCToastConfig.shared.text.font, backgroundColor: UIKit.UIColor? = nil, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension UIKit.UIResponder {
+  @_Concurrency.MainActor @preconcurrency public func mc_text(_ text: Swift.String, offset: CoreFoundation.CGFloat? = nil, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+extension DCloudUTSExtAPI.MCToast {
+  public static func mc_text(_ text: Swift.String, offset: CoreFoundation.CGFloat? = nil, duration: CoreFoundation.CGFloat = MCToastConfig.shared.duration, respond: DCloudUTSExtAPI.MCToast.MCToastRespond = MCToastConfig.shared.respond, callback: DCloudUTSExtAPI.MCToast.MCToastCallback? = nil)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MCToast : ObjectiveC.NSObject {
+  @objc deinit
+}
+extension DCloudUTSExtAPI.MCToast {
+  public typealias MCToastCallback = () -> Swift.Void
+  public enum MCToastRespond {
+    case `default`
+    case noRespond
+    case respond
+    case navBarRespond
+    public static func == (a: DCloudUTSExtAPI.MCToast.MCToastRespond, b: DCloudUTSExtAPI.MCToast.MCToastRespond) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension DCloudUTSExtAPI.MCToast {
+  public static func colorWithSystemStyle(_ darkColor: UIKit.UIColor, _ defaultColor: UIKit.UIColor) -> UIKit.UIColor
+}
+@objc @_inheritsConvenienceInitializers public class MCToastConfig : ObjectiveC.NSObject {
+  public static let shared: DCloudUTSExtAPI.MCToastConfig
+  public var respond: DCloudUTSExtAPI.MCToast.MCToastRespond
+  public var background: DCloudUTSExtAPI.MCToastConfig.Background
+  public var icon: DCloudUTSExtAPI.MCToastConfig.Icon
+  public var text: DCloudUTSExtAPI.MCToastConfig.Text
+  public var spacing: DCloudUTSExtAPI.MCToastConfig.MainAreaSpacing
+  public var duration: CoreFoundation.CGFloat
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension DCloudUTSExtAPI.MCToastConfig {
+  public struct Background {
+    public var color: UIKit.UIColor
+    public var size: CoreFoundation.CGSize
+  }
+  public struct Icon {
+    public var size: CoreFoundation.CGSize
+    public var successImage: UIKit.UIImage?
+    public var failureImage: UIKit.UIImage?
+    public var warningImage: UIKit.UIImage?
+  }
+  public struct Text {
+    public var textColor: UIKit.UIColor?
+    public var font: UIKit.UIFont
+    public var offset: (CoreFoundation.CGFloat)
+  }
+  public struct MainAreaSpacing {
+    public var margin: CoreFoundation.CGFloat
+    public var padding: CoreFoundation.CGFloat
+  }
+}
+public typealias Rpx2px = (_ number: Foundation.NSNumber) -> Foundation.NSNumber
+public var EPS: Foundation.NSNumber
+public var BASE_DEVICE_WIDTH: Foundation.NSNumber
+public var windowWidth: Foundation.NSNumber
+public var pixelRatio: Foundation.NSNumber
+public var rpx2px: (_ number: Foundation.NSNumber) -> Foundation.NSNumber
+public func rpx2pxByJs(_ number: Foundation.NSNumber) -> Foundation.NSNumber
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRpx2pxIndexSwift) @objcMembers public class UTSSDKModulesDCloudUniRpx2pxIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_rpx2pxByJs(_ number: Foundation.NSNumber) -> Foundation.NSNumber
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(UTSSDKModulesDCloudUniRichTextHTMLParserAttr) @objcMembers public class HTMLParserAttr : ObjectiveC.NSObject {
+  @objc public var name: Swift.String
+  @objc public var value: Swift.String
+  @objc public init(_ name: Swift.String, _ value: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRichTextHTMLParserHandler) @objcMembers public class HTMLParserHandler : ObjectiveC.NSObject {
+  @objc public var start: ((_ tag: Swift.String, _ attrs: Swift.Array<DCloudUTSExtAPI.HTMLParserAttr>, _ unary: Swift.Bool) -> Swift.Void)?
+  @objc public var end: ((_ tag: Swift.String) -> Swift.Void)?
+  @objc public var chars: ((_ text: Swift.String) -> Swift.Void)?
+  @objc public var comment: ((_ text: Swift.String) -> Swift.Void)?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func makeMap(_ str: Swift.String) -> Swift.Dictionary<Swift.String, Swift.Bool>
+public var startTag: DCloudUTSFoundation.UTSRegExp
+public var endTag: DCloudUTSFoundation.UTSRegExp
+public var empty: [Swift.String : Swift.Bool]
+public var block: [Swift.String : Swift.Bool]
+public var inline: [Swift.String : Swift.Bool]
+public var closeSelf: [Swift.String : Swift.Bool]
+public var fillAttrs: [Swift.String : Swift.Bool]
+public var special: [Swift.String : Swift.Bool]
+public var TAGS: [Swift.String : [Swift.String]]
+public func HTMLParser(_ reassignedHtml: Swift.String, _ handler: DCloudUTSExtAPI.HTMLParserHandler)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRichTextNode) @objcMembers public class Node : ObjectiveC.NSObject {
+  @objc public var name: Swift.String
+  @objc public var attrs: Swift.Dictionary<Swift.String, Any>?
+  @objc public var children: [DCloudUTSExtAPI.Node]?
+  @objc public var type: Swift.String?
+  @objc public var text: Swift.String?
+  @objc public var node: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func removeDOCTYPE(_ html: Swift.String) -> Swift.String
+public func parseAttrs(_ attrs: Swift.Array<DCloudUTSExtAPI.HTMLParserAttr>) -> Swift.Dictionary<Swift.String, Any>
+public func parseHtml(_ reassignedHtml: Swift.String) -> [DCloudUTSExtAPI.Node]
+public func attrsToString(_ attrs: Swift.Dictionary<Swift.String, Any>?) -> Swift.String
+public func nodesToHtml(_ nodes: [DCloudUTSExtAPI.Node]) -> Swift.String
+public func htmlParser(_ htmlStr: Swift.String) -> Swift.String
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRichTextUniRichTextItemClickEventDetail) @objcMembers public class UniRichTextItemClickEventDetail : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject {
+  @objc public var src: Swift.String?
+  @objc public var href: Swift.String?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@objc(UTSSDKModulesDCloudUniRichTextUniRichTextItemClickEvent) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniRichTextUniRichTextItemClickEvent) public class UniRichTextItemClickEvent : DCloudUniappRuntime.UniCustomEvent<DCloudUTSExtAPI.UniRichTextItemClickEventDetail> {
+  @objc public init(_ type: Swift.String, _ src: Swift.String?, _ href: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRichTextUniRichTextElement) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniRichTextUniRichTextElement) public class UniRichTextElement : DCloudUniappRuntime.UniViewElementImpl, DCloudUniappRuntime.UniCustomElement {
+  @objc public var _parsedAttributes: Swift.Dictionary<Swift.String, Swift.String>?
+  @objc public var _observedAttributes: [Swift.String]? {
+    @objc get
+  }
+  @objc public static var observedAttributes: Swift.Array<Swift.String> {
+    @objc get
+  }
+  @objc override public func __initCustomElement()
+  @objc public func connectedCallback()
+  @objc override public func insertBefore(_ child: any DCloudUniappRuntime.UniElement, _ anchor: (any DCloudUniappRuntime.UniElement)?) -> (any DCloudUniappRuntime.UniElement)?
+  @objc public func attributeChangedCallback(_ name: Swift.String, _ _oldValue: Swift.String, _ _newValue: Swift.String)
+  required public init(context: any DCloudUniappRuntime.IPageContext, data: any DCloudUniappRuntime.INodeData, level: DCloudUniappRuntime.UniCSSNodeLevel = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UniRichTextElementRegister) @objcMembers public class UniRichTextElementRegister : ObjectiveC.NSObject {
+  @objc public static func registerComponent()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRichTextUniRichTextItemClickEventByJs) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniRichTextUniRichTextItemClickEventByJs) public class UniRichTextItemClickEventByJs : DCloudUTSExtAPI.UniRichTextItemClickEvent {
+  @objc override public init(_ type: Swift.String, _ src: Swift.String?, _ href: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesDCloudUniRichTextUniRichTextElementByJs) @objcMembers @_objcRuntimeName(UTSSDKModulesDCloudUniRichTextUniRichTextElementByJs) public class UniRichTextElementByJs : DCloudUTSExtAPI.UniRichTextElement {
+  @objc public func __initCustomElementByJs()
+  @objc public func connectedCallbackByJs()
+  @objc public func insertBeforeByJs(_ child: any DCloudUniappRuntime.UniElement, _ anchor: (any DCloudUniappRuntime.UniElement)?) -> (any DCloudUniappRuntime.UniElement)?
+  @objc public func attributeChangedCallbackByJs(_ name: Swift.String, _ _oldValue: Swift.String, _ _newValue: Swift.String)
+  required public init(context: any DCloudUniappRuntime.IPageContext, data: any DCloudUniappRuntime.INodeData, level: DCloudUniappRuntime.UniCSSNodeLevel = super)
+  @objc deinit
+}
+extension DCloudUTSExtAPI.DCAlertViewControllerStyle : Swift.Equatable {}
+extension DCloudUTSExtAPI.DCAlertViewControllerStyle : Swift.Hashable {}
+extension DCloudUTSExtAPI.DCAlertViewControllerStyle : Swift.RawRepresentable {}
+extension DCloudUTSExtAPI.DCAlertActionStyle : Swift.Equatable {}
+extension DCloudUTSExtAPI.DCAlertActionStyle : Swift.Hashable {}
+extension DCloudUTSExtAPI.DCAlertActionStyle : Swift.RawRepresentable {}
+extension DCloudUTSExtAPI.DCAlertImagePosition : Swift.Equatable {}
+extension DCloudUTSExtAPI.DCAlertImagePosition : Swift.Hashable {}
+extension DCloudUTSExtAPI.DCAlertImagePosition : Swift.RawRepresentable {}
+extension DCloudUTSExtAPI.MCToast.MCToastType : Swift.Equatable {}
+extension DCloudUTSExtAPI.MCToast.MCToastType : Swift.Hashable {}
+extension DCloudUTSExtAPI.MCToast.MCToastRespond : Swift.Equatable {}
+extension DCloudUTSExtAPI.MCToast.MCToastRespond : Swift.Hashable {}
