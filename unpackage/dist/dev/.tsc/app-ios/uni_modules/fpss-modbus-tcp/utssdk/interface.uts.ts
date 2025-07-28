@@ -5,6 +5,5 @@
  * 声明连接Modbus服务器API类型
  * connect
  */
-export type connect = (ip : string, port : number) => void
-
-
+export type connectType = () => void
+export type connectType2 = (cb : (flag : Boolean) => void) => void

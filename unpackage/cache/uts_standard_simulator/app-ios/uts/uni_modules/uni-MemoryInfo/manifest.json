@@ -1,0 +1,26 @@
+{
+  "version": "1",
+  "env": {
+    "compilerVersion": "4.75"
+  },
+  "files": {
+    "utssdk/app-ios/index.uts": {
+      "md5": "8f2a239a82481f319a054d385bd333d5"
+    },
+    "utssdk/interface.uts": {
+      "md5": "dc456b53673c8bc3e2d476211f256382"
+    },
+    "utssdk/unierror.uts": {
+      "md5": "96c1bcfa94529b3cafbd16b4730334a0"
+    },
+    "package.json": {
+      "md5": "1d9f395938f12b862e5bd2e27f6c0f3f"
+    },
+    "utssdk/app-ios/MemoryInfoNative.swift": {
+      "md5": "6a4e318f25e82dafadd9326055d283e8"
+    },
+    "utssdk/app-ios/config.json": {
+      "md5": "22e597b95366f33dacc5887bff2d351b"
+    }
+  }
+}

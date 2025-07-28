@@ -5,6 +5,12 @@ import Foundation
 import Network
 
 /// 原生 Swift 语言实现封装类
+// public class FPSSModbusTcpNative {
+//     static func connectToModbusServer() {
+//     }
+//     static func myApi() {
+//     }
+// }
 public class FPSSModbusTcpNative {
     // MARK: - Modbus TCP属性
     static private var connection: NWConnection?
@@ -16,6 +22,8 @@ public class FPSSModbusTcpNative {
 
     // MARK: - Modbus TCP通讯方法
 
+    static func myApiNa() {
+    }
     /**
      * 连接Modbus TCP服务器
      * - Parameters:
@@ -31,6 +39,20 @@ public class FPSSModbusTcpNative {
         let connection = NWConnection(host: hostEndpoint, port: portEndpoint, using: .tcp)
 
         self.connection = connection
+
+        // 设置连接超时
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            if !FPSSModbusTcpNative.isConnected {
+                connection.cancel()
+                completion(
+                    false,
+                    NSError(
+                        domain: "ModbusTCP",
+                        code: -6,
+                        userInfo: [NSLocalizedDescriptionKey: "连接超时"]
+                    ))
+            }
+        }
 
         connection.stateUpdateHandler = {
             state in
@@ -66,48 +88,112 @@ public class FPSSModbusTcpNative {
     static func readHoldingRegisters(
         startAddress: UInt16, count: UInt16, completion: @escaping ([UInt16]?, Error?) -> Void
     ) {
-        guard isConnected, let connection = connection else {
-            completion(
-                nil,
-                NSError(
-                    domain: "ModbusTCP", code: -2, userInfo: [NSLocalizedDescriptionKey: "未建立连接"]))
-            return
+        var isCompleted = false
+        func safeCompletion(_ registers: [UInt16]?, _ error: Error?) {
+            guard !isCompleted else { return }
+            isCompleted = true
+            completion(registers, error)
         }
-
-        // 构建Modbus TCP请求 (功能码0x03 读取保持寄存器)
-        let requestData = createReadHoldingRegistersRequest(
-            startAddress: startAddress, count: count)
-
-        // 发送请求
-        connection.send(
-            content: requestData,
-            completion: .contentProcessed({
-                error in
-                if let error = error {
-                    completion(nil, error)
-                    return
+        modbusQueue.async {
+            guard Self.isConnected, let connection = Self.connection else {
+                DispatchQueue.main.async {
+                    safeCompletion(
+                        nil,
+                        NSError(
+                            domain: "ModbusTCP", code: -2,
+                            userInfo: [
+                                NSLocalizedDescriptionKey:
+                                    "[连接阶段] 未建立连接，请先调用connectToModbusServer建立连接"
+                            ]))
                 }
+                return
+            }
 
-                // 接收响应
-                self.receiveModbusResponse(connection: connection) { responseData, error in
+            // 添加请求超时处理
+            let timeoutTask = DispatchWorkItem {
+                DispatchQueue.main.async {
+                    safeCompletion(
+                        nil,
+                        NSError(
+                            domain: "ModbusTCP", code: -7,
+                            userInfo: [NSLocalizedDescriptionKey: "[超时阶段] 读取保持寄存器超时(10秒)"]))
+                }
+            }
+            Self.modbusQueue.asyncAfter(deadline: .now() + 10, execute: timeoutTask)
+
+            // 构建Modbus TCP请求 (功能码0x03 读取保持寄存器)
+            let requestData = Self.createReadHoldingRegistersRequest(
+                startAddress: startAddress, count: count)
+
+            // 发送请求
+            connection.send(
+                content: requestData,
+                completion: .contentProcessed({ error in
                     if let error = error {
-                        completion(nil, error)
+                        DispatchQueue.main.async {
+                            safeCompletion(
+                                nil,
+                                NSError(
+                                    domain: "ModbusTCP", code: -100,
+                                    userInfo: [
+                                        NSLocalizedDescriptionKey:
+                                            "[发送阶段] 发送保持寄存器读取请求失败: \(error.localizedDescription)"
+                                    ]))
+                        }
                         return
                     }
 
-                    // 解析响应
-                    if let responseData = responseData {
-                        let registers = self.parseHoldingRegistersResponse(data: responseData)
-                        completion(registers, nil)
-                    } else {
-                        completion(
-                            nil,
-                            NSError(
-                                domain: "ModbusTCP", code: -3,
-                                userInfo: [NSLocalizedDescriptionKey: "无效响应数据"]))
+                    // 接收响应
+                    Self.receiveModbusResponse(connection: connection) { responseData, error in
+                        timeoutTask.cancel()
+                        if let error = error {
+                            DispatchQueue.main.async {
+                                safeCompletion(
+                                    nil,
+                                    NSError(
+                                        domain: "ModbusTCP", code: -101,
+                                        userInfo: [
+                                            NSLocalizedDescriptionKey:
+                                                "[接收阶段] 接收保持寄存器响应失败: \(error.localizedDescription)"
+                                        ]))
+                            }
+                            return
+                        }
+
+                        // 解析响应
+                        guard let responseData = responseData else {
+                            DispatchQueue.main.async {
+                                safeCompletion(
+                                    nil,
+                                    NSError(
+                                        domain: "ModbusTCP", code: -3,
+                                        userInfo: [
+                                            NSLocalizedDescriptionKey: "[解析阶段] 无效响应数据: 响应数据为空"
+                                        ]))
+                            }
+                            return
+                        }
+
+                        guard let registers = Self.parseHoldingRegistersResponse(data: responseData)
+                        else {
+                            DispatchQueue.main.async {
+                                safeCompletion(
+                                    nil,
+                                    NSError(
+                                        domain: "ModbusTCP", code: -102,
+                                        userInfo: [
+                                            NSLocalizedDescriptionKey: "[解析阶段] 解析保持寄存器数据失败: 数据格式不正确"
+                                        ]))
+                            }
+                            return
+                        }
+
+                        DispatchQueue.main.async {
+                            safeCompletion(registers, nil)
+                        }
                     }
-                }
-            }))
+                }))
+        }
     }
 
     /**
@@ -178,7 +264,7 @@ public class FPSSModbusTcpNative {
         }
     }
 
-    private static func parseHoldingRegistersResponse(data: Data) -> [UInt16]? {
+    private static func parseHoldingRegistersResponseOld(data: Data) -> [UInt16]? {
         // 检查数据长度是否有效 (至少包含MBAP头部+功能码+字节计数)
         guard data.count >= 9 else {
             return nil
@@ -215,4 +301,33 @@ public class FPSSModbusTcpNative {
         return registers
     }
 
+    private static func parseHoldingRegistersResponse(data: Data) -> [UInt16]? {
+        // MBAP头部7字节，PDU至少2字节：功能码+字节计数
+        guard data.count >= 9 else { return nil }
+        let pduData = data.suffix(from: 7)
+        guard pduData.count >= 2 else { return nil }
+        guard pduData.first == 0x03 else { return nil }
+        let byteCount = Int(pduData[safe: 1] ?? 0)
+        guard byteCount > 0, (2 + byteCount) <= pduData.count else { return nil }
+        guard byteCount % 2 == 0 else { return nil }
+
+        var registers = [UInt16]()
+        for i in 0..<(byteCount / 2) {
+            let startIndex = 2 + i * 2
+            let endIndex = startIndex + 2
+            guard endIndex <= pduData.count else { break }
+            let registerBytes = pduData.subdata(in: startIndex..<endIndex)
+            guard registerBytes.count == 2 else { continue }
+            let registerValue = registerBytes.withUnsafeBytes { $0.load(as: UInt16.self).bigEndian }
+            registers.append(registerValue)
+        }
+        return registers
+    }
+
+}
+// Data安全下标扩展
+extension Data {
+    subscript(safe index: Int) -> UInt8? {
+        return indices.contains(index) ? self[index] : nil
+    }
 }

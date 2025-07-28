@@ -13,7 +13,11 @@
     "distribute": {
       "modules": {},
       "icons": {},
-      "splashScreens": {}
+      "splashScreens": {},
+      "privacyDescription": {
+        "NSLocalNetworkUsageDescription": "此应用需要访问局域网以连接 Modbus TCP 设备",
+        "NSNetworkUsageDescription": "此应用需要访问网络以连接 Modbus TCP 设备"
+      }
     }
   }
 }

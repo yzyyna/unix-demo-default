@@ -5,6 +5,7 @@ import { GetMemoryInfo, OnMemoryInfoChange, OffMemoryInfoChange } from '../inter
  * 获取内存信息
  */
 export const getMemoryInfo : GetMemoryInfo = function () : Array<number> {
+	console.log('get mmmmmmmmmm.....');
   // 将原生 swift 语言的 Int 数组转换成 uts 语言中的 number数组
   let numberArray = MemoryInfoNative.getMemInfoSwift().map((value : Int, index : number) : number => {
     // 将 Int 数据类型转换成 number

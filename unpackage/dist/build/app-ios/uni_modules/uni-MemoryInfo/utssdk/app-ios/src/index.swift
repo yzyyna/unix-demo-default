@@ -5,6 +5,7 @@ public typealias OnMemoryInfoChange = (_ callback: @escaping (_ res: Array<NSNum
 public typealias OffMemoryInfoChange = () -> Void
 public var getMemoryInfo: GetMemoryInfo = {
 () -> Array<NSNumber> in
+console.log("get mmmmmmmmmm.....")
 var numberArray = MemoryInfoNative.getMemInfoSwift().map({
 (_ value: Int, _ index: NSNumber) -> NSNumber in
 return NSNumber.from(value)

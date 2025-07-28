@@ -144,17 +144,40 @@
   const is_uni_modules = true;
   const pkg = /* @__PURE__ */ initUTSPackageName(name, is_uni_modules);
   const cls = /* @__PURE__ */ initUTSIndexClassName(name, is_uni_modules);
-  const connect = /* @__PURE__ */ initUTSProxyFunction(false, { moduleName, moduleType, errMsg, main: true, package: pkg, class: cls, name: "connectByJs", keepAlive: false, params: [{ "name": "ip", "type": "string" }, { "name": "port", "type": "number" }], return: "" });
+  const connect = /* @__PURE__ */ initUTSProxyFunction(false, { moduleName, moduleType, errMsg, main: true, package: pkg, class: cls, name: "connectByJs", keepAlive: false, params: [], return: "" });
+  const disConnect = /* @__PURE__ */ initUTSProxyFunction(false, { moduleName, moduleType, errMsg, main: true, package: pkg, class: cls, name: "disConnectByJs", keepAlive: false, params: [], return: "" });
+  const myApi = /* @__PURE__ */ initUTSProxyFunction(false, { moduleName, moduleType, errMsg, main: true, package: pkg, class: cls, name: "myApiByJs", keepAlive: false, params: [], return: "" });
   const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
     __name: "page-modbus",
     setup(__props) {
-      const connectClient = () => {
-        uni.__log__("log", "at pages/index/page-modbus.uvue:11", "dddd");
-        connect("192.168.110.88", 500);
+      const msg = vue.ref("");
+      const connectClient = (flag = null) => {
+        if (flag) {
+          uni.__log__("log", "at pages/index/page-modbus.uvue:15", "正在连接 Modbus 服务器...");
+          connect();
+        } else {
+          uni.__log__("log", "at pages/index/page-modbus.uvue:24", "正在连接 Modbus 服务器...");
+          disConnect();
+          msg.value = "断开";
+        }
+      };
+      const clickTestApi = () => {
+        myApi();
       };
       return (_ctx = null, _cache = null) => {
         return vue.openBlock(), vue.createElementBlock("view", new UTSJSONObject({ class: "container" }), [
-          vue.createElementVNode("button", new UTSJSONObject({ onClick: connectClient }), "连接Modbus服务器")
+          vue.createElementVNode("button", new UTSJSONObject({
+            onClick: _cache[0] || (_cache[0] = ($event = null) => {
+              return connectClient(true);
+            })
+          }), "连接Modbus服务器"),
+          vue.createElementVNode("button", new UTSJSONObject({
+            onClick: _cache[1] || (_cache[1] = ($event = null) => {
+              return connectClient(false);
+            })
+          }), "断开Modbus服务器"),
+          vue.createElementVNode("button", new UTSJSONObject({ onClick: clickTestApi }), "测试Api"),
+          vue.createElementVNode("view", null, vue.toDisplayString(vue.unref(msg)), 1)
         ]);
       };
     }

@@ -1,14 +1,29 @@
 <template>
-	<view class="container">
-		        <button @tap="connectClient">连接Modbus服务器</button>
-
+	<view>
+		<button @tap="connectClient(true)">连接Modbus服务器</button>
+		<button @tap="connectClient(false)">断开Modbus服务器</button>
+		<button @tap="clickTestApi">测试Api</button>
+		<view>{{msg}}</view>
 	</view>
 </template>
 
 <script setup>
-	import {connect} from '@/uni_modules/fpss-modbus-tcp'
-const connectClient = () => {
-	console.log('dddd');
-	connect('192.168.110.88',500)
-}
+	import { connect, myApi, disConnect } from '@/uni_modules/fpss-modbus-tcp'
+	const msg = ref('')
+	const connectClient = (flag) => {
+		if (flag) {
+			console.log('正在连接 Modbus 服务器...');
+
+			connect()
+
+		} else {
+			console.log('正在断开 Modbus 服务器...');
+			disConnect()
+			msg.value = '断开'
+		}
+	}
+	const clickTestApi = () => {
+		myApi()
+		msg.value = 'test api'
+	}
 </script>
