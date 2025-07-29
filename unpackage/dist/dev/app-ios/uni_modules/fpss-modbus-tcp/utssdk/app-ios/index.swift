@@ -1,32 +1,37 @@
 import DCloudUTSFoundation
 import DCloudUniappRuntime
+import Swift
 public typealias connectType = () -> Void
 public var connect: connectType = {
 () -> Void in
 FPSSModbusTcpNative.connectToModbusServer(host: "192.168.150.224", port: 502, completion: {
 (_ Bool: Bool, _ UTSError: Any) -> Void in
-console.log(Bool ? "链接成功" : "连接失败", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:10")
+console.log(Bool ? "链接成功" : "连接失败", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:11")
 if (Bool) {
-    console.log("开始读取", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:12")
-    FPSSModbusTcpNative.readHoldingRegisters(startAddress: 0, count: 5, completion: {
-    (_ UInt16: Any, _ UTSError: Any) -> Void in
-    console.log("读取结束", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:14")
-    console.log(UInt16, JSON.stringify(UTSError), " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:15")
+    var startA: UInt16 = 0x00
+    var countA: UInt16 = 5
+    console.log("""
+开始读取起始地址:\(startA)寄存器数量:\(countA)
+""", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:15")
+    FPSSModbusTcpNative.readHoldingRegisters(startAddress: startA, count: countA, completion: {
+    (_ UInt161: Any, _ UTSError: Any) -> Void in
+    console.log("读取结束", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:17")
+    console.log(UInt161, JSON.stringify(UTSError), " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:18")
     disConnect()
     })
 } else {
-    console.log(UTSError, " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:20")
+    console.log(UTSError, " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:23")
 }
 })
 }
 public var disConnect: connectType = {
 () -> Void in
-console.log("断开连接", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:26")
+console.log("断开连接", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:29")
 FPSSModbusTcpNative.disconnectModbusServer()
 }
 public var myApi: connectType = {
 () -> Void in
-console.log("%c ✨ myApi??? ✨ ", "color:#0ff;", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:30")
+console.log("%c ✨ myApi??? ✨ ", "color:#0ff;", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:33")
 FPSSModbusTcpNative.myApiNa()
 }
 public func connectByJs() -> Void {

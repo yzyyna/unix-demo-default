@@ -94,6 +94,24 @@ public class FPSSModbusTcpNative {
             isCompleted = true
             completion(registers, error)
         }
+        // 验证寄存器数量是否在有效范围内 (1-125个寄存器)
+        guard count > 0 && count <= 125 else {
+            DispatchQueue.main.async {
+                safeCompletion(
+                    nil,
+                    "[请求参数错误] 寄存器数量必须在1-125之间，当前请求：\(count)个")
+            }
+            return
+        }
+        // 验证起始地址是否合法 (0-65535)
+        guard startAddress <= 0xFFFF else {
+            DispatchQueue.main.async {
+                safeCompletion(
+                    nil,
+                    "[请求参数错误] 起始地址必须在0-65535之间，当前请求：\(startAddress)")
+            }
+            return
+        }
         modbusQueue.async {
             guard Self.isConnected, let connection = Self.connection else {
                 DispatchQueue.main.async {
@@ -153,12 +171,12 @@ public class FPSSModbusTcpNative {
                             return
                         }
 
-                        guard let registers = Self.parseHoldingRegistersResponse(data: responseData)
-                        else {
+                        let (registers, parseError) = Self.parseHoldingRegistersResponse(data: responseData)
+                        guard let registers = registers, parseError == nil else {
                             DispatchQueue.main.async {
                                 safeCompletion(
                                     nil,
-                                    "[解析阶段] 解析保持寄存器数据失败: 数据格式不正确")
+                                    "[解析阶段] 解析保持寄存器数据失败: \(parseError ?? "未知错误")")
                             }
                             return
                         }
@@ -276,27 +294,46 @@ public class FPSSModbusTcpNative {
         return registers
     }
 
-    private static func parseHoldingRegistersResponse(data: Data) -> [UInt16]? {
+    private static func parseHoldingRegistersResponse(data: Data) -> (registers: [UInt16]?, error: String?) {
         // MBAP头部7字节，PDU至少2字节：功能码+字节计数
-        guard data.count >= 9 else { return nil }
+        guard data.count >= 9 else { return (nil, "响应数据长度不足(至少9字节)") }
         let pduData = data.suffix(from: 7)
-        guard pduData.count >= 2 else { return nil }
-        guard pduData.first == 0x03 else { return nil }
+        guard pduData.count >= 2 else { return (nil, "PDU数据长度不足(至少2字节)") }
+
+        let functionCode = pduData.first ?? 0
+        guard functionCode == 0x03 else {
+            if functionCode == 0x83 {
+                let exceptionCode = Int(pduData[1])
+                return (nil, "从机返回错误响应: 功能码0x\(String(format: "%02X", functionCode)), 异常码\(exceptionCode)")
+            }
+            return (nil, "功能码不匹配(期望0x03, 实际0x\(String(format: "%02X", functionCode)))")
+        }
+		
         let byteCount = Int(pduData[safe: 1] ?? 0)
-        guard byteCount > 0, (2 + byteCount) <= pduData.count else { return nil }
-        guard byteCount % 2 == 0 else { return nil }
+        guard byteCount > 0 else { 
+            let hexData = pduData.map { String(format: "%02X", $0) }.joined(separator: " ")
+            return (nil, "从机返回无效字节计数(\(pduData))，PDU数据: [\(hexData)]。请检查从机配置或请求参数是否正确") 
+        }
+        guard (2 + byteCount) <= pduData.count else {
+            return (nil, "PDU数据长度不足(需要\(2+byteCount)字节, 实际\(pduData.count)字节)")
+        }
+        guard byteCount % 2 == 0 else { return (nil, "字节计数不是偶数(\(byteCount))") }
 
         var registers = [UInt16]()
         for i in 0..<(byteCount / 2) {
             let startIndex = 2 + i * 2
             let endIndex = startIndex + 2
-            guard endIndex <= pduData.count else { break }
+            guard endIndex <= pduData.count else {
+                return (nil, "寄存器数据索引越界(i=\(i), start=\(startIndex), end=\(endIndex))")
+            }
             let registerBytes = pduData.subdata(in: startIndex..<endIndex)
-            guard registerBytes.count == 2 else { continue }
+            guard registerBytes.count == 2 else {
+                return (nil, "寄存器\(i)数据长度不足2字节")
+            }
             let registerValue = registerBytes.withUnsafeBytes { $0.load(as: UInt16.self).bigEndian }
             registers.append(registerValue)
         }
-        return registers
+        return (registers, nil)
     }
 
 }

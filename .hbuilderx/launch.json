@@ -5,7 +5,7 @@
             "bundleId" : "com.fortrust.fpss",
             "certificateFile" : "/Users/fortrust/Documents/Projects/fortrust-app 上架 new/苹果开发者Apple developer证书相关/测试证书和密钥/development.p12",
             "certificateProfileFile" : "/Users/fortrust/Documents/Projects/fortrust-app 上架 new/苹果开发者Apple developer证书相关/测试证书和密钥/developProfileOnlyTestPhoneNew.mobileprovision",
-            "playground" : "custom",
+            "playground" : "standard",
             "runSignStatus" : 1,
             "type" : "uni-app:app-ios"
         }

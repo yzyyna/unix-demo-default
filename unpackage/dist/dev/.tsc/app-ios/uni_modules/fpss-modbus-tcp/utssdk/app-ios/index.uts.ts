@@ -1,4 +1,5 @@
 import { connectType, connectType2 } from '../interface.uts'
+import { UInt16 } from 'Swift';
 
 
 
@@ -7,26 +8,28 @@ import { connectType, connectType2 } from '../interface.uts'
 export const connect : connectType = function () {
 	FPSSModbusTcpNative.connectToModbusServer(host = '192.168.150.224', port = 502,
 		completion = (Bool : Boolean, Error : any) => {
-			__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:10',Bool ? '链接成功' : '连接失败');
+			__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:11',Bool ? '链接成功' : '连接失败');
 			if (Bool) {
-				__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:12','开始读取');
-				FPSSModbusTcpNative.readHoldingRegisters(startAddress = 0, count = 5, completion = (UInt16 : any, Error : any) => {
-					__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:14','读取结束');
-					__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:15',UInt16, JSON.stringify(Error));
+				const startA : UInt16 = 0x00
+				const countA : UInt16 = 5
+				__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:15',`开始读取起始地址:${startA}寄存器数量:${countA}`);
+				FPSSModbusTcpNative.readHoldingRegisters(startAddress = startA, count = countA, completion = (UInt16 : any, Error : any) => {
+					__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:17','读取结束');
+					__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:18',UInt16, JSON.stringify(Error));
 					// 断开连接
 					disConnect()
 				})
 			} else {
-				__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:20',Error);
+				__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:23',Error);
 			}
 		})
 }
 // 直接导出disConnect函数，移除中间变量disConnect0
 export const disConnect : connectType = function () {
-    __f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:26','断开连接');
-    FPSSModbusTcpNative.disconnectModbusServer()
+	__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:29','断开连接');
+	FPSSModbusTcpNative.disconnectModbusServer()
 }
 export const myApi : connectType = function () {
-	__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:30',"%c ✨ myApi??? ✨ ", "color:#0ff;");
+	__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:33',"%c ✨ myApi??? ✨ ", "color:#0ff;");
 	FPSSModbusTcpNative.myApiNa()
 }
