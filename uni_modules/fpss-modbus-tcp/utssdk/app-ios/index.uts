@@ -1,4 +1,4 @@
-import { connectType, connectType2 } from '../interface.uts'
+import { connectType, connectType2, WriteRegisterType, WriteRegisterCallback } from '../interface.uts'
 import { UInt16 } from 'Swift';
 
 
@@ -13,9 +13,9 @@ export const connect : connectType = function () {
 				const startA : UInt16 = 0x00
 				const countA : UInt16 = 5
 				console.log(`开始读取起始地址:${startA}寄存器数量:${countA}`);
-				FPSSModbusTcpNative.readHoldingRegisters(startAddress = startA, count = countA, completion = (UInt16 : any, Error : any) => {
+				FPSSModbusTcpNative.readHoldingRegisters(startAddress = startA, count = countA, completion = (registers : any, Error : any) => {
 					console.log('读取结束');
-					console.log(UInt16, JSON.stringify(Error));
+					console.log(registers, JSON.stringify(Error));
 					// 断开连接
 					disConnect()
 				})
@@ -32,4 +32,24 @@ export const disConnect : connectType = function () {
 export const myApi : connectType = function () {
 	console.log("%c ✨ myApi??? ✨ ", "color:#0ff;");
 	FPSSModbusTcpNative.myApiNa()
+}
+
+// 写入寄存器功能实现
+export const writeHoldingRegisters : WriteRegisterType = function (
+	_startAddress : number,
+	_values : number[],
+	callback : WriteRegisterCallback
+) {
+	// 将JavaScript的number类型转换为Swift的UInt16类型
+	const startAddr : UInt16 = 0x00
+	const regValues : UInt16[] = [0xFF, 0x10, 0x11]
+
+	// 调用原生Swift方法执行写入操作
+	FPSSModbusTcpNative.writeHoldingRegisters(
+		startAddress = startAddr,
+		values = regValues,
+		completion = (success : Boolean, error : string | null) => {
+			callback(success, error)
+		}
+	)
 }

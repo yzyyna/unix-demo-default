@@ -2,13 +2,14 @@
 	<view>
 		<button @tap="connectClient(true)">连接Modbus服务器</button>
 		<button @tap="connectClient(false)">断开Modbus服务器</button>
+		<button @tap="writeRegister">写入寄存器测试</button>
 		<button @tap="clickTestApi">测试Api</button>
 		<view>{{msg}}</view>
 	</view>
 </template>
 
 <script setup>
-	import { connect, myApi, disConnect } from '@/uni_modules/fpss-modbus-tcp'
+	import { connect, myApi, disConnect, writeHoldingRegisters } from '@/uni_modules/fpss-modbus-tcp'
 	const msg = ref('')
 	const connectClient = (flag) => {
 		if (flag) {
@@ -25,5 +26,18 @@
 	const clickTestApi = () => {
 		myApi()
 		msg.value = 'test api'
+	}
+	const writeRegister = () => {
+		msg.value = '写入寄存器测试'
+		// 调用写入寄存器功能
+		writeHoldingRegisters(0, [100, 200, 300], (success, error) => {
+			if (success) {
+				console.log('写入寄存器成功');
+				msg.value = '写入寄存器成功';
+			} else {
+				console.log('写入寄存器失败:', error);
+				msg.value = `写入失败: ${error}`;
+			}
+		});
 	}
 </script>

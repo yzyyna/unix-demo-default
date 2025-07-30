@@ -42,7 +42,7 @@
     });
   }
   function initRuntimeSocketService() {
-    const hosts = "127.0.0.1,192.168.110.88,169.254.65.164";
+    const hosts = "127.0.0.1,192.168.110.88";
     const port = "8090";
     const id = "app-ios_TxNb9g";
     let socketTask = null;
@@ -77,6 +77,7 @@
   const connect = /* @__PURE__ */ initUTSProxyFunction$1(false, { moduleName: moduleName$1, moduleType: moduleType$1, errMsg: errMsg$1, main: true, package: pkg$1, class: cls$1, name: "connectByJs", keepAlive: false, params: [], return: "" });
   const disConnect = /* @__PURE__ */ initUTSProxyFunction$1(false, { moduleName: moduleName$1, moduleType: moduleType$1, errMsg: errMsg$1, main: true, package: pkg$1, class: cls$1, name: "disConnectByJs", keepAlive: false, params: [], return: "" });
   const myApi = /* @__PURE__ */ initUTSProxyFunction$1(false, { moduleName: moduleName$1, moduleType: moduleType$1, errMsg: errMsg$1, main: true, package: pkg$1, class: cls$1, name: "myApiByJs", keepAlive: false, params: [], return: "" });
+  const writeHoldingRegisters = /* @__PURE__ */ initUTSProxyFunction$1(false, { moduleName: moduleName$1, moduleType: moduleType$1, errMsg: errMsg$1, main: true, package: pkg$1, class: cls$1, name: "writeHoldingRegistersByJs", keepAlive: false, params: [{ "name": "startAddress", "type": "number" }, { "name": "values", "type": "number" }, { "name": "callback", "type": "UTSCallback" }], return: "" });
   const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
     __name: "page-modbus",
     setup(__props, _a) {
@@ -85,10 +86,10 @@
       const msg = vue.ref("");
       const connectClient = (flag = null) => {
         if (flag) {
-          uni.__log__("log", "at pages/index/page-modbus.uvue:15", "正在连接 Modbus 服务器...");
+          uni.__log__("log", "at pages/index/page-modbus.uvue:16", "正在连接 Modbus 服务器...");
           connect();
         } else {
-          uni.__log__("log", "at pages/index/page-modbus.uvue:20", "正在断开 Modbus 服务器...");
+          uni.__log__("log", "at pages/index/page-modbus.uvue:21", "正在断开 Modbus 服务器...");
           disConnect();
           msg.value = "断开";
         }
@@ -97,7 +98,19 @@
         myApi();
         msg.value = "test api";
       };
-      const __returned__ = { msg, connectClient, clickTestApi };
+      const writeRegister = () => {
+        msg.value = "写入寄存器测试";
+        writeHoldingRegisters(0, [100, 200, 300], (success, error = null) => {
+          if (success) {
+            uni.__log__("log", "at pages/index/page-modbus.uvue:35", "写入寄存器成功");
+            msg.value = "写入寄存器成功";
+          } else {
+            uni.__log__("log", "at pages/index/page-modbus.uvue:38", "写入寄存器失败:", error);
+            msg.value = "写入失败: ".concat(error);
+          }
+        });
+      };
+      const __returned__ = { msg, connectClient, clickTestApi, writeRegister };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
@@ -117,6 +130,7 @@
       vue.createElementVNode("button", {
         onClick: _cache[1] || (_cache[1] = ($event) => $setup.connectClient(false))
       }, "断开Modbus服务器"),
+      vue.createElementVNode("button", { onClick: $setup.writeRegister }, "写入寄存器测试"),
       vue.createElementVNode("button", { onClick: $setup.clickTestApi }, "测试Api"),
       vue.createElementVNode(
         "view",
