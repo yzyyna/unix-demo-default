@@ -32,7 +32,7 @@ object MemoryInfoNative {
     val totalMem = memoryInfo.totalMem / 1024 / 1024
     // availMem 可用内存，单位MB
     // totalMem 设备内存，单位MB
-    // console.log(availMem,totalMem)
+    // 
     return arrayOf(availMem,totalMem)
   }
 
@@ -54,7 +54,7 @@ object MemoryInfoNative {
       val totalMem = memoryInfo.totalMem / 1024 / 1024
       // availMem 可用内存，单位MB
       // totalMem 设备内存，单位MB
-      // console.log(availMem,totalMem)
+      // 
       callback(arrayOf(availMem,totalMem))
     },1000,2000)
   }

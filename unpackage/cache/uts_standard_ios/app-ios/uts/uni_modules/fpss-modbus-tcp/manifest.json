@@ -8,7 +8,7 @@
       "md5": "58036fd244f9d228707a13c37698a657"
     },
     "utssdk/app-ios/index.uts": {
-      "md5": "9dbdbbd1f0a00ef5dd85e582850b03b0"
+      "md5": "313fb4906b22e2775e8953a3dd379d4d"
     },
     "utssdk/interface.uts": {
       "md5": "5999fb6403b81cd7bbdc7fca25761f88"
@@ -20,7 +20,7 @@
       "md5": "121b8f2804775b9f59ddcfbf0aeaf404"
     },
     "utssdk/app-ios/FPSSModbusTcpNative.swift": {
-      "md5": "db7b80202abfe4b900c03d62bad1d56c"
+      "md5": "dbdf133665e65b5e035734357aa2062a"
     },
     "utssdk/app-ios/config.json": {
       "md5": "d5a26b0983f28259517b7717d0684882"

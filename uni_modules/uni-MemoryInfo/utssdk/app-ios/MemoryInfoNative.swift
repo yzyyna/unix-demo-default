@@ -17,7 +17,7 @@ public class MemoryInfoNative {
   static func getMemInfoSwift() -> [Int] {
     let freeMem = MemoryInfoNative.getFreeMemory()
     let totalMem = MemoryInfoNative.getTotalMemory()
-    // console.log(freeMem, totalMem)
+    // 
     return [freeMem, totalMem]
   }
 
@@ -34,7 +34,7 @@ public class MemoryInfoNative {
     lastTaskId = setInterval({ 
       let freeMem = MemoryInfoNative.getFreeMemory()
       let totalMem = MemoryInfoNative.getTotalMemory()
-      // console.log(freeMem, totalMem)
+      // 
       callback([freeMem, totalMem])
     }, 2000).toInt()
   }

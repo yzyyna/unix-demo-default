@@ -13,12 +13,12 @@
 	const msg = ref('')
 	const connectClient = (flag) => {
 		if (flag) {
-			console.log('正在连接 Modbus 服务器...');
+			
 
 			connect()
 
 		} else {
-			console.log('正在断开 Modbus 服务器...');
+			
 			disConnect()
 			msg.value = '断开'
 		}
@@ -32,12 +32,15 @@
 		// 调用写入寄存器功能
 		writeHoldingRegisters(0, [100, 200, 300], (success, error) => {
 			if (success) {
-				console.log('写入寄存器成功');
+				
 				msg.value = '写入寄存器成功';
 			} else {
-				console.log('写入寄存器失败:', error);
+				
 				msg.value = `写入失败: ${error}`;
 			}
 		});
 	}
+	onUnmounted(()=>{
+		disConnect()
+	})
 </script>

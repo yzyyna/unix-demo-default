@@ -4,13 +4,13 @@ import DCloudUTSFoundation
 import Foundation
 import Network
 
+// Data安全下标扩展
+extension Data {
+    subscript(safe index: Int) -> UInt8? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
 /// 原生 Swift 语言实现封装类
-// public class FPSSModbusTcpNative {
-//     static func connectToModbusServer() {
-//     }
-//     static func myApi() {
-//     }
-// }
 public class FPSSModbusTcpNative {
     // MARK: - Modbus TCP属性
     static private var connection: NWConnection?
@@ -171,7 +171,8 @@ public class FPSSModbusTcpNative {
                             return
                         }
 
-                        let (registers, parseError) = Self.parseHoldingRegistersResponse(data: responseData)
+                        let (registers, parseError) = Self.parseHoldingRegistersResponse(
+                            data: responseData)
                         guard let registers = registers, parseError == nil else {
                             DispatchQueue.main.async {
                                 safeCompletion(
@@ -205,7 +206,7 @@ public class FPSSModbusTcpNative {
             isCompleted = true
             completion(success, error)
         }
-        
+
         // 参数验证
         guard !values.isEmpty, values.count <= 123 else {
             DispatchQueue.main.async {
@@ -213,14 +214,14 @@ public class FPSSModbusTcpNative {
             }
             return
         }
-        
+
         guard startAddress <= 0xFFFF else {
             DispatchQueue.main.async {
                 safeCompletion(false, "[请求参数错误] 起始地址必须在0-65535之间，当前请求：\(startAddress)")
             }
             return
         }
-        
+
         modbusQueue.async {
             guard Self.isConnected, let connection = Self.connection else {
                 DispatchQueue.main.async {
@@ -228,7 +229,7 @@ public class FPSSModbusTcpNative {
                 }
                 return
             }
-            
+
             // 添加请求超时处理
             let timeoutTask = DispatchWorkItem {
                 DispatchQueue.main.async {
@@ -236,38 +237,42 @@ public class FPSSModbusTcpNative {
                 }
             }
             Self.modbusQueue.asyncAfter(deadline: .now() + 10, execute: timeoutTask)
-            
+
             // 构建Modbus TCP请求 (功能码0x10 写入多个保持寄存器)
-            guard let requestData = Self.createWriteHoldingRegistersRequest(
-                startAddress: startAddress, values: values
-            ) else {
+            guard
+                let requestData = Self.createWriteHoldingRegistersRequest(
+                    startAddress: startAddress, values: values
+                )
+            else {
                 DispatchQueue.main.async {
                     safeCompletion(false, "[请求构建] 无法构建写入请求数据")
                 }
                 return
             }
-            
+
             // 发送请求
             connection.send(
                 content: requestData,
                 completion: .contentProcessed({ error in
                     if let error = error {
                         DispatchQueue.main.async {
-                            safeCompletion(false, "[发送阶段] 发送保持寄存器写入请求失败: \(error.localizedDescription)")
+                            safeCompletion(
+                                false, "[发送阶段] 发送保持寄存器写入请求失败: \(error.localizedDescription)")
                         }
                         return
                     }
-                    
+
                     // 接收响应
                     Self.receiveModbusResponse(connection: connection) { responseData, error in
                         timeoutTask.cancel()
                         if let error = error {
                             DispatchQueue.main.async {
-                                safeCompletion(false, "[接收阶段] 接收保持寄存器写入响应失败: \(error.localizedDescription)")
+                                safeCompletion(
+                                    false, "[接收阶段] 接收保持寄存器写入响应失败: \(error.localizedDescription)")
                             }
                             return
                         }
-                        
+
                         // 解析响应
                         guard let responseData = responseData else {
                             DispatchQueue.main.async {
@@ -275,15 +280,17 @@ public class FPSSModbusTcpNative {
                             }
                             return
                         }
-                        
+
                         let (success, parseError) = Self.parseWriteHoldingRegistersResponse(
-                            data: responseData, expectedStartAddress: startAddress, expectedCount: UInt16(values.count)
+                            data: responseData, expectedStartAddress: startAddress,
+                            expectedCount: UInt16(values.count)
                         )
                         DispatchQueue.main.async {
                             if success {
                                 safeCompletion(true, nil)
                             } else {
-                                safeCompletion(false, "[解析阶段] 解析保持寄存器写入响应失败: \(parseError ?? "未知错误")")
+                                safeCompletion(
+                                    false, "[解析阶段] 解析保持寄存器写入响应失败: \(parseError ?? "未知错误")")
                             }
                         }
                     }
@@ -301,7 +308,9 @@ public class FPSSModbusTcpNative {
     }
 
     // MARK: - Modbus协议工具方法
-    private static func createWriteHoldingRegistersRequest(startAddress: UInt16, values: [UInt16]) -> Data? {
+    private static func createWriteHoldingRegistersRequest(startAddress: UInt16, values: [UInt16])
+        -> Data?
+    {
         var data = Data()
 
         // MBAP头部 (7字节)
@@ -317,15 +326,21 @@ public class FPSSModbusTcpNative {
 
         // PDU (协议数据单元)
         data.append(UInt8(0x10))  // 功能码: 写入多个保持寄存器
-        let startAddressData = withUnsafeBytes(of: startAddress.bigEndian) { (body: UnsafeRawBufferPointer) -> Data in Data(body) }
+        let startAddressData = withUnsafeBytes(of: startAddress.bigEndian) {
+            (body: UnsafeRawBufferPointer) -> Data in Data(body)
+        }
         data.append(startAddressData)  // 起始地址
-        let countData = withUnsafeBytes(of: UInt16(values.count).bigEndian) { (body: UnsafeRawBufferPointer) -> Data in Data(body) }
+        let countData = withUnsafeBytes(of: UInt16(values.count).bigEndian) {
+            (body: UnsafeRawBufferPointer) -> Data in Data(body)
+        }
         data.append(countData)  // 寄存器数量
         data.append(UInt8(byteCount))  // 字节计数
 
         // 写入数据
         for value in values {
-            let valueData = withUnsafeBytes(of: value.bigEndian) { (body: UnsafeRawBufferPointer) -> Data in Data(body) }
+            let valueData = withUnsafeBytes(of: value.bigEndian) {
+                (body: UnsafeRawBufferPointer) -> Data in Data(body)
+            }
             data.append(valueData)
         }
 
@@ -354,9 +369,13 @@ public class FPSSModbusTcpNative {
 
         // PDU (协议数据单元)
         data.append(UInt8(0x03))  // 功能码: 读取保持寄存器
-        let startAddressData = withUnsafeBytes(of: startAddress.bigEndian) { (body: UnsafeRawBufferPointer) -> Data in Data(body) }
+        let startAddressData = withUnsafeBytes(of: startAddress.bigEndian) {
+            (body: UnsafeRawBufferPointer) -> Data in Data(body)
+        }
         data.append(startAddressData)  // 起始地址
-        let countData = withUnsafeBytes(of: count.bigEndian) { (body: UnsafeRawBufferPointer) -> Data in Data(body) }
+        let countData = withUnsafeBytes(of: count.bigEndian) {
+            (body: UnsafeRawBufferPointer) -> Data in Data(body)
+        }
         data.append(countData)  // 寄存器数量
 
         // 更新事务ID
@@ -396,50 +415,11 @@ public class FPSSModbusTcpNative {
         }
     }
 
-    private static func parseHoldingRegistersResponseOld(data: Data) -> [UInt16]? {
-        // 检查数据长度是否有效 (至少包含MBAP头部+功能码+字节计数)
-        guard data.count >= 9 else {
-            return nil
-        }
-
-        // 解析MBAP头部后的数据
-        let pduData = data.suffix(from: 7)
-
-        // 检查功能码和错误状态
-        guard pduData[0] == 0x03 else {
-            return nil
-        }
-
-        // 获取字节计数
-        let byteCount = Int(pduData[1])
-        guard byteCount % 2 == 0 else {
-            return nil
-        }
-
-        // 解析寄存器值
-        var registers = [UInt16]()
-        for i in 0..<byteCount / 2 {
-            let startIndex = 2 + i * 2
-            let endIndex = startIndex + 2
-            guard endIndex <= pduData.count else {
-                break
-            }
-            let registerBytes = pduData.subdata(in: startIndex..<endIndex)
-            let registerValue = registerBytes.withUnsafeBytes { (body: UnsafeRawBufferPointer) -> UInt16 in
-                return UInt16(bigEndian: body.load(as: UInt16.self))
-            }
-            registers.append(registerValue)
-        }
-
-        return registers
-    }
-
     private static func parseWriteHoldingRegistersResponse(
         data: Data, expectedStartAddress: UInt16, expectedCount: UInt16
-    ) -> (success: Bool, error: String?)
-    {
-        // MBAP头部7字节，PDU至少6字节：功能码(1) + 起始地址(2) + 数量(2) + CRC(2)
-        guard data.count >= 13 else { return (false, "响应数据长度不足(至少13字节)") }
+    ) -> (success: Bool, error: String?) {
+        // MBAP头部7字节，PDU至少6字���������：功能码(1) + 起始地址(2) + 数量(2) + CRC(2)
+        guard data.count >= 13 else { return (false, "响应数据长度不�������(至少13字节)") }
         let pduData = data.suffix(from: 7)
         guard pduData.count >= 6 else { return (false, "PDU数据长度不足(至少6字节)") }
 
@@ -448,23 +428,34 @@ public class FPSSModbusTcpNative {
             if functionCode == 0x90 {
                 let exceptionCode = Int(pduData[1])
                 let hexData = pduData.map { String(format: "%02X", $0) }.joined(separator: ",")
-                return (false, "从机返回错误响应: 功能码0x\(String(format: "%02X", functionCode)), 异常码\(exceptionCode)\nPDU数据: [\(hexData)]")
+                return (
+                    false,
+                    "从机返回错误响应: 功能码0x\(String(format: "%02X", functionCode)), 异常码\(exceptionCode)\nPDU数据: [\(hexData)]"
+                )
             }
-            return (false, "功能码不匹配(期望0x10, 实际0x\(String(format: "%02X", functionCode)))\nPDU数据: [\(pduData.map { String(format: "%02X", $0) }.joined(separator: ":"))]")
+            return (
+                false,
+                "功能码不匹配(期望0x10, 实际0x\(String(format: "%02X", functionCode)))\nPDU数据: [\(pduData.map { String(format: "%02X", $0) }.joined(separator: ":"))]"
+            )
         }
 
         // 解析起始地址
         let responseStartAddressData = pduData.subdata(in: 1..<3)
-        let responseStartAddress = responseStartAddressData.withUnsafeBytes { (body: UnsafeRawBufferPointer) -> UInt16 in
+        let responseStartAddress = responseStartAddressData.withUnsafeBytes {
+            (body: UnsafeRawBufferPointer) -> UInt16 in
             return UInt16(bigEndian: body.load(as: UInt16.self))
         }
         guard responseStartAddress == expectedStartAddress else {
-            return (false, "起始地址不匹配(期望0x\(String(format: "%04X", expectedStartAddress)), 实际0x\(String(format: "%04X", responseStartAddress)))")
+            return (
+                false,
+                "起始地址不匹配(期望0x\(String(format: "%04X", expectedStartAddress)), 实际0x\(String(format: "%04X", responseStartAddress)))"
+            )
         }
 
         // 解析写入数量
         let responseCountData = pduData.subdata(in: 3..<5)
-        let responseCount = responseCountData.withUnsafeBytes { (body: UnsafeRawBufferPointer) -> UInt16 in
+        let responseCount = responseCountData.withUnsafeBytes {
+            (body: UnsafeRawBufferPointer) -> UInt16 in
             return UInt16(bigEndian: body.load(as: UInt16.self))
         }
         guard responseCount == expectedCount else {
@@ -474,7 +465,9 @@ public class FPSSModbusTcpNative {
         return (true, nil)
     }
 
-    private static func parseHoldingRegistersResponse(data: Data) -> (registers: [UInt16]?, error: String?) {
+    private static func parseHoldingRegistersResponse(data: Data) -> (
+        registers: [UInt16]?, error: String?
+    ) {
         // MBAP头部7字节，PDU至少2字节：功能码+字节计数
         guard data.count >= 9 else { return (nil, "响应数据长度不足(至少9字节)") }
         let pduData = data.suffix(from: 7)
@@ -484,45 +477,78 @@ public class FPSSModbusTcpNative {
         guard functionCode == 0x03 else {
             if functionCode == 0x83 {
                 let exceptionCode = Int(pduData[1])
-                return (nil, "从机返回错误响应: 功能码0x\(String(format: "%02X", functionCode)), 异常码\(exceptionCode)")
+                return (
+                    nil,
+                    "从机返回错误响应: 功能码0x\(String(format: "%02X", functionCode)), 异常码\(exceptionCode)"
+                )
             }
             return (nil, "功能码不匹配(期望0x03, 实际0x\(String(format: "%02X", functionCode)))")
         }
-	
-        // let byteCount = 2
-        let byteCount = Int(pduData[safe: 1] ?? 0)
-        guard byteCount > 0 else { 
-            let hexData = pduData.map { String(format: "%02X", $0) }.joined(separator: " ")
-            return (nil, "从机返回无效字节计数(\(pduData))，PDU数据: [\(hexData)]。请检查从机配置或请求参数是否正确") 
-        }
-        guard (2 + byteCount) <= pduData.count else {
-            return (nil, "PDU数据长度不足(需要\(2+byteCount)字节, 实际\(pduData.count)字节)")
-        }
-        guard byteCount % 2 == 0 else { return (nil, "字节计数不是偶数(\(byteCount))") }
+        // 调试pduData和safe下标访问
+        
+        
+
+        // 检查indices范围
+        
+        
+        
+
+        // 测试first属性和safe下标
+        let testV1 = pduData.first
+        let testV2 = pduData[safe: 7]
+        
+        
+
+        // 测试直接访问原始索引
+        let startIndex = pduData.startIndex
+        let testV5 = pduData[safe: startIndex]
+        
+        
+
+        
+
+        // 功能码是下标7，byteCount应该是下标8
+        let byteCount = Int(pduData[safe: 8] ?? 0)
+        
+        
 
         var registers = [UInt16]()
-        for i in 0..<(byteCount / 2) {
-            let startIndex = 2 + i * 2
-            let endIndex = startIndex + 2
-            guard endIndex <= pduData.count else {
+        // 确保byteCount是偶数
+        guard byteCount % 2 == 0 else {
+            return (nil, "byteCount必须为偶数，当前值: \(byteCount)")
+        }
+
+        // 计算可以解析的寄存器数量
+        let registerCount = byteCount / 2
+
+        // 从pduData的第3个字节开始解析（索引为startIndex + 3）
+        // 因为下标7是功能码，下标8是byteCount
+        let dataStartIndex = startIndex + 2
+
+        // 在 Swift 中，Data.endIndex 是 Data 类型的一个属性，表示数据集合的结束索引。
+        // 它指向集合中最后一个元素之后的位置，而非最后一个元素本身。
+        // 理解 endIndex 的正确含义和用法对于安全地操作 Data 至关重要。
+        for i in 0..<registerCount {
+            // 计算当前寄存器的起始索引
+            let startIndex = dataStartIndex + i * 2
+            let endIndex = startIndex + 1
+
+            // 检查索引是否在有效范围内
+            guard endIndex <= pduData.endIndex else {
                 return (nil, "寄存器数据索引越界(i=\(i), start=\(startIndex), end=\(endIndex))")
             }
-            let registerBytes = pduData.subdata(in: startIndex..<endIndex)
-            guard registerBytes.count == 2 else {
-                return (nil, "寄存器\(i)数据长度不足2字节")
+
+            // 安全地获取两个字节
+            guard let byte1 = pduData[safe: startIndex], let byte2 = pduData[safe: endIndex] else {
+                return (nil, "无法获取寄存器\(i)的字节数据")
             }
-            let registerValue = registerBytes.withUnsafeBytes { (body: UnsafeRawBufferPointer) -> UInt16 in
-                return UInt16(bigEndian: body.load(as: UInt16.self))
-            }
+
+            
+            // 组合两个字节为16位无符号整数（大端序）
+            let registerValue = UInt16(byte1) << 8 | UInt16(byte2)
             registers.append(registerValue)
         }
         return (registers, nil)
     }
 
-}
-// Data安全下标扩展
-extension Data {
-    subscript(safe index: Int) -> UInt8? {
-        return indices.contains(index) ? self[index] : nil
-    }
 }

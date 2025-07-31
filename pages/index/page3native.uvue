@@ -25,18 +25,18 @@ export default {
     utsGetMemory(){
       let array = getMemoryInfo()
       this.memInfo = "可用内存:" + array[0] + "MB \n整体内存:" + array[1] + "MB"
-      console.log('getMemoryInfo', array)
+      
     },
     utsStartMemoryWatch(){
       onMemoryInfoChange((res: Array<number>) => {
         this.memInfo = "可用内存:" + res[0] + "MB \n整体内存:" + res[1] + "MB"
-        console.log('onMemoryInfoChange', res)
+        
       })
     },
     utsStopMemoryWatch(){
       offMemoryInfoChange()
       this.memInfo = "已停止监听"
-      console.log('offMemoryInfoChange')
+      
     },
   }
 }

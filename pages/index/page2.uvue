@@ -13,7 +13,7 @@
 			}
 		},
 		onReady() {
-			console.log(getApp(), getCurrentPages())
+			
 		},
 		methods: {
 

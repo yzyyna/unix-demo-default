@@ -20,7 +20,7 @@
 		onLoad() {
 		},
 		onReady() {
-			// console.log(getApp(), getCurrentPages())
+			// 
 		},
 		methods: {
 			onClick(path) {
