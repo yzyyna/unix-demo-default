@@ -8,28 +8,28 @@ import { UInt16 } from 'Swift';
 export const connect : connectType = function () {
 	FPSSModbusTcpNative.connectToModbusServer(host = '192.168.150.224', port = 502,
 		completion = (Bool : Boolean, Error : any) => {
-			
+			__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:11','uts:连接成功')
 			if (Bool) {
 				const startA : UInt16 = 0x00
-				const countA : UInt16 = 5
-				
+				const countA : UInt16 = 20
+
 				FPSSModbusTcpNative.readHoldingRegisters(startAddress = startA, count = countA, completion = (registers : any, Error : any) => {
-					
-					
-			
+					__f__('log','at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:17','uts:读取成功', registers, Error);
+
+
 				})
 			} else {
-				
+
 			}
 		})
 }
 // 直接导出disConnect函数，移除中间变量disConnect0
 export const disConnect : connectType = function () {
-	
+
 	FPSSModbusTcpNative.disconnectModbusServer()
 }
 export const myApi : connectType = function () {
-	
+
 	FPSSModbusTcpNative.myApiNa()
 }
 

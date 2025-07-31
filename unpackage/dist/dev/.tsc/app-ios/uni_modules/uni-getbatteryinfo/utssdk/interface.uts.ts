@@ -74,7 +74,7 @@ interface Uni {
    * ```typescript
    * uni.getBatteryInfo({
    *		success(res) {
-   *			__f__('log','at uni_modules/uni-getbatteryinfo/utssdk/interface.uts:77',res);
+   *			
    *		}
    * })
    * ```

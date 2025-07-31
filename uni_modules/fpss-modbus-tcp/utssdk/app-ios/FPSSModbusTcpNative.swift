@@ -23,6 +23,7 @@ public class FPSSModbusTcpNative {
     // MARK: - Modbus TCP通讯方法
 
     static func myApiNa() {
+        console.log("swift:my api")
     }
     /**
      * 连接Modbus TCP服务器
@@ -217,7 +218,7 @@ public class FPSSModbusTcpNative {
 
         guard startAddress <= 0xFFFF else {
             DispatchQueue.main.async {
-                safeCompletion(false, "[请求参数错误] 起始地址必须在0-65535之间，当前请求：\(startAddress)")
+                safeCompletion(false, "[请求参数错误] 起始地址必须在0-65535之��，当前请求：\(startAddress)")
             }
             return
         }
@@ -419,7 +420,7 @@ public class FPSSModbusTcpNative {
         data: Data, expectedStartAddress: UInt16, expectedCount: UInt16
     ) -> (success: Bool, error: String?) {
         // MBAP头部7字节，PDU至少6字���������：功能码(1) + 起始地址(2) + 数量(2) + CRC(2)
-        guard data.count >= 13 else { return (false, "响应数据长度不�������(至少13字节)") }
+        guard data.count >= 13 else { return (false, "响应数据长度不��������(至少13字节)") }
         let pduData = data.suffix(from: 7)
         guard pduData.count >= 6 else { return (false, "PDU数据长度不足(至少6字节)") }
 
@@ -468,11 +469,12 @@ public class FPSSModbusTcpNative {
     private static func parseHoldingRegistersResponse(data: Data) -> (
         registers: [UInt16]?, error: String?
     ) {
-        // MBAP头部7字节，PDU至少2字节：功能码+字节计数
+
+        MBAP头部7字节，PDU至少2字节：功能码 + 字节计数
         guard data.count >= 9 else { return (nil, "响应数据长度不足(至少9字节)") }
         let pduData = data.suffix(from: 7)
         guard pduData.count >= 2 else { return (nil, "PDU数据长度不足(至少2字节)") }
-
+        console.log("pdu data", pduData)
         let functionCode = pduData.first ?? 0
         guard functionCode == 0x03 else {
             if functionCode == 0x83 {
@@ -484,50 +486,24 @@ public class FPSSModbusTcpNative {
             }
             return (nil, "功能码不匹配(期望0x03, 实际0x\(String(format: "%02X", functionCode)))")
         }
-        // 调试pduData和safe下标访问
-        
-        
-
-        // 检查indices范围
-        
-        
-        
-
-        // 测试first属性和safe下标
-        let testV1 = pduData.first
-        let testV2 = pduData[safe: 7]
-        
-        
-
-        // 测试直接访问原始索引
-        let startIndex = pduData.startIndex
-        let testV5 = pduData[safe: startIndex]
-        
-        
-
-        
-
         // 功能码是下标7，byteCount应该是下标8
         let byteCount = Int(pduData[safe: 8] ?? 0)
-        
-        
-
-        var registers = [UInt16]()
         // 确保byteCount是偶数
         guard byteCount % 2 == 0 else {
             return (nil, "byteCount必须为偶数，当前值: \(byteCount)")
         }
-
+        let startIndex = pduData.startIndex
+        var registers = [UInt16]()
         // 计算可以解析的寄存器数量
         let registerCount = byteCount / 2
-
-        // 从pduData的第3个字节开始解析（索引为startIndex + 3）
+        // 从pduData的第3个字节开始解析（索引为startIndex + 2）
         // 因为下标7是功能码，下标8是byteCount
         let dataStartIndex = startIndex + 2
-
-        // 在 Swift 中，Data.endIndex 是 Data 类型的一个属性，表示数据集合的结束索引。
-        // 它指向集合中最后一个元素之后的位置，而非最后一个元素本身。
-        // 理解 endIndex 的正确含义和用法对于安全地操作 Data 至关重要。
+        /// S
+        ///   在 Swift 中，Data.endIndex 是 Data 类型的一个属性，表示数据集合的结束索引。
+        ///   它指向集合中最后一个元素之后的位置，而非最后一个元素本身。
+        ///   理解 endIndex 的正确含义和用法对于安全地操作 Data 至关重要。
+        /// E
         for i in 0..<registerCount {
             // 计算当前寄存器的起始索引
             let startIndex = dataStartIndex + i * 2
@@ -543,7 +519,6 @@ public class FPSSModbusTcpNative {
                 return (nil, "无法获取寄存器\(i)的字节数据")
             }
 
-            
             // 组合两个字节为16位无符号整数（大端序）
             let registerValue = UInt16(byte1) << 8 | UInt16(byte2)
             registers.append(registerValue)
