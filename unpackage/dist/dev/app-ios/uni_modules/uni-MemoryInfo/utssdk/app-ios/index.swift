@@ -5,7 +5,6 @@ public typealias OnMemoryInfoChange = (_ callback: @escaping (_ res: Array<NSNum
 public typealias OffMemoryInfoChange = () -> Void
 public var getMemoryInfo: GetMemoryInfo = {
 () -> Array<NSNumber> in
-console.log("get mmmmmmmmmm.....", " at uni_modules/uni-MemoryInfo/utssdk/app-ios/index.uts:8")
 var numberArray = MemoryInfoNative.getMemInfoSwift().map({
 (_ value: Int, _ index: NSNumber) -> NSNumber in
 return NSNumber.from(value)
@@ -13,7 +12,7 @@ return NSNumber.from(value)
 return numberArray
 }
 public var onMemoryInfoChange: OnMemoryInfoChange = {
-(_ callback:@escaping (_ res: Array<NSNumber>) -> Void) -> Void in
+(_ callback: @escaping (_ res: Array<NSNumber>) -> Void) -> Void in
 MemoryInfoNative.onMemoryInfoChangeSwift({
 (_ res: Array<Int>) -> Void in
 var numberArray = res.map({

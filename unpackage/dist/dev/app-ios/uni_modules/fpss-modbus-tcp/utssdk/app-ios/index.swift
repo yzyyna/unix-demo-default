@@ -26,7 +26,7 @@ public var myApi: connectType = {
 FPSSModbusTcpNative.myApiNa()
 }
 public var writeHoldingRegisters: WriteRegisterType = {
-(_ _startAddress: NSNumber, _ _values: [NSNumber], _ callback:@escaping WriteRegisterCallback) -> Void in
+(_ _startAddress: NSNumber, _ _values: [NSNumber], _ callback: @escaping WriteRegisterCallback) -> Void in
 var startAddr: UInt16 = 0x00
 var regValues = [
     0xFF,

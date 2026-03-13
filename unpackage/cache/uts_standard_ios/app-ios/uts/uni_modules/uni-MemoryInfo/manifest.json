@@ -1,7 +1,7 @@
 {
   "version": "1",
   "env": {
-    "compilerVersion": "4.75"
+    "compilerVersion": "4.84"
   },
   "files": {
     "utssdk/app-ios/index.uts": {
