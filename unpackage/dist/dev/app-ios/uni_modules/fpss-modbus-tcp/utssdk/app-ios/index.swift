@@ -8,11 +8,13 @@ public var connect: connectType = {
 () -> Void in
 FPSSModbusTcpNative.connectToModbusServer(host: "192.168.150.224", port: 502, completion: {
 (_ Bool: Bool, _ UTSError: Any) -> Void in
+console.log("uts:连接成功", " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:11")
 if (Bool) {
     var startA: UInt16 = 0x00
-    var countA: UInt16 = 5
+    var countA: UInt16 = 20
     FPSSModbusTcpNative.readHoldingRegisters(startAddress: startA, count: countA, completion: {
     (_ registers: Any, _ UTSError: Any) -> Void in
+    console.log("uts:读取成功", registers, UTSError, " at uni_modules/fpss-modbus-tcp/utssdk/app-ios/index.uts:17")
     })
 }
 })

@@ -6,7 +6,6 @@
  * connect
  */
 export type connectType = () => void
-export type connectType2 = (cb : (flag : Boolean) => void) => void
 
 // 写入寄存器回调类型
 export type WriteRegisterCallback = (success: boolean, error: string | null) => void

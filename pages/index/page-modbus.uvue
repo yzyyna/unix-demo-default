@@ -13,12 +13,12 @@
 	const msg = ref('')
 	const connectClient = (flag) => {
 		if (flag) {
-			
 
+			console.log('uvue:开始连接');
 			connect()
 
 		} else {
-			
+
 			disConnect()
 			msg.value = '断开'
 		}
@@ -32,15 +32,15 @@
 		// 调用写入寄存器功能
 		writeHoldingRegisters(0, [100, 200, 300], (success, error) => {
 			if (success) {
-				
+
 				msg.value = '写入寄存器成功';
 			} else {
-				
+
 				msg.value = `写入失败: ${error}`;
 			}
 		});
 	}
-	onUnmounted(()=>{
+	onUnmounted(() => {
 		disConnect()
 	})
 </script>
