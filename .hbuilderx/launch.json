@@ -8,6 +8,10 @@
             "playground" : "standard",
             "runSignStatus" : 1,
             "type" : "uni-app:app-ios"
+        },
+        {
+            "playground" : "standard",
+            "type" : "uni-app:app-android"
         }
     ]
 }
